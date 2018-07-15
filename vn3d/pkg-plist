@@ -1,0 +1,4 @@
+include/vn3d/vn3d.h
+lib/libvn3d.so
+lib/libvn3d.so.0
+lib/libvn3d.so.0.1
