@@ -219,6 +219,7 @@ lib/libvoxtrees.so.0.32
 %%DATADIR%%/data/skull.dat
 %%DATADIR%%/modules/doom-camera.so
 %%DATADIR%%/modules/simple-camera.so
+%%DATADIR%%/modules/vn3d.so
 %%DATADIR%%/modules/voxrnd.so
 %%DATADIR%%/modules/voxsdl.so
 %%DATADIR%%/modules/voxtrees.so

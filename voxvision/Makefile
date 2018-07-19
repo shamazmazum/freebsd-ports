@@ -1,7 +1,7 @@
 PORTNAME=	voxvision
-DISTVERSION=	0.20-146
+DISTVERSION=	0.20-148
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-g46849fc
+DISTVERSIONSUFFIX=	-gcf7696b
 CATEGORIES=	graphics
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Voxel visualisation library
@@ -10,14 +10,15 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libiniparser.so:devel/iniparser \
-		libdispatch.so:devel/libdispatch
+		libdispatch.so:devel/libdispatch \
+		libvn3d.so:graphics/vn3d
 
 USE_SDL=	sdl2
 USES=		lua:53 cmake:outsource python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_TUPLE=	shamazmazum:voxvision:46849fc:voxvision \
+GH_TUPLE=	shamazmazum:voxvision:cf7696b:voxvision \
 		shamazmazum:luasdl2:37f2163:voxvision/src/voxengine/modules/luasdl2
 
 OPTIONS_DEFINE=	DOXYGEN NO_SSE LIGHT_MANAGER
