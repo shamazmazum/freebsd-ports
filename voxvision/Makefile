@@ -21,17 +21,17 @@ GH_ACCOUNT=	shamazmazum
 GH_TUPLE=	shamazmazum:voxvision:6395a64:voxvision \
 		shamazmazum:luasdl2:37f2163:voxvision/src/voxengine/modules/luasdl2
 
-OPTIONS_DEFINE=	DOXYGEN NO_SSE LIGHT_MANAGER
-DOXYGEN_DESC=	Install Doxygen-generated documentation
+OPTIONS_DEFINE=	DOCS NO_SSE LIGHT_MANAGER EXAMPLES
+DOCS_DESC=	Install Doxygen-generated documentation
 NO_SSE_DESC=	Disable SSE SIMD intrinsics (for running on old CPUs)
 LIGHT_MANAGER_DESC=	Enable experimental light manager (slow)
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 NO_SSE_CMAKE_BOOL_OFF=	SSE_INTRIN
 LIGHT_MANAGER_CMAKE_BOOL=	WITH_LIGHT_MANAGER
 OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
-do-install-DOXYGEN-on:
+post-install-DOCS-on:
 	${MAKE_CMD} doc -C ${BUILD_WRKSRC}
 	cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
