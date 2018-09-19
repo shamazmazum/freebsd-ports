@@ -8,8 +8,8 @@ lib/libvn3d.so.0.3
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/closed.png
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_4bc747e60d4c3efb8d7b8e86ae705c33.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_6ac430f81f76cbfc505e41753bce8d09.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_abf26ce9ebba5f383bac20038ffb78f0.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_e2dbc7a88296959b5fe72728316f75fc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
@@ -32,8 +32,9 @@ lib/libvn3d.so.0.3
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_g.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
-%%PORTDOCS%%%%DOCSDIR%%/html/octaves3.png
-%%PORTDOCS%%%%DOCSDIR%%/html/octaves8.png
+%%PORTDOCS%%%%DOCSDIR%%/html/octaves2-64x64.png
+%%PORTDOCS%%%%DOCSDIR%%/html/octaves4-16x16.png
+%%PORTDOCS%%%%DOCSDIR%%/html/octaves6-64x64.png
 %%PORTDOCS%%%%DOCSDIR%%/html/open.png
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_0.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_0.js
