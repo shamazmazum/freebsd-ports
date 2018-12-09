@@ -1,5 +1,5 @@
 PORTNAME=	vn3d
-DISTVERSION=	0.3.2
+DISTVERSION=	0.4
 CATEGORIES=	graphics
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Value noise library
@@ -10,8 +10,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_PROJECT=	vn3d
-GH_TAGNAME=	v0.3.2
+GH_TAGNAME=	v0.4
 
 OPTIONS_DEFINE=	LINEAR_INTERPOLATION DOCS
 LINEAR_INTERPOLATION_DESC= Use more faster linear interpolation
