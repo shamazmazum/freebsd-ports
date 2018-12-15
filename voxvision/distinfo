@@ -1,5 +1,5 @@
-TIMESTAMP = 1538495632
-SHA256 (shamazmazum-voxvision-v0.20-156-g353e404_GH0.tar.gz) = 56f8b08d10f07422a1c6d3e8cb86e41ef972d4619cc92ba7d252b59e69fc78b6
-SIZE (shamazmazum-voxvision-v0.20-156-g353e404_GH0.tar.gz) = 13733648
+TIMESTAMP = 1544878760
+SHA256 (shamazmazum-voxvision-v0.20-160-ge442161_GH0.tar.gz) = a442349a59dd9d128f1b6ab641d3f9b8a694958b0b5aa0b026b9afc51c77b0df
+SIZE (shamazmazum-voxvision-v0.20-160-ge442161_GH0.tar.gz) = 13733385
 SHA256 (shamazmazum-luasdl2-37f2163_GH0.tar.gz) = ec2ab84d6f919106202d87d5cbaa76c14a0ec5827a64028b572144f89564b2ae
 SIZE (shamazmazum-luasdl2-37f2163_GH0.tar.gz) = 11148538

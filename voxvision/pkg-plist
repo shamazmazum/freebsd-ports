@@ -10,6 +10,7 @@ include/voxvision/voxrnd/lights.h
 include/voxvision/voxrnd/modules.h
 include/voxvision/voxrnd/object.h
 include/voxvision/voxrnd/renderer.h
+include/voxvision/voxrnd/screenshot.h
 include/voxvision/voxtrees.h
 include/voxvision/voxtrees/datareader.h
 include/voxvision/voxtrees/geom.h
@@ -39,12 +40,12 @@ lib/libvoxtrees.so.0.33
 %%PORTDOCS%%%%DOCSDIR%%/html/closed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/datareader_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/datareader_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_251867040f2118f1c456516b5aa8a165.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_5d9adee6212e79d6ceb3521f7005509f.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_1054578048e2e8a7e1e42abd6a1ab35d.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_697b07ab8d0ff8681c932755e021d3e7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dir_8f1ddfcaba34d370f217a025e0bf2872.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_92ca7c26738410a0bade18521df2b8ed.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_ae99c600473fbd237a0ab310d7cb4825.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_fc86d6cd1ea9516f309513a8c906f43b.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_a9c1b9b53d2433a01abc7704704f6900.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_cefe4256cd15209fb9077355bf799690.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_f63caddd16b49414bf9f4e8503c21ad6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
@@ -88,6 +89,8 @@ lib/libvoxtrees.so.0.33
 %%PORTDOCS%%%%DOCSDIR%%/html/renderer_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/renderer_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rnd.png
+%%PORTDOCS%%%%DOCSDIR%%/html/screenshot_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/html/screenshot_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_0.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_1.html
