@@ -7,7 +7,7 @@ COMMENT=	Value noise library
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_TAGNAME=	v0.4
