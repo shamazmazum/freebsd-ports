@@ -1,0 +1,4 @@
+include/program-map.h
+lib/libprogram-map.so
+lib/libprogram-map.so.0
+lib/libprogram-map.so.0.1
