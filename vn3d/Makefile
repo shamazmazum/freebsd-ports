@@ -1,5 +1,6 @@
 PORTNAME=	vn3d
 DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Value noise library
@@ -23,5 +24,10 @@ OPTIONS_SUB=	yes
 post-install-DOCS-on:
 	${MAKE_CMD} doc -C ${BUILD_WRKSRC}
 	cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${RM} ${WRKDIR}/PLIST.txt
+	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
+		${SED} 's|${STAGEDIR}${PREFIX}/||' \
+		>> ${WRKDIR}/PLIST.txt ; \
+	(cd ${WRKDIR} ; ${CAT} ${WRKDIR}/PLIST.txt >> ${TMPPLIST})
 
 .include <bsd.port.mk>
