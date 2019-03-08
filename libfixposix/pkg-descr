@@ -1,0 +1,2 @@
+This is a portable wrapper over POSIX syscalls needed by a common lisp library
+called iolib.
