@@ -1,5 +1,6 @@
 PORTNAME=	libfixposix
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Thin wrapper over POSIX syscalls
