@@ -4,4 +4,4 @@ include/vn3d/vn3d.h
 include/vn3d/worley.h
 lib/libvn3d.so
 lib/libvn3d.so.0
-lib/libvn3d.so.0.4
+lib/libvn3d.so.0.5
