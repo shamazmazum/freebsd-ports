@@ -1,7 +1,7 @@
 PORTNAME=	voxvision
-DISTVERSION=	0.34-5
+DISTVERSION=	0.34-7
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-gb6be3c1
+DISTVERSIONSUFFIX=	-g795ca7d
 #PORTREVISION=	1
 CATEGORIES=	graphics
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -19,7 +19,7 @@ USES=		lua:53 cmake python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_TUPLE=	shamazmazum:voxvision:b6be3c1:voxvision \
+GH_TUPLE=	shamazmazum:voxvision:795ca7d:voxvision \
 		shamazmazum:luasdl2:37f2163:voxvision/src/voxengine/modules/luasdl2
 
 OPTIONS_DEFINE=	DOCS NO_SSE EXAMPLES
