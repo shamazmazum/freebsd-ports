@@ -38,6 +38,7 @@ lib/libvoxtrees.so.0.34
 %%PORTEXAMPLES%%%%DATADIR%%/data/bonsai.dat
 %%PORTEXAMPLES%%%%DATADIR%%/data/skull.dat
 %%DATADIR%%/modules/doom-camera.so
+%%DATADIR%%/modules/loadenvironment.lua
 %%DATADIR%%/modules/simple-camera.so
 %%DATADIR%%/modules/vn3d.so
 %%DATADIR%%/modules/voxrnd.so
