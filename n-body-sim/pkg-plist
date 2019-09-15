@@ -1,0 +1,3 @@
+bin/n-body-sim
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config
+%%DATADIR%%/process.cl
