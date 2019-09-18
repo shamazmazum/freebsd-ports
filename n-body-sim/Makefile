@@ -1,5 +1,5 @@
 PORTNAME=	n-body-sim
-DISTVERSION=	g20190915
+DISTVERSION=	g20190918
 #PORTREVISION=	1
 CATEGORIES=	math
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	n-body-sim
-GH_TAGNAME=	991b2a6
+GH_TAGNAME=	11349ed
 
 USES=		cmake
 LIB_DEPENDS=	libiniparser.so:devel/iniparser \
