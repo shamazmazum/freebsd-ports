@@ -1,5 +1,5 @@
 PORTNAME=	n-body-sim
-DISTVERSION=	g20190918
+DISTVERSION=	0.1
 #PORTREVISION=	1
 CATEGORIES=	math
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -11,11 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	n-body-sim
-GH_TAGNAME=	11349ed
+GH_TAGNAME=	v0.1
 
 USES=		cmake
-LIB_DEPENDS=	libiniparser.so:devel/iniparser \
-		libprogram-map.so:devel/program-map \
+LIB_DEPENDS=	libprogram-map.so:devel/program-map \
 		libOpenCL.so:devel/ocl-icd
 
 OPTIONS_DEFINE=	EXAMPLES
