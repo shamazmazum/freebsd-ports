@@ -1,0 +1,11 @@
+--- configure.ac.old	2018-12-08 19:44:07.714483000 +0300
++++ configure.ac	2018-12-08 19:44:18.170167000 +0300
+@@ -267,7 +267,7 @@
+                      [VORBISFILE], [vorbisfile])
+ 
+ AX_CHECK_FEATURE_LIB([smpeg], [SMPEG],
+-                     [smpeg/smpeg.h], [smpeg], [SMPEG_new])
++                     [smpeg2/smpeg.h], [smpeg], [SMPEG_new])
+ 
+ AX_CHECK_FEATURE_PKG([speex], [SPEEX], [speex], [speex])
+ AS_IF([test "x$have_speex" = "xtrue"],
