@@ -1,5 +1,3 @@
-TIMESTAMP = 1570779920
-SHA256 (quake2sdl/maxpak.pak) = 653569fe880f1ed5f7529483ac961b22078482e6ff0e83f4d9d1bc503c866770
-SIZE (quake2sdl/maxpak.pak) = 3282742
-SHA256 (quake2sdl/shamazmazum-quake2sdl-g20191011-336db75_GH0.tar.gz) = ed6b6e0ecbb7cf5091be023e35296abfd1e648dd3aa634e74d1eca3f3aa06d78
-SIZE (quake2sdl/shamazmazum-quake2sdl-g20191011-336db75_GH0.tar.gz) = 1161117
+TIMESTAMP = 1570790248
+SHA256 (quake2sdl/shamazmazum-quake2sdl-g20191011-64bae5e_GH0.tar.gz) = 5c6b29cade6494db82c2e6a2f742729843ae887333af6f2248aa1da6afc23274
+SIZE (quake2sdl/shamazmazum-quake2sdl-g20191011-64bae5e_GH0.tar.gz) = 1160900
