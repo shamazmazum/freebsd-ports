@@ -1,0 +1,4 @@
+bin/quake2
+lib/quake2lnx/baseq2/game.so
+lib/quake2lnx/ref_sdlgl.so
+lib/quake2lnx/ref_softsdl.so
