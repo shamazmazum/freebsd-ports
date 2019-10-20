@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -628,3 +628,8 @@ set_target_properties(ref_soft PROPERTIES
+ 		SUFFIX ${CMAKE_SHARED_LIBRARY_SUFFIX}
+ 		)
+ target_link_libraries(ref_soft ${yquake2LinkerFlags} ${yquake2SDLLinkerFlags})
++
++# Install things
++install (TARGETS quake2 q2ded RUNTIME DESTINATION bin)
++install (TARGETS ref_soft ref_gl1 ref_gl3 LIBRARY DESTINATION lib/yquake2)
++install (TARGETS game LIBRARY DESTINATION lib/yquake2/baseq2)

@@ -1,0 +1,6 @@
+bin/q2ded
+bin/quake2
+lib/yquake2/baseq2/game.so
+lib/yquake2/ref_gl1.so
+lib/yquake2/ref_gl3.so
+lib/yquake2/ref_soft.so
