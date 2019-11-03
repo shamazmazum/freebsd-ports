@@ -19,8 +19,7 @@ USES=		lua:53 cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_TUPLE=	shamazmazum:voxvision:0fa49b8:voxvision \
-		shamazmazum:luasdl2:37f2163:voxvision/src/voxengine/modules/luasdl2
+GH_TUPLE=	shamazmazum:luasdl2:37f2163:luasdl2/src/voxengine/modules/luasdl2
 
 OPTIONS_DEFINE=	DOCS NO_SSE EXAMPLES
 DOCS_DESC=	Install Doxygen-generated documentation
