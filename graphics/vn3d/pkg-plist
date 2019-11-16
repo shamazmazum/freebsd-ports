@@ -1,7 +1,8 @@
+%%PORTEXAMPLES%%bin/vn3dgen
 include/vn3d/generic.h
 include/vn3d/value.h
 include/vn3d/vn3d.h
 include/vn3d/worley.h
 lib/libvn3d.so
 lib/libvn3d.so.0
-lib/libvn3d.so.0.5
+lib/libvn3d.so.0.6
