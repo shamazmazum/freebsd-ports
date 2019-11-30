@@ -1,7 +1,7 @@
 PORTNAME=	voxvision
-DISTVERSION=	0.35
+DISTVERSION=	0.35-4
 DISTVERSIONPREFIX=	v
-#DISTVERSIONSUFFIX=	-g0fa49b8
+DISTVERSIONSUFFIX=	-g7a2e1ce
 #PORTREVISION=	1
 CATEGORIES=	graphics
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -19,7 +19,7 @@ USES=		lua:53 cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_TUPLE=	shamazmazum:luasdl2:37f2163:luasdl2/src/voxengine/modules/luasdl2
+GH_TUPLE=	shamazmazum:luasdl2:3e0db9e:luasdl2/src/voxengine/modules/luasdl2
 
 OPTIONS_DEFINE=	DOCS NO_SSE EXAMPLES
 DOCS_DESC=	Install Doxygen-generated documentation
