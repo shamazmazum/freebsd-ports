@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This port is in pretty bad shape, probably contains infinitely many
+bugs and what's the most important, I do not have any idea how to
+install the game data files system-wide, so you need to install them
+somewhere in your home directory and run the game from that directory,
+like so:
+
+$ cp -r /path/to/original/vangers/data ~/vangers
+$ cd ~/vangers/data
+$ vangers
+EOM
+}
+]
