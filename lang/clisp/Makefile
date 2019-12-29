@@ -10,8 +10,8 @@ COMMENT=	A Common Lisp implementation
 LICENSE=	GPLv2
 LICENSE_FILE= ${WRKSRC}/GNU-GPL
 
-LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
-BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:devel/libffcall
+LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv \
+		libavcall.so:devel/libffcall
 
 USES=		tar:bz2 iconv
 
