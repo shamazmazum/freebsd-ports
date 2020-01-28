@@ -1,0 +1,29 @@
+--- Makefile.am.orig	2020-01-27 07:34:57.144175000 +0300
++++ Makefile.am	2020-01-27 07:37:27.611308000 +0300
+@@ -73,7 +73,7 @@
+ 	protocol/wayland-client-protocol.h
+ 
+ libwayland_server_la_CFLAGS = $(FFI_CFLAGS) $(AM_CFLAGS) -pthread
+-libwayland_server_la_LIBADD = $(FFI_LIBS) libwayland-private.la libwayland-util.la $(RT_LIBS) -lm
++libwayland_server_la_LIBADD = $(FFI_LIBS) $(EPOLLSHIM_LIBS) libwayland-private.la libwayland-util.la $(RT_LIBS) -lm
+ libwayland_server_la_LDFLAGS = -version-info 1:0:1
+ libwayland_server_la_SOURCES =			\
+ 	src/wayland-server.c			\
+@@ -85,7 +85,7 @@
+ 	protocol/wayland-protocol.c
+ 
+ libwayland_client_la_CFLAGS = $(FFI_CFLAGS) $(AM_CFLAGS) -pthread
+-libwayland_client_la_LIBADD = $(FFI_LIBS) libwayland-private.la libwayland-util.la $(RT_LIBS) -lm
++libwayland_client_la_LIBADD = $(FFI_LIBS) $(EPOLLSHIM_LIBS) libwayland-private.la libwayland-util.la $(RT_LIBS) -lm
+ libwayland_client_la_LDFLAGS = -version-info 3:0:3
+ libwayland_client_la_SOURCES =			\
+ 	src/wayland-client.c
+@@ -230,7 +230,7 @@
+ 	libwayland-client.la			\
+ 	libwayland-server.la			\
+ 	libtest-helpers.la			\
+-	$(RT_LIBS) $(DL_LIBS) $(FFI_LIBS)
++	$(RT_LIBS) $(DL_LIBS) $(FFI_LIBS) $(EPOLLSHIM_LIB)
+ 
+ array_test_SOURCES = tests/array-test.c
+ array_test_LDADD = libtest-runner.la
