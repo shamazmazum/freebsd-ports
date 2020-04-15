@@ -1,7 +1,7 @@
 PORTNAME=	vangers
 DISTVERSION=	1.0.0-78
 DISTVERSIONSUFFIX=	-gb395e55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	The legendary racing game
