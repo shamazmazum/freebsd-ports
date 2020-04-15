@@ -1,0 +1,10 @@
+--- systemshock-run.orig	2020-04-15 19:27:41.812345000 +0300
++++ systemshock-run	2020-04-15 19:27:21.517780000 +0300
+@@ -0,0 +1,7 @@
++#!/bin/sh
++
++if [ -d $HOME/.sshock ]; then
++    (cd $HOME/.sshock && systemshock)
++else
++    echo 'Please copy the game files into ~/.sshock and try again'
++fi
