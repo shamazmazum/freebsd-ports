@@ -5,7 +5,7 @@
  
  AX_CHECK_FEATURE_LIB([smpeg], [SMPEG],
 -                     [smpeg/smpeg.h], [smpeg], [SMPEG_new])
-+                     [smpeg2/smpeg.h], [smpeg], [SMPEG_new])
++                     [smpeg2/smpeg.h], [smpeg2], [SMPEG_new])
  
  AX_CHECK_FEATURE_PKG([speex], [SPEEX], [speex], [speex])
  AS_IF([test "x$have_speex" = "xtrue"],
