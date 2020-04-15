@@ -1,17 +1,22 @@
+# $FreeBSD$
+
 PORTNAME=	libfixposix
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
-PORTREVISION=	1
 CATEGORIES=	devel
-MAINTAINER=	shamaz.mazum@gmail.com
-COMMENT=	Thin wrapper over POSIX syscalls
 
-#LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
+MAINTAINER=	tobik@FreeBSD.org
+COMMENT=	Replacement for inconsistent parts of POSIX
 
-USES=		autoreconf gmake libtool pkgconfig
+LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+USES=		autoreconf libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sionescu
-GH_TAGNAME=	v0.4.3
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

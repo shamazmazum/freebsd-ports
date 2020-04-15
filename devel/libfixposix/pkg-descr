@@ -1,2 +1,4 @@
-This is a portable wrapper over POSIX syscalls needed by a common lisp library
-called iolib.
+The purpose of libfixposix is to offer replacements for parts of
+POSIX whose behaviour is inconsistent across *NIX flavours.
+
+WWW: https://github.com/sionescu/libfixposix
