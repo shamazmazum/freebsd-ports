@@ -24,7 +24,7 @@ GH_ACCOUNT=	shamazmazum
 GH_TUPLE=	aminosbh:sdl2-cmake-modules:48fa6e2:sdl2_cmake_modules/Modules/sdl2 \
 		ooxi:CMake-Gettext:c7acd17:cmake_gettext/lib/CMake-Gettext
 
-USES=		cmake compiler:c++11-lang gettext gl
+USES=		cmake compiler:c++11-lang gettext gl sdl
 USE_SDL=	sdl2 mixer2 image2 ttf2
 USE_GL=		gl glu
 USE_CXXSTD=	c++98

@@ -16,9 +16,9 @@ MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Yamagi QuakeII is an improved version of Icculus Quake II
 LICENSE=	GPLv2
 
+USES=		cmake openal gl sdl
 USE_GL=		gl
 USE_SDL=	sdl2
-USES=		cmake openal
 CMAKE_ON=	SYSTEMWIDE_SUPPORT
 
 OPTIONS_SUB=		yes

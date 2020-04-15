@@ -5,7 +5,7 @@ CATEGORIES=	science
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	N-body simulation in two dimensions
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes

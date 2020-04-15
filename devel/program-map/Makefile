@@ -4,7 +4,7 @@ CATEGORIES=	devel
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Helper library for mapping OpenCL programs
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
