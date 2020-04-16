@@ -10,13 +10,14 @@ COMMENT=	Open source and cross-platform remake of a cult game System Shock
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
+		libasound.so:audio/alsa-lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Interrupt
 GH_PROJECT=	systemshock
 
-USES=		cmake gl sdl
+USES=		cmake gl sdl pkgconfig
 USE_GL=		gl glu
 USE_SDL=	sdl2 mixer2
 
