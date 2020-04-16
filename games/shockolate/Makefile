@@ -3,6 +3,7 @@
 PORTNAME=	shockolate
 DISTVERSION=	0.8.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -26,8 +27,9 @@ CMAKE_ON=	ENABLE_SDL2 ENABLE_SOUND ENABLE_FLUIDSYNTH
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${LOCALBASE}/share/shockolate/|' \
 		${WRKSRC}/src/Libraries/RES/Source/caseless.c \
-		${WRKSRC}/src/MusicSrc/MusicDevice.c \
 		${WRKSRC}/src/MacSrc/OpenGL.cc
+	${REINPLACE_CMD} -e 's|%%MIDIDIR%%|${LOCALBASE}/share/sounds/sf2/|' \
+		${WRKSRC}/src/MusicSrc/MusicDevice.c
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/systemshock ${STAGEDIR}${PREFIX}/bin
