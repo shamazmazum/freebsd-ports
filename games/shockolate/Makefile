@@ -22,8 +22,15 @@ USE_SDL=	sdl2 mixer2
 
 CMAKE_ON=	ENABLE_SDL2 ENABLE_SOUND ENABLE_FLUIDSYNTH
 
+post-patch: .SILENT
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${LOCALBASE}/share/shockolate/|' \
+		${WRKSRC}/src/Libraries/RES/Source/caseless.c \
+		${WRKSRC}/src/MusicSrc/MusicDevice.c \
+		${WRKSRC}/src/MacSrc/OpenGL.cc
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/systemshock ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/systemshock-run ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} shaders ${STAGEDIR}${DATADIR})
+	${MKDIR} ${STAGEDIR}${DATADIR}/res
 
 .include <bsd.port.mk>
