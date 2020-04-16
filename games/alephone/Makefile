@@ -7,16 +7,16 @@ CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	The open source version of Bungies Marathon game
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 
-USES=		gmake localbase pkgconfig tar:bzip2 autoreconf
+USES=		gmake localbase pkgconfig tar:bzip2 autoreconf sdl gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Aleph-One-Marathon
 GH_TAGNAME=	release-20181006
-#USE_CXXSTD=	gnu++98
 USE_SDL=	sdl2 image2 net2 ttf2
-USE_GL=		yes
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 

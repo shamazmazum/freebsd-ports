@@ -13,8 +13,9 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libclunk.so:audio/clunk-sdl2 \
 		libavcodec.so:multimedia/ffmpeg
 
+USES=		cmake dos2unix iconv:build sdl gl
 USE_SDL=	sdl2 net2
-USES=		cmake dos2unix iconv:build
+USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.cpp *.h
 
 USE_GITHUB=	yes
