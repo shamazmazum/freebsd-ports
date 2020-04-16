@@ -1,7 +1,7 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	shockolate
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libasound.so:audio/alsa-lib
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Interrupt
+GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	systemshock
 
 USES=		cmake gl sdl pkgconfig
