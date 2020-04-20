@@ -1,10 +1,9 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	shockolate
-DISTVERSION=	0.8.3-1
+DISTVERSION=	0.8.3-3
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-g41179860
-#PORTREVISION=	1
+DISTVERSIONSUFFIX=	-g50f4d1cc
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
