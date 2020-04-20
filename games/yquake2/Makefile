@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yquake2
-PORTVERSION=	7.41
+PORTVERSION=	7.43
 CATEGORIES=	games
 CONFLICTS_INSTALL=	quake2lnx quake2max quake2sdl
 
