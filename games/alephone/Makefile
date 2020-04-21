@@ -11,10 +11,10 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 
-USES=		gmake localbase pkgconfig tar:bzip2 autoreconf sdl gl
+USES=		compiler:c++11-lang gmake localbase pkgconfig tar:bzip2 autoreconf sdl gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Aleph-One-Marathon
-GH_TAGNAME=	release-20181006
+GH_TAGNAME=	release-20190331
 USE_SDL=	sdl2 image2 net2 ttf2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
