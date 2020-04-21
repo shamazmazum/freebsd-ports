@@ -1,7 +1,7 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	lugaru
-DISTVERSION=	20200421
+DISTVERSION=	1.3
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -18,9 +18,8 @@ USE_GL=		gl glu
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	osslugaru
+GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	lugaru
-GH_TAGNAME=	da7c08d
 
 PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
