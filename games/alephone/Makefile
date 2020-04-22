@@ -9,7 +9,8 @@ MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	The open source version of Bungies Marathon game
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libboost_filesystem.so:devel/boost-libs
 
 USES=		compiler:c++11-lang gmake localbase pkgconfig tar:bzip2 autoreconf sdl gl
 USE_GITHUB=	yes
@@ -20,27 +21,23 @@ USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 
-PORTDOCS=	*
-
 DATADIR=	${PREFIX}/share/AlephOne
 
-OPTIONS_DEFINE=	MAD FFMPEG OGG SPEEX SMPEG ZZIP PNG CURL SNDFILE DOCS
-OPTIONS_DEFAULT=MAD FFMPEG OGG SPEEX SMPEG ZZIP PNG CURL SNDFILE
+OPTIONS_DEFINE=	MAD FFMPEG OGG SPEEX ZZIP PNG CURL SNDFILE DOCS
+OPTIONS_DEFAULT=MAD FFMPEG OGG SPEEX ZZIP PNG CURL SNDFILE
 
 FFMPEG_DESC=	Use ffmpeg for film export and playback
-SMPEG_DESC=	Use SMPEG for movie playback
 ZZIP_DESC=	Enable zziplib support
 
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_WITH=	mad
-FMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-FMPEG_CONFIGURE_WITH=	ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CONFIGURE_WITH=	ffmpeg
 OGG_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 OGG_CONFIGURE_WITH=	vorbis
-SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
+			libspeexdsp.so:audio/speexdsp
 SPEEX_CONFIGURE_WITH=	speex
-SMPEG_LIB_DEPENDS=	libsmpeg2.so:multimedia/smpeg2
-SMPEG_CONFIGURE_WITH=	smpeg
 ZZIP_LIB_DEPENDS=	libzzip.so:devel/zziplib
 ZZIP_CONFIGURE_WITH=	zzip
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
