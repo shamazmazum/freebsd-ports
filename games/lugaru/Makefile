@@ -2,6 +2,7 @@
 
 PORTNAME=	lugaru
 DISTVERSION=	1.3
+PORTEPOCH=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -11,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
-		libogg.so:audio/libogg
+		libogg.so:audio/libogg \
+		libjsoncpp.so:devel/jsoncpp
 
 USES=		cmake compiler:c++11-lang gl jpeg openal:soft pkgconfig sdl
 USE_GL=		gl glu
@@ -21,11 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	lugaru
 
-PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
-
-DESKTOP_ENTRIES="Lugaru" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ActionGame;" ""
 
 CMAKE_ON=	SYSTEM_INSTALL
 
@@ -34,11 +32,8 @@ post-patch:
 		${WRKSRC}/Source/Utils/Folders.cpp
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${RLN} ${STAGEDIR}${DATADIR}/Textures/Lugaru.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
