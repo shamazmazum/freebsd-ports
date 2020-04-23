@@ -1,11 +1,11 @@
---- vangers-run.orig	2020-04-22 20:14:05.033034000 +0300
-+++ vangers-run	2020-04-22 20:14:39.420416000 +0300
+--- vangers.orig	2020-04-22 20:14:05.033034000 +0300
++++ vangers	2020-04-22 20:14:39.420416000 +0300
 @@ -0,0 +1,8 @@
 +#!/bin/sh
 +
 +if [ -d $HOME/.vangers/data ]; then
 +    cd $HOME/.vangers/data
-+    exec vangers "$@"
++    exec vangers.bin "$@"
 +else
 +    echo 'Please copy directory "data" from the original installation to ~/.vangers and try again'
 +fi

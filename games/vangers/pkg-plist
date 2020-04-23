@@ -1,5 +1,5 @@
 bin/vangers
-bin/vangers-run
+bin/vangers.bin
 %%DATADIR%%/data/actint/a_consts.h
 %%DATADIR%%/data/actint/a_str.inc
 %%DATADIR%%/data/actint/a_str1.inc
