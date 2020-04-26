@@ -1,6 +1,6 @@
---- src/GameSrc/setup.c.orig	2020-04-16 09:23:31.515350000 +0300
-+++ src/GameSrc/setup.c	2020-04-16 09:29:18.433353000 +0300
-@@ -25,6 +25,7 @@
+--- src/GameSrc/setup.c.orig	2020-04-23 04:29:54 UTC
++++ src/GameSrc/setup.c
+@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.
  
  #define __SETUP_SRC
  
@@ -8,7 +8,7 @@
  #include <string.h>
  
  // TODO: extract this into a compatibility header
-@@ -36,6 +37,10 @@
+@@ -36,6 +37,10 @@ along with this program.  If not, see <http://www.gnu.
  	#include <unistd.h>
  #endif
  
@@ -19,7 +19,7 @@
  #include "archiveformat.h"
  #include "ShockDialogs.h"
  #include "setup.h"
-@@ -1304,8 +1309,21 @@
+@@ -1305,8 +1310,21 @@ uchar intro_key_handler(uiEvent *ev, LGRegion *r, intp
    return (main_kb_callback(ev, r, user_data));
  }
  
@@ -41,7 +41,7 @@
  errtype load_savegame_names(void)
  {
    int i;
-@@ -1319,7 +1337,7 @@
+@@ -1320,7 +1338,7 @@ errtype load_savegame_names(void)
    {
      Poke_SaveName(i);
  

@@ -1,6 +1,6 @@
---- src/Libraries/RES/Source/caseless.c.orig	2020-01-18 07:05:35.000000000 +0300
-+++ src/Libraries/RES/Source/caseless.c	2020-04-16 08:44:02.713028000 +0300
-@@ -20,6 +20,7 @@
+--- src/Libraries/RES/Source/caseless.c.orig	2020-04-23 04:29:54 UTC
++++ src/Libraries/RES/Source/caseless.c
+@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.
  // DG 2018: a case-insensitive fopen() wrapper, and functions used by it
  
  #include <assert.h>
@@ -8,7 +8,7 @@
  #include <string.h>
  #include <stdio.h>
  #include <sys/stat.h>
-@@ -241,18 +242,35 @@
+@@ -241,18 +242,35 @@ int caselesspath(const char *inpath, char *outpath, in
  
  FILE *fopen_caseless(const char *path, const char *mode) {
      FILE *ret = NULL;

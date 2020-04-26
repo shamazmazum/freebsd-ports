@@ -1,6 +1,6 @@
---- src/MacSrc/OpenGL.cc.orig	2020-01-18 07:05:35.000000000 +0300
-+++ src/MacSrc/OpenGL.cc	2020-04-16 07:23:52.285448000 +0300
-@@ -195,7 +195,7 @@
+--- src/MacSrc/OpenGL.cc.orig	2020-04-23 04:29:54 UTC
++++ src/MacSrc/OpenGL.cc
+@@ -195,7 +195,7 @@ static GLuint loadShader(GLenum type, const char *file
      DEBUG("Loading shader %s", filename);
  
      char fb[256];
