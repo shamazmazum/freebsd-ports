@@ -1,2 +1,3 @@
-program-map is a simple helper library which can do read-only mappings of files into memory
-(wrapper around open/mmap). It is useful to map OpenCL programs.
+program-map is a simple helper library which can do read-only mappings
+of files into memory (wrapper around open/mmap). It is useful to map
+OpenCL programs or OpenGL shaders.
