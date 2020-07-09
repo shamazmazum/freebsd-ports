@@ -51,7 +51,7 @@ SUPERNOVA_CMAKE_BOOL=	SUPERNOVA
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 			libavahi-common.so:net/avahi-app
-AVAHI_CMAKE_BOOL=	NO_AVAHI
+AVAHI_CMAKE_BOOL_OFF=	NO_AVAHI
 
 .include <bsd.port.pre.mk>
 
