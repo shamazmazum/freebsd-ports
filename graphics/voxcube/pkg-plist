@@ -1,0 +1,9 @@
+bin/voxcube
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BostonTeapot.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bonsai.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bonsai.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pot.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/skull.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/skull.json
+%%DATADIR%%/shaders/world.frag
+%%DATADIR%%/shaders/world.vert
