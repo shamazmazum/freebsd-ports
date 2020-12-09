@@ -1,0 +1,4 @@
+This is NSS module for ZeroDNS server which provides DNS functionality
+on top of ZeroMQ library and NORM multicast protocol. Tested on
+FreeBSD only, but may work on Linux as well. Currently it resolves
+only IPv4 addresses.
