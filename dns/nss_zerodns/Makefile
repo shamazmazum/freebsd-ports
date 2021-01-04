@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss_zerodns
-DISTVERSION=	1.0
-PORTREVISION=	2
+DISTVERSION=	1.1
 CATEGORIES=	dns
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -17,6 +16,6 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	nss-zero-dns
-GH_TAGNAME=	72256d4
+GH_TAGNAME=	f36b693
 
 .include <bsd.port.mk>
