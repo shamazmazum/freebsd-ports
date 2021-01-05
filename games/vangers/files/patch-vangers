@@ -5,7 +5,7 @@
 +
 +if [ -d $HOME/.vangers/data ]; then
 +    cd $HOME/.vangers/data
-+    exec vangers.bin "$@"
++    exec vangers.bin %%LANGOPT%% "$@"
 +else
 +    echo 'Please copy directory "data" from the original installation to ~/.vangers and try again'
 +fi

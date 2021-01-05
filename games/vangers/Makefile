@@ -1,10 +1,13 @@
+# $FreeBSD$
+
 PORTNAME=	vangers
-DISTVERSION=	1.0.0-78
-DISTVERSIONSUFFIX=	-gb395e55
+DISTVERSION=	1.0.0-391
+DISTVERSIONSUFFIX=	-gd051840
 PORTREVISION=	2
 CATEGORIES=	games
+
 MAINTAINER=	shamaz.mazum@gmail.com
-COMMENT=	The legendary racing game
+COMMENT=	Legendary racing game
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,12 +25,27 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	KranX
 GH_PROJECT=	Vangers
 
+OPTIONS_SINGLE=	LANG
+OPTIONS_SINGLE_LANG=	RUSSIAN ENGLISH
+OPTIONS_DEFAULT=	RUSSIAN
+
+LANG_DESC=	Select language
+RUSSIAN_DESC=	Build vangers for Russian game assets
+ENGLISH_DESC=	Build vangers for English game assets
+
+post-patch-RUSSIAN-on:
+	${REINPLACE_CMD} -e 's|%%LANGOPT%%|-russian|' \
+		${WRKSRC}/vangers
+
+post-patch-ENGLISH-on:
+	${REINPLACE_CMD} -e 's|%%LANGOPT%%||' \
+		${WRKSRC}/vangers
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/${PORTNAME} \
 			   ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}/data
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
-
 
 .include <bsd.port.mk>
