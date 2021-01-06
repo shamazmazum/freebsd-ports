@@ -2,7 +2,7 @@
 # $FreeBSD: head/games/alephone/Makefile 484273 2018-11-06 01:50:26Z jbeich $
 
 PORTNAME=	alephone
-DISTVERSION=	20190331
+DISTVERSION=	20200904
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USES=		compiler:c++11-lang gmake localbase pkgconfig tar:bzip2 autoreconf sdl gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Aleph-One-Marathon
-GH_TAGNAME=	release-20190331
+GH_TAGNAME=	release-20200904
 USE_SDL=	sdl2 image2 net2 ttf2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
