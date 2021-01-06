@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	yquake2
-PORTVERSION=	7.43
+PORTVERSION=	7.45
 CATEGORIES=	games
 CONFLICTS_INSTALL=	quake2lnx quake2max quake2sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	8bcb8f8
+GH_TAGNAME=	6102a36
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 MAINTAINER=	shamaz.mazum@gmail.com
