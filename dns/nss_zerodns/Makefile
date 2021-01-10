@@ -2,6 +2,7 @@
 
 PORTNAME=	nss_zerodns
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -16,6 +17,6 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	nss-zero-dns
-GH_TAGNAME=	f36b693
+GH_TAGNAME=	050ed8b
 
 .include <bsd.port.mk>
