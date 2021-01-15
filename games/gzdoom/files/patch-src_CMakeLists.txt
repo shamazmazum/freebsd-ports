@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2020-10-31 09:07:33 UTC
++++ src/CMakeLists.txt
+@@ -1343,7 +1343,7 @@ add_custom_command(TARGET zdoom POST_BUILD
+ if( WIN32 )
+ 	set( INSTALL_SOUNDFONT_PATH . CACHE STRING "Directory where soundfonts and WOPL/WOPN banks will be placed during install." )
+ else()
+-	set( INSTALL_SOUNDFONT_PATH share/games/doom CACHE STRING "Directory where soundfonts and WOPL/WOPN banks will be placed during install." )
++	set( INSTALL_SOUNDFONT_PATH share/doom/gzdoom CACHE STRING "Directory where soundfonts and WOPL/WOPN banks will be placed during install." )
+ endif()
+ install(DIRECTORY "${PROJECT_BINARY_DIR}/soundfonts" "${PROJECT_BINARY_DIR}/fm_banks"
+ 		DESTINATION ${INSTALL_SOUNDFONT_PATH}
