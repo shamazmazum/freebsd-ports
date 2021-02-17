@@ -2,24 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	yquake2
-PORTVERSION=	7.45
+DISTVERSION=	7.45-191
+DISTVERSIONSUFFIX=	-gd8690511
 CATEGORIES=	games
-CONFLICTS_INSTALL=	quake2lnx quake2max quake2sdl
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	6102a36
-LIB_DEPENDS=	libcurl.so:ftp/curl
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Yamagi QuakeII is an improved version of Icculus Quake II
+
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+CONFLICTS_INSTALL=	quake2lnx quake2max quake2sdl
 
 USES=		cmake openal gl sdl
 USE_GL=		gl
 USE_SDL=	sdl2
 CMAKE_ON=	SYSTEMWIDE_SUPPORT
+
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libvulkan.so:graphics/vulkan-loader
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	d8690511
 
 OPTIONS_SUB=		yes
 .include <bsd.port.options.mk>

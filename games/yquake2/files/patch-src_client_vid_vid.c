@@ -1,6 +1,6 @@
---- src/client/vid/vid.c.orig	2021-01-06 09:50:18.455692000 +0300
-+++ src/client/vid/vid.c	2021-01-06 09:56:19.922122000 +0300
-@@ -348,6 +348,7 @@
+--- src/client/vid/vid.c.orig	2021-02-11 16:28:18 UTC
++++ src/client/vid/vid.c
+@@ -348,6 +348,7 @@ VID_LoadRenderer(void)
  
  	char reflib_name[64] = {0};
  	char reflib_path[MAX_OSPATH] = {0};
@@ -8,14 +8,14 @@
  
  	// If the refresher is already active we need
  	// to shut it down before loading a new one
-@@ -357,11 +358,19 @@
+@@ -357,11 +358,19 @@ VID_LoadRenderer(void)
  	Com_Printf("----- refresher initialization -----\n");
  
  	snprintf(reflib_name, sizeof(reflib_name), "ref_%s.%s", vid_renderer->string, lib_ext);
 -	snprintf(reflib_path, sizeof(reflib_path), "%s%s", Sys_GetBinaryDir(), reflib_name);
 -	Com_Printf("Loading library: %s\n", reflib_name);
 +	while ((next_path = FS_GetNextRawPath (next_path)) != NULL) {
-+		snprintf(reflib_path, sizeof(reflib_path), "%s%s", next_path, reflib_name);
++		snprintf(reflib_path, sizeof(reflib_path), "%s/%s", next_path, reflib_name);
 +		Com_Printf("LoadLibrary(%s)\n", reflib_name);
  
 -	// Mkay, let's load the requested renderer.
