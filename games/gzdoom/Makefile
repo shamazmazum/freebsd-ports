@@ -14,11 +14,13 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/docs/licenses/bsd.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/docs/licenses/gpl.txt
 LICENSE_FILE_LGPL3=	${WRKSRC}/docs/licenses/lgpl.txt
 
-BUILD_DEPENDS=	zip:archivers/zip
+BUILD_DEPENDS=	zip:archivers/zip \
+		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libzmusic.so:audio/zmusic \
-		libgme.so:audio/libgme
+		libgme.so:audio/libgme \
+		libvulkan.so:graphics/vulkan-loader
 
 USES=		cmake compiler:c++11-lang gettext gl gnome jpeg openal \
 		pkgconfig sdl
