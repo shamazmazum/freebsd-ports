@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	voxcube
-PORTVERSION=	20200712
+PORTVERSION=	20210306
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -15,11 +15,11 @@ LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
 USES=		cmake compiler:c++17-lang gl sdl
 USE_GL=		gl
-USE_SDL=	sdl2
+USE_SDL=	sdl2 ttf2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_TAGNAME=	e65ff0c
+GH_TAGNAME=	cbeda4c
 
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes

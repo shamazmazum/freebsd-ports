@@ -5,5 +5,8 @@ bin/voxcube
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pot.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/skull.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/skull.json
+%%DATADIR%%/fonts/DejaVuSans.ttf
+%%DATADIR%%/shaders/text.frag
+%%DATADIR%%/shaders/text.vert
 %%DATADIR%%/shaders/world.frag
 %%DATADIR%%/shaders/world.vert
