@@ -1,10 +1,9 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	shockolate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2-43
-DISTVERSIONSUFFIX=	-ga9eb1b93
+DISTVERSION=	0.8.2-65
+DISTVERSIONSUFFIX=	-g7da4d1be
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
