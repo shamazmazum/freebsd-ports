@@ -1,11 +1,10 @@
---- CMakeLists.txt.orig	2021-02-11 16:28:18 UTC
+--- CMakeLists.txt.orig	2021-06-20 06:28:58 UTC
 +++ CMakeLists.txt
-@@ -719,3 +719,8 @@ if(${VULKAN_SUPPORT})
+@@ -660,3 +660,7 @@ set_target_properties(ref_soft PROPERTIES
+ 		SUFFIX ${CMAKE_SHARED_LIBRARY_SUFFIX}
  		)
-     target_link_libraries(ref_vk ${yquake2LinkerFlags} ${yquake2VulkanLinkerFlags} ${yquake2SDLLinkerFlags})
- endif()
+ target_link_libraries(ref_soft ${yquake2LinkerFlags} ${yquake2SDLLinkerFlags})
 +
-+# Install things
 +install (TARGETS quake2 q2ded RUNTIME DESTINATION bin)
-+install (TARGETS ref_soft ref_gl1 ref_gl3 ref_vk LIBRARY DESTINATION lib/yquake2)
++install (TARGETS ref_soft ref_gl1 ref_gl3 LIBRARY DESTINATION lib/yquake2)
 +install (TARGETS game LIBRARY DESTINATION lib/yquake2/baseq2)

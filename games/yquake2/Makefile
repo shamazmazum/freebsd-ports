@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yquake2
-DISTVERSION=	7.45-191
-DISTVERSIONSUFFIX=	-gd8690511
+DISTVERSION=	8.0
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -19,14 +18,12 @@ USE_GL=		gl
 USE_SDL=	sdl2
 CMAKE_ON=	SYSTEMWIDE_SUPPORT
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libvulkan.so:graphics/vulkan-loader
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	d8690511
+GH_TAGNAME=	f648378
 
 OPTIONS_SUB=		yes
 .include <bsd.port.options.mk>
