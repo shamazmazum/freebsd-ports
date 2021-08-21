@@ -2,7 +2,7 @@
 # $FreeBSD: head/games/alephone/Makefile 484273 2018-11-06 01:50:26Z jbeich $
 
 PORTNAME=	alephone
-DISTVERSION=	20200904
+DISTVERSION=	20210408
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
