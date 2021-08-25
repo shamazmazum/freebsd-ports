@@ -1,0 +1,4 @@
+Newton Game Dynamics is an open-source physics engine for
+realistically simulating rigid bodies in games and other real-time
+applications. Its solver is deterministic and not based on traditional
+LCP or iterative methods.
