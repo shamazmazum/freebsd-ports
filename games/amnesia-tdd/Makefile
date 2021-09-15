@@ -9,6 +9,9 @@ COMMENT=	Amnesia: The Dark Descent
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	The game is completely untested on this architecture
+
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libvorbis.so:audio/libvorbis \
 		libtheora.so:multimedia/libtheora \
