@@ -11,11 +11,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libvorbis.so:audio/libvorbis \
-		libtheora.so:multimedia/libtheora
+		libtheora.so:multimedia/libtheora \
+		libogg.so:audio/libogg
 
-USES=		cmake gl sdl openal
+USES=		cmake gl sdl openal perl5
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
+USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
