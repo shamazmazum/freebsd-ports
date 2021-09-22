@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To play the game you need to do the following:
+
+* Obtail files from the original game (a Steam version will do).
+* Convert all FBX models to Collada format (.dae). You can use
+  Autodesk FBX Converter for that.
+* Run $find . -name "*.ent" -print0 | xargs -0 sed -i.bak 's\.FBX/\.dae/'
+  from the top directory of the game assets.
+* Copy game assets to %%DATADIR%%.
+
+Enjoy!
+EOM
+}
+]
