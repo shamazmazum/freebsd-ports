@@ -1,11 +1,9 @@
 [
 { type: install
   message: <<EOM
-To run the game, make a local copy of /usr/local/share/vangers/data
+To run the game, make a local copy of %%DATADIR%%/data
 directory in ~/.vangers and then copy the game content in "data"
-directory from a Steam installation into ~/.vangers/data and run:
-
-$ vangers
+directory from a Steam installation into ~/.vangers/data.
 
 The source code of this game is a mess, so be prepared to face
 probable bugs.
