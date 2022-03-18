@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	voxcube
-PORTVERSION=	20210306
+PORTVERSION=	20220318
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -19,7 +19,7 @@ USE_SDL=	sdl2 ttf2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_TAGNAME=	cbeda4c
+GH_TAGNAME=	c1ed7bc
 
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
