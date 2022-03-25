@@ -1,7 +1,7 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	yquake2
-DISTVERSION=	8.0
+DISTVERSION=	8.01
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
