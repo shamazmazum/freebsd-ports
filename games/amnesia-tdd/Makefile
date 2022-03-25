@@ -1,6 +1,6 @@
 PORTNAME=	amnesia-tdd
-DISTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.2
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -10,7 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	The game is completely untested on this architecture
+ONLY_FOR_ARCHS_REASON=	Bundled AngelScript does not work on this architecture.
 
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libvorbis.so:audio/libvorbis \
