@@ -16,7 +16,7 @@ USE_SDL=	sdl2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
-RUN_DEPENDS=	${LOCALBASE}/bin/quake2:games/yquake2
+RUN_DEPENDS=	${LOCALBASE}/bin/yquake2:games/yquake2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yquake2
