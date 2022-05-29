@@ -1,12 +1,12 @@
 # Created by: Michael Alyn Miller <malyn@strangeGizmo.com>
-# $FreeBSD: head/games/alephone/Makefile 484273 2018-11-06 01:50:26Z jbeich $
 
 PORTNAME=	alephone
-DISTVERSION=	20210408
+DISTVERSION=	20220115
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	The open source version of Bungies Marathon game
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
