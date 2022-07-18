@@ -1,7 +1,7 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	yquake2
-PORTVERSION=	8.01
+PORTVERSION=	8.10
 CATEGORIES=	games
 MASTER_SITES=	https://deponie.yamagi.org/quake2/
 DISTNAME=	quake2-${PORTVERSION}
