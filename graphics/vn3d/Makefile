@@ -1,7 +1,7 @@
 PORTNAME=	vn3d
 DISTVERSION=	0.6
-#PORTREVISION=	1
 CATEGORIES=	graphics
+
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Value noise library
 

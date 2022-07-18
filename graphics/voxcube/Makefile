@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	voxcube
 PORTVERSION=	20220718
 CATEGORIES=	graphics

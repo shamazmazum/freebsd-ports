@@ -1,5 +1,4 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	clunk-sdl2
 DISTVERSION=	1.0
@@ -11,10 +10,10 @@ COMMENT=	Real-time binaural sound generation library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL= clunk
-
 USES=		cmake sdl
 USE_SDL=	sdl2
+
+CONFLICTS_INSTALL= clunk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stalkerg

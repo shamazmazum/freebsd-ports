@@ -1,6 +1,6 @@
 PORTNAME=	amnesia-amfp
-DISTVERSION=	0.1.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com

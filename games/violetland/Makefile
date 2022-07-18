@@ -1,15 +1,14 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	violetland
-DISTVERSION=	0.5-157
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5-157
 DISTVERSIONSUFFIX=	-g4dc4ef6
 PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
-COMMENT=	Top-down survival shoot 'em up
+COMMENT=	Top-down survival shoot'em 'up
 
 LICENSE=	GPLv3 CC-BY-SA-3.0
 LICENSE_COMB=	multi
@@ -18,18 +17,18 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
-USE_GITHUB=	yes
-GH_PROJECT=	violetland
-GH_ACCOUNT=	shamazmazum
-GH_TUPLE=	aminosbh:sdl2-cmake-modules:48fa6e2:sdl2_cmake_modules/Modules/sdl2 \
-		ooxi:CMake-Gettext:c7acd17:cmake_gettext/lib/CMake-Gettext
-
 USES=		cmake compiler:c++11-lang gettext gl sdl
 USE_SDL=	sdl2 mixer2 image2 ttf2
 USE_GL=		gl glu
 USE_CXXSTD=	c++98
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}" \
 		-DLOCALE_INSTALL_DIR="${PREFIX}/share/locale"
+
+USE_GITHUB=	yes
+GH_PROJECT=	violetland
+GH_ACCOUNT=	shamazmazum
+GH_TUPLE=	aminosbh:sdl2-cmake-modules:48fa6e2:sdl2_cmake_modules/Modules/sdl2 \
+		ooxi:CMake-Gettext:c7acd17:cmake_gettext/lib/CMake-Gettext
 
 PORTDOCS=	*
 PORTDATA=	*

@@ -1,5 +1,3 @@
-# $FreeBSD: $
-
 PORTNAME=	n-body-sim
 DISTVERSIONPREFIX= v
 DISTVERSION=	0.1-3

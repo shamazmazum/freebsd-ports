@@ -1,4 +1,5 @@
-xonar-kmod installs driver needed for Asus Xonar Essense ST (and probably STX) sound card.
+xonar-kmod installs driver needed for Asus Xonar Essense ST (and
+probably STX) sound card.
 
-Currently only analog playback and recording are implemented, meaning that you will not have
- SP/DIFF working.
+Currently only analog playback and recording are implemented, meaning
+that you will not have SP/DIFF working.

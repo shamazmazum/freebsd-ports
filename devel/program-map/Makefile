@@ -1,5 +1,3 @@
-# $FreeBSD:$
-
 PORTNAME=	program-map
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.2

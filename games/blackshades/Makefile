@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	blackshades
 PORTVERSION=	20200511
 CATEGORIES=	games

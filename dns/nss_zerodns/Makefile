@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	nss_zerodns
 DISTVERSION=	1.1
 PORTREVISION=	2

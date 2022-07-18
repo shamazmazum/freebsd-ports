@@ -1,9 +1,9 @@
 PORTNAME=	voxvision
-DISTVERSION=	0.35-13
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.35-13
 DISTVERSIONSUFFIX=	-g5d38156
-#PORTREVISION=	1
 CATEGORIES=	graphics
+
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Voxel visualisation library
 
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libiniparser.so:devel/iniparser \
 		libdispatch.so:devel/libdispatch \
 		libvn3d.so:graphics/vn3d
 
-USE_SDL=	sdl2
 USES=		lua:53 cmake
+USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
