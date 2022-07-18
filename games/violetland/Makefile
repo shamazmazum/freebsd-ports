@@ -18,7 +18,6 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 USES=		cmake compiler:c++11-lang gettext gl sdl
 USE_SDL=	sdl2 mixer2 image2 ttf2
 USE_GL=		gl glu
-USE_CXXSTD=	c++98
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}" \
 		-DLOCALE_INSTALL_DIR="${PREFIX}/share/locale"
 
