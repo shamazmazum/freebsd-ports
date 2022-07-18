@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yquake2-ref_vk
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.12
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/yquake2:games/yquake2
 USE_GITHUB=	yes
 GH_ACCOUNT=	yquake2
 GH_PROJECT=	ref_vk
-GH_TAGNAME=	a7e53dd
+GH_TAGNAME=	6729698
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/yquake2
