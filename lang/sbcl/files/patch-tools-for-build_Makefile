@@ -1,0 +1,19 @@
+--- tools-for-build/Makefile.orig	2022-08-01 05:15:40 UTC
++++ tools-for-build/Makefile
+@@ -7,13 +7,11 @@
+ # provided with absolutely no warranty. See the COPYING and CREDITS
+ # files for more information.
+ 
+--include genesis/Makefile.features # for grovel-headers
+--include Config
+-
+ # Do not append to CFLAGS otherwise -I can override the -I below.
+ CFLAGS:=-I../src/runtime $(CFLAGS)
+-LDFLAGS:=$(LDFLAGS)
+-LDLIBS:=$(OS_LIBS)
++
++%: %.c
++	$(CC) $(CFLAGS) $< -o $@
+ 
+ all: grovel-headers determine-endianness where-is-mcontext mmap-rwx
+ 

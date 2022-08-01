@@ -1,0 +1,12 @@
+--- src/runtime/Config.x86-64-bsd.orig	2022-08-01 05:17:26 UTC
++++ src/runtime/Config.x86-64-bsd
+@@ -30,3 +30,9 @@ ifdef LISP_FEATURE_IMMOBILE_SPACE
+ else
+   GC_SRC = fullcgc.c gencgc.c traceroot.c
+ endif
++
++ifdef LISP_FEATURE_SB_CORE_COMPRESSION
++CFLAGS += -I/usr/local/include
++CPPFLAGS += -I/usr/local/include
++LINKFLAGS += -L/usr/local/lib
++endif
