@@ -1,17 +1,20 @@
---- tools-for-build/Makefile.orig	2022-08-01 05:15:40 UTC
+--- tools-for-build/Makefile.orig	2022-08-01 06:02:27 UTC
 +++ tools-for-build/Makefile
-@@ -7,13 +7,11 @@
+@@ -7,16 +7,10 @@
  # provided with absolutely no warranty. See the COPYING and CREDITS
  # files for more information.
  
---include genesis/Makefile.features # for grovel-headers
+-# it is illogical that this makefile pulls in Makefile.features,
+-# which is presumed not to exist, and which when it does exist causes
+-# confusion as to what flags should be added in for a generic C compile.
+-# Why do we do this???
+--include genesis/Makefile.features
 --include Config
--
- # Do not append to CFLAGS otherwise -I can override the -I below.
- CFLAGS:=-I../src/runtime $(CFLAGS)
++CFLAGS+=-I../src/runtime
+ 
+-CPPFLAGS+=-I../src/runtime
 -LDFLAGS:=$(LDFLAGS)
 -LDLIBS:=$(OS_LIBS)
-+
 +%: %.c
 +	$(CC) $(CFLAGS) $< -o $@
  
