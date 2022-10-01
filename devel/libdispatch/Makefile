@@ -8,6 +8,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Grand Central Dispatch API support library
+WWW=		http://libdispatch.macosforge.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

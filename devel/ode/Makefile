@@ -8,6 +8,7 @@ MASTER_SITES=	https://bitbucket.org/odedevs/ode/downloads/
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Articulated rigid body dynamics library
+WWW=		http://www.ode.org/
 
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual

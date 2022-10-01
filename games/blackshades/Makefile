@@ -4,6 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Psychic Bodyguard FPS - protect the VIP
+WWW=		http://home.gna.org/blackshadeselite/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

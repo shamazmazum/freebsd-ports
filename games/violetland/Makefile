@@ -7,6 +7,7 @@ CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Top-down survival shoot'em 'up
+WWW=		https://violetland.github.io/
 
 LICENSE=	GPLv3 CC-BY-SA-3.0
 LICENSE_COMB=	multi

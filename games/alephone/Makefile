@@ -5,7 +5,8 @@ DISTVERSION=	20220115
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
-COMMENT=	The open source version of Bungies Marathon game
+COMMENT=	Open source version of Bungies Marathon game
+WWW=		http://source.bungie.org/
 
 LICENSE=	GPLv3
 

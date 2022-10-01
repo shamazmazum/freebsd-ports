@@ -8,6 +8,7 @@ CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	3D arcade with unique fighting system and anthropomorphic characters
+WWW=		https://bitbucket.org/osslugaru/lugaru/wiki/Home
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
