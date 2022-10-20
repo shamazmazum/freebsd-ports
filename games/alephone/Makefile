@@ -2,6 +2,7 @@
 
 PORTNAME=	alephone
 DISTVERSION=	20220115
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
