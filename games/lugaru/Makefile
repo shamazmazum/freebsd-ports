@@ -10,8 +10,9 @@ MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	3D arcade with unique fighting system and anthropomorphic characters
 WWW=		https://bitbucket.org/osslugaru/lugaru/wiki/Home
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE=	GPLv2+ CC-BY-SA-3.0 CC-BY-SA-4.0
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
@@ -38,5 +39,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${RLN} ${STAGEDIR}${DATADIR}/Textures/Lugaru.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_MAN} ${WRKSRC}/Dist/Linux/lugaru.6 ${STAGEDIR}${PREFIX}/share/man/man6/lugaru.6
 
 .include <bsd.port.mk>
