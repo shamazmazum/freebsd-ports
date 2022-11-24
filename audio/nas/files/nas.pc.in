@@ -1,0 +1,10 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: nas
+Description: The Network Audio System
+Version: @VERSION@
+Libs: -L${libdir} -laudio
+Cflags: -I${includedir}/audio
