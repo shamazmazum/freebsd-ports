@@ -1,7 +1,7 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.35.0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio wayland
 
@@ -171,7 +171,6 @@ WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
 WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
 				libwayland-cursor.so:graphics/wayland \
 				libxkbcommon.so:x11/libxkbcommon
-WAYLAND_RUN_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols # pkg-config
 WAYLAND_MESON_ENABLED=		wayland
 WAYLAND_IMPLIES=		OPENGL
 
