@@ -1,5 +1,6 @@
 PORTNAME=	yquake2
 PORTVERSION=	8.20
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://deponie.yamagi.org/quake2/
 DISTNAME=	quake2-${PORTVERSION}
