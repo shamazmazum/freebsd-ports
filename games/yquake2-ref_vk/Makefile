@@ -1,7 +1,9 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	yquake2-ref_vk
-DISTVERSION=	1.0.12
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.3
+PORTEPOCH=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -20,7 +22,6 @@ USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	yquake2
 GH_PROJECT=	ref_vk
-GH_TAGNAME=	6729698
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/yquake2
