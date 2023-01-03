@@ -1,0 +1,32 @@
+PORTNAME=	yquake2-xatrix
+PORTVERSION=	2.11
+CATEGORIES=	games
+MASTER_SITES=	https://deponie.yamagi.org/quake2/
+DISTNAME=	quake2-xatrix-${PORTVERSION}
+
+MAINTAINER=	shamaz.mazum@gmail.com
+COMMENT=	Improved version of Icculus Quake II
+WWW=		https://www.yamagi.org/quake2/
+
+# FIXME: EULA license
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	yquake2:games/yquake2
+
+USES=		gmake tar:xz
+MAKE_ARGS=	VERBOSE=1
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/xatrix
+	${INSTALL_LIB} ${WRKSRC}/release/game.so \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/xatrix
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
+
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+.include <bsd.port.mk>
