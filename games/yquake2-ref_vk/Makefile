@@ -1,10 +1,9 @@
-# Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
-
-PORTNAME=	yquake2-ref_vk
+PORTNAME=	ref_vk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	games
+PKGNAMEPREFIX=	yquake2-
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Vulkan renderer for Yamagi Quake II
@@ -14,14 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
-RUN_DEPENDS=	${LOCALBASE}/bin/yquake2:games/yquake2
+RUN_DEPENDS=	yquake2:games/yquake2
 
 USES=		sdl gmake
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yquake2
-GH_PROJECT=	ref_vk
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/yquake2

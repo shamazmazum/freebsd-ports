@@ -1,10 +1,10 @@
-PORTNAME=	xatrix
-PORTVERSION=	2.11
+PORTNAME=	rogue
+PORTVERSION=	2.10
 CATEGORIES=	games
 PKGNAMEPREFIX=	yquake2-
 
 MAINTAINER=	shamaz.mazum@gmail.com
-COMMENT=	Improved version of Icculus Quake II (The Reconing mission pack)
+COMMENT=	Improved version of Icculus Quake II (Ground Zero mission pack)
 WWW=		https://www.yamagi.org/quake2/
 
 LICENSE=	UNKNOWN
@@ -20,14 +20,14 @@ USE_GITHUB=	yes
 MAKE_ARGS=	VERBOSE=1
 
 GH_ACCOUNT=	yquake2
-GH_TAGNAME=	XATRIX_2_11
+GH_TAGNAME=	ROGUE_2_10
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/yquake2/xatrix
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/yquake2/rogue
 	${INSTALL_LIB} ${WRKSRC}/release/game.so \
-		${STAGEDIR}${PREFIX}/lib/yquake2/xatrix
+		${STAGEDIR}${PREFIX}/lib/yquake2/rogue
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
