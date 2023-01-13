@@ -1,8 +1,8 @@
 # Created by: Michael Alyn Miller <malyn@strangeGizmo.com>
 
 PORTNAME=	alephone
-DISTVERSION=	20220115
-PORTREVISION=	3
+PORTVERSION=	1.6
+PORTEPOCH=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -14,10 +14,10 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_filesystem.so:devel/boost-libs
 
-USES=		compiler:c++11-lang gmake localbase pkgconfig tar:bzip2 autoreconf sdl gl
+USES=		compiler:c++17-lang gmake localbase pkgconfig tar:bzip2 autoreconf sdl gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Aleph-One-Marathon
-GH_TAGNAME=	release-20200904
+GH_TAGNAME=	release-20221126
 USE_SDL=	sdl2 image2 net2 ttf2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
