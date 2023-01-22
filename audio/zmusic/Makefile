@@ -15,7 +15,8 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/licenses/lgplv3.txt
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libfluidsynth.so:audio/fluidsynth
 
-USES=		cmake
+USES=		cmake pkgconfig gnome
+USE_GNOME=	glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ZDoom

@@ -17,7 +17,8 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/docs/licenses/lgpl.txt
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libzmusic.so:audio/zmusic
+		libzmusic.so:audio/zmusic \
+		libvpx.so:multimedia/libvpx
 
 USES=		cmake compiler:c++11-lang gl gnome jpeg pkgconfig sdl
 
