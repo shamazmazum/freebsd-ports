@@ -9,9 +9,9 @@ PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Common Lisp development system derived from the CMU CL system
-WWW=		 http://sbcl.sourceforge.net/
+WWW=		http://sbcl.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	dual
@@ -33,7 +33,7 @@ PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
 OPTIONS_DEFINE=		DOCS LINKABLE_RUNTIME QSHOW SAFEPOINT THREADS UNICODE \
-			XREF ZSTD
+			XREF ZSTD SIMD
 OPTIONS_DEFAULT=	SBCL THREADS UNICODE
 
 OPTIONS_SINGLE=			BOOTSTRAP
@@ -49,6 +49,7 @@ LINKABLE_RUNTIME_DESC=	Enable SB-LINKABLE-RUNTIME feature (experimental)
 QSHOW_DESC=		C runtime with low-level debugging output
 SAFEPOINT_DESC=		Using safepoints instead of signals
 XREF_DESC=		XREF data for SBCL internals
+SIMD_DESC=		Enable SB-SIMD (requires CPUs supporting AVX2)
 
 ABCL_BUILD_DEPENDS=	abcl:lang/abcl
 ABCL_VARS=		XC_HOST="abcl"
@@ -87,6 +88,9 @@ ZSTD_VARS=	MAKE_SH_ARGS+="--with-sb-core-compression"
 ZSTD_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-core-compression"
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
+SIMD_VARS=	MAKE_SH_ARGS+="--with-sb-simd"
+SIMD_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-simd"
+
 MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
 
 .include <bsd.port.options.mk>
@@ -95,6 +99,12 @@ MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
 PLIST_SUB+=	LINKABLE_RUNTIME=""
 .else
 PLIST_SUB+=	LINKABLE_RUNTIME="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSIMD}
+PLIST_SUB+=	SIMD=""
+.else
+PLIST_SUB+=	SIMD="@comment "
 .endif
 
 post-patch:
