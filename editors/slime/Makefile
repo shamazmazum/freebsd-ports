@@ -2,7 +2,7 @@
 
 PORTNAME=	slime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.27
+DISTVERSION=	2.28
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -17,8 +17,7 @@ BUILD_DEPENDS=	texinfo>=5.2:print/texinfo
 USES=		emacs gmake
 USE_GITHUB=	yes
 
-ALL_TARGET=	all contrib-compile doc-slime.info
-INFO=		slime
+ALL_TARGET=	all contrib-compile
 NO_ARCH=	yes
 PORTDOCS=	CONTRIBUTING.md NEWS PROBLEMS README.md
 SUB_FILES=	pkg-message
