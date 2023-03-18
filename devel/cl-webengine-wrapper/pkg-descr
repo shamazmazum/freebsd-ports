@@ -1,0 +1,3 @@
+cl-webengine-wrapper contains C wrapper around WebEngine and is used
+for a Common Lisp system called cl-webengine which provides FFI
+interface for WebEngine.
