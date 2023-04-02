@@ -13,7 +13,7 @@ LIB_DEPENDS=	libiniparser.so:devel/iniparser \
 		libdispatch.so:devel/libdispatch \
 		libvn3d.so:graphics/vn3d
 
-USES=		lua:53 cmake
+USES=		lua:53 cmake sdl
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
@@ -28,13 +28,12 @@ NO_SSE_CMAKE_BOOL_OFF=	SSE_INTRIN
 OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
-post-install-DOCS-on:
+post-build-DOCS-on:
 	${MAKE_CMD} doc -C ${BUILD_WRKSRC}
-	cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	${RM} ${WRKDIR}/PLIST.txt
+
+post-install-DOCS-on:
+	(cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
-		${SED} 's|${STAGEDIR}${PREFIX}/||' \
-		>> ${WRKDIR}/PLIST.txt ; \
-	(cd ${WRKDIR} ; ${CAT} ${WRKDIR}/PLIST.txt >> ${TMPPLIST})
+		${SED} 's|${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
