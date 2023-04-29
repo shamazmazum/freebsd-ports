@@ -1,6 +1,7 @@
 PORTNAME=	vangers
 DISTVERSION=	1.0.0-491
 DISTVERSIONSUFFIX=	-gda1a916
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -10,8 +11,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
 		libclunk.so:audio/clunk-sdl2 \
-		libavcodec.so:multimedia/ffmpeg
+		libavcodec.so.58:multimedia/ffmpeg4
 
 USES=		cmake dos2unix iconv:build sdl gl
 USE_SDL=	sdl2 net2
@@ -39,6 +41,10 @@ post-patch-RUSSIAN-on:
 post-patch-ENGLISH-on:
 	${REINPLACE_CMD} -e 's|%%LANGOPT%%||' \
 		${WRKSRC}/vangers
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindFFMPEG.cmake
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/${PORTNAME} \
