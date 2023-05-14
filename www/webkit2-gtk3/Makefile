@@ -1,5 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.35.3
+DISTVERSION=	2.41.3
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -13,6 +13,8 @@ WWW=		https://webkitgtk.org/
 LICENSE=	GPLv2 BSD2CLAUSE
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
+		${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -31,7 +33,10 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libtasn1.so:security/libtasn1 \
 		libwoff2dec.so:devel/woff2 \
 		liblcms2.so:graphics/lcms2 \
-		libgpg-error.so:security/libgpg-error
+		libgpg-error.so:security/libgpg-error \
+		libavif.so:graphics/libavif \
+		libepoxy.so:graphics/libepoxy \
+		libdrm.so:graphics/libdrm
 
 PORTSCOUT=	limitw:1,even
 
@@ -39,7 +44,7 @@ USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:build \
 		sqlite tar:xz xorg ruby:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
-USE_GL=		gl egl glesv2
+USE_GL=		gl egl glesv2 gbm
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XORG=	x11 xcomposite xdamage xext xrender xt ice
@@ -88,6 +93,10 @@ pre-configure:
 		${ECHO_MSG} "${PKGNAME}: Needs cairo with OPENGL support enabled."; \
 		${FALSE}; \
 	fi
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LIBDIR%%|${LOCALBASE}/lib|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.0/jsc \
