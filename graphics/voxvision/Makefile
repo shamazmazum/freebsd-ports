@@ -1,6 +1,6 @@
 PORTNAME=	voxvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36
+DISTVERSION=	0.37
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
