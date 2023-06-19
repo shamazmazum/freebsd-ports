@@ -1,6 +1,6 @@
 PORTNAME=	n-body-sim
 DISTVERSIONPREFIX= v
-DISTVERSION=	0.2
+DISTVERSION=	0.3
 CATEGORIES=	science
 
 MAINTAINER=	shamaz.mazum@gmail.com
