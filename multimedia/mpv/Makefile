@@ -1,17 +1,15 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35.0
-PORTREVISION=	7
+DISTVERSION=	0.36.0
+PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES=	multimedia audio wayland
+CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCH_SITES+=	https://github.com/shamazmazum/${GH_PROJECT}/commit/
-PATCHFILES+=	b95111dda879.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
-PATCHFILES+=	f10b24e3c5c7.patch:-p1 # https://github.com/mpv-player/mpv/issues/10882
-PATCHFILES+=	b9b3342369c3.patch:-p1 # https://github.com/mpv-player/mpv/pull/10895
-PATCHFILES+=	e1a04cd8ac40.patch:-p1 # https://github.com/mpv-player/mpv/pull/10895
-PATCHFILES+=	c2b9dcd0c5ec.patch:-p1 # Support for NAS
+PATCH_SITES+=   https://github.com/shamazmazum/${GH_PROJECT}/commit/
+PATCHFILES+=	9c97f6ebccaa.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
+PATCHFILES+=	48eb77207bff.patch:-p1 # https://github.com/mpv-player/mpv/pull/12012
+PATCHFILES+=    19993eb0d3ae.patch:-p1 # Support for NAS
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -33,10 +31,11 @@ SHEBANG_FILES=	*.py TOOLS/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
-MESON_ARGS=	-Dshaderc=disabled \
+MESON_ARGS=	--auto-features=auto \
+		-Dshaderc=disabled \
 		-Dlibmpv=true
 
-OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS RUBBERBAND TEST UCHARDET EXAMPLES ZIMG
+OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS RUBBERBAND UCHARDET EXAMPLES ZIMG
 OPTIONS_DEFAULT=	ARCHIVE DVDNAV LCMS2 LUAJIT MANPAGES NVDEC OPENGL UCHARDET \
 			V4L VAAPI VDPAU VULKAN WAYLAND X11 YTDLP
 OPTIONS_GROUP=		IN VO AO
@@ -54,7 +53,6 @@ LUA_NONE_DESC=		Disable Lua scripting language support
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
 MUJS_DESC=		Use MuJS for Javascript language support
 NVDEC_DESC=		NVIDIA decoder with CUDA support
-PIPEWIRE_DESC=		Pipewire sound server support
 RUBBERBAND_DESC=	High quality pitch correction with librubberband
 SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
@@ -140,10 +138,8 @@ SIXEL_MESON_ENABLED=		sixel
 SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
 SNDIO_MESON_ENABLED=		sndio
 
-NAS_LIB_DEPENDS=		libaudio.so:audio/nas
-NAS_MESON_ENABLED=		nas
-
-TEST_MESON_TRUE=		tests
+NAS_LIB_DEPENDS=                libaudio.so:audio/nas
+NAS_MESON_ENABLED=              nas
 
 UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_MESON_ENABLED=		uchardet
@@ -166,11 +162,13 @@ VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
 				libvulkan.so:graphics/vulkan-loader
 VULKAN_MESON_ENABLED=		vulkan libplacebo
 
+WAYLAND_CATEGORIES=		wayland
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
 				${LOCALBASE}/include/linux/input-event-codes.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
 				libwayland-cursor.so:graphics/wayland \
 				libxkbcommon.so:x11/libxkbcommon
+WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols # pkg-config
 WAYLAND_MESON_ENABLED=		wayland
 WAYLAND_IMPLIES=		OPENGL
 
@@ -198,8 +196,11 @@ post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
-pre-install-TEST-on:
-	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} \
-		${MESON_BUILD_DIR}/${PORTNAME} --unittest=all-simple)
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=true"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
