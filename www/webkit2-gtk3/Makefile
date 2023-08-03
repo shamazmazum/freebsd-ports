@@ -1,6 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.41.4
-PORTREVISION=	1
+DISTVERSION=	2.41.6
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -37,7 +36,8 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libgpg-error.so:security/libgpg-error \
 		libavif.so:graphics/libavif \
 		libepoxy.so:graphics/libepoxy \
-		libdrm.so:graphics/libdrm
+		libdrm.so:graphics/libdrm \
+		libjxl.so:graphics/libjxl
 
 PORTSCOUT=	limitw:1,even
 
