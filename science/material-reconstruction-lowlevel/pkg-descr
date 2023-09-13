@@ -1,0 +1,4 @@
+Matrerial-reconstruction provides the means for reconstruction of 2D
+and 3D images via simulated annealing based on two-point correlation
+function (autocorrelation). This is low-level C interface to Vulkan
+and FFTW3 used by material-reconstruction.

@@ -1,0 +1,6 @@
+lib/libannealing-lowlevel.so
+lib/libannealing-lowlevel.so.0
+lib/libannealing-lowlevel.so.0.1
+share/annealing-lowlevel/metric.spv
+share/annealing-lowlevel/reduce.spv
+share/annealing-lowlevel/update-s2.spv
