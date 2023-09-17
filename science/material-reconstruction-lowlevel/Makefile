@@ -1,6 +1,6 @@
 PORTNAME=	material-reconstruction-lowlevel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
+DISTVERSION=	0.3
 CATEGORIES=	science
 
 MAINTAINER=	shamazm.mazum@gmail.com
