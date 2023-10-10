@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-10-10 06:09:57 UTC
++++ CMakeLists.txt
+@@ -515,7 +515,7 @@ if (NOT APPLE AND UNIX)
+ if (NOT APPLE AND UNIX)
+   include(GNUInstallDirs)
+   if (DATA_DIR)
+-	set(BASE_DATA_DIR "${CMAKE_INSTALL_PREFIX}")
++	set(BASE_DATA_DIR "${CMAKE_INSTALL_PREFIX}/share/barony")
+   endif()
+   message(STATUS "Base data directory ${BASE_DATA_DIR}")
+ 
