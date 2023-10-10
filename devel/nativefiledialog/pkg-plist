@@ -1,0 +1,2 @@
+include/nfd/nfd.h
+lib/libnfd.a
