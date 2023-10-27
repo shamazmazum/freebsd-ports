@@ -14,7 +14,7 @@ GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	xonar-dragonfly
 GH_TAGNAME=	v1.0
 
-PLIST_FILES=	/${KMODDIR}/snd_xonar.ko \
+PLIST_FILES=	${KMODDIR}/snd_xonar.ko \
 		man/man4/snd_xonar.4.gz
 
 post-install:
