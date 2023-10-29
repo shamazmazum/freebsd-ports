@@ -1,6 +1,6 @@
---- src/init_game.cpp.orig	2023-10-29 04:13:16 UTC
+--- src/init_game.cpp.orig	2023-10-29 15:19:06 UTC
 +++ src/init_game.cpp
-@@ -533,33 +533,33 @@ void deinitGame()
+@@ -537,33 +537,33 @@ void deinitGame()
  #endif
  	if ( !no_sound )
  	{
@@ -58,7 +58,7 @@
  		}
  		if ( minesmusic )
  		{
-@@ -567,7 +567,7 @@ void deinitGame()
+@@ -571,7 +571,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMSWAMPMUSIC; c++ )
  		{
@@ -67,7 +67,7 @@
  		}
  		if ( swampmusic )
  		{
-@@ -575,7 +575,7 @@ void deinitGame()
+@@ -579,7 +579,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMLABYRINTHMUSIC; c++ )
  		{
@@ -76,7 +76,7 @@
  		}
  		if ( labyrinthmusic )
  		{
-@@ -583,7 +583,7 @@ void deinitGame()
+@@ -587,7 +587,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMRUINSMUSIC; c++ )
  		{
@@ -85,7 +85,7 @@
  		}
  		if ( ruinsmusic )
  		{
-@@ -591,7 +591,7 @@ void deinitGame()
+@@ -595,7 +595,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMUNDERWORLDMUSIC; c++ )
  		{
@@ -94,7 +94,7 @@
  		}
  		if ( underworldmusic )
  		{
-@@ -599,7 +599,7 @@ void deinitGame()
+@@ -603,7 +603,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMHELLMUSIC; c++ )
  		{
@@ -103,7 +103,7 @@
  		}
  		if ( hellmusic )
  		{
-@@ -607,7 +607,7 @@ void deinitGame()
+@@ -611,7 +611,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMMINOTAURMUSIC; c++ )
  		{
@@ -112,7 +112,7 @@
  		}
  		if ( minotaurmusic )
  		{
-@@ -615,7 +615,7 @@ void deinitGame()
+@@ -619,7 +619,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMCAVESMUSIC; c++ )
  		{
@@ -121,7 +121,7 @@
  		}
  		if ( cavesmusic )
  		{
-@@ -623,7 +623,7 @@ void deinitGame()
+@@ -627,7 +627,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMCITADELMUSIC; c++ )
  		{
@@ -130,7 +130,7 @@
  		}
  		if ( citadelmusic )
  		{
-@@ -631,7 +631,7 @@ void deinitGame()
+@@ -635,7 +635,7 @@ void deinitGame()
  		}
  		for ( int c = 0; c < NUMINTROMUSIC; c++ )
  		{

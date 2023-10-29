@@ -1,4 +1,4 @@
---- src/engine/audio/sound.hpp.orig	2023-10-29 04:13:52 UTC
+--- src/engine/audio/sound.hpp.orig	2023-10-29 15:17:59 UTC
 +++ src/engine/audio/sound.hpp
 @@ -196,9 +196,12 @@ OPENAL_SOUND* playSound(Uint16 snd, Uint8 vol);
  OPENAL_SOUND* playSoundEntity(Entity* entity, Uint16 snd, Uint8 vol);
