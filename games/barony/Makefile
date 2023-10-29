@@ -1,5 +1,5 @@
 PORTNAME=	barony
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.2
 CATEGORIES=	games
@@ -14,18 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson \
 		nativefiledialog>=116:devel/nativefiledialog
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libvorbisfile.so:audio/libvorbis
 
 USES=		cmake compiler:c++11-lib dos2unix gl localbase:ldflags \
-		pkgconfig sdl
+		openal pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	TurningWheel
 GH_PROJECT=	Barony
 USE_GL=		gl glu
 USE_SDL=	sdl2 image2 net2 ttf2
 
-CMAKE_ON=	DATA_DIR
-CMAKE_OFF=	FMOD_ENABLED OPENAL_ENABLED
+CMAKE_ON=	DATA_DIR OPENAL_ENABLED
+CMAKE_OFF=	FMOD_ENABLED
 CMAKE_ARGS=	-DEDITOR_EXE_NAME:STRING="barony-editor"
 CONFIGURE_ENV=	OPTIMIZATION_LEVEL=""
 DOS2UNIX_FILES=	src/menu.cpp
