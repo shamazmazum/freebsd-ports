@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	g20230205
+PORTVERSION=	g20230707
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -18,15 +18,15 @@ SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenEnroth CLIUtils:cli11 fastfloat:ff g-truc:glm \
-		LuaJIT:lj Neargye:me pulzed:mini nlohmann:nj
+		LuaJIT:lj Neargye:me pulzed:mini nlohmann:nj mandreyel:mio
 GH_PROJECT=	OpenEnroth CLI11:cli11 fast_float:ff glm:glm \
-		LuaJIT:lj magic_enum:me mINI:mini json:nj
-GH_TAGNAME=	cba7c3b a227cd1:cli11 1ea4f27:ff 6ad79aa:glm \
-		03080b7:lj d01a4f9:me a1ff72e:mini 4c6cde7:nj
+		LuaJIT:lj magic_enum:me mINI:mini json:nj mio:mio
+GH_TAGNAME=	c3b739a a6c4826:cli11 1ea4f27:ff 6ad79aa:glm \
+		03080b7:lj d01a4f9:me a1ff72e:mini 4c6cde7:nj 8b6b7d8:mio
 GH_SUBDIR=	thirdparty/cli11:cli11 thirdparty/fast_float:ff \
 		thirdparty/glm:glm thirdparty/luajit/luajit:lj \
 		thirdparty/magic_enum:me thirdparty/mini:mini \
-		thirdparty/nlohmann_json:nj
+		thirdparty/nlohmann_json:nj thirdparty/mio:mio
 
 .include <bsd.port.options.mk>
 
@@ -41,8 +41,6 @@ LLD_UNSAFE=	yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/CMAKE_CXX_STANDARD/s,23,20,' \
-		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
 	    '/PROJECT_VERSION/s,unknown,git-${GH_TAGNAME:[1]},' \
 		${WRKSRC}/CMakeModules/Git.cmake
