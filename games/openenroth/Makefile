@@ -1,7 +1,13 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	g20230707
-PORTREVISION=	1
+PORTVERSION=	g20231110
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/shamazmazum/${GH_PROJECT}/commit/
+PATCHFILES=	038126f9d75c.patch:-p1
+PATCHFILES+=	8b7803c6d5d4.patch:-p1
+PATCHFILES+=	9e82f4681add.patch:-p1
+PATCHFILES+=	6c1dfd3661d4.patch:-p1
+PATCHFILES+=	638abe4baf97.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open reimplementation of Might and Magic VI-VIII game engine
@@ -10,32 +16,31 @@ WWW=		https://github.com/OpenEnroth/OpenEnroth
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libfmt.so:devel/libfmt
+		libfmt.so:devel/libfmt \
+		libspdlog.so:devel/spdlog
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
+		glm>0:math/glm
 
-USES=		cmake gl openal sdl
+USES=		cmake gl openal sdl luajit pkgconfig:build
 USE_GL=		gl
 USE_SDL=	sdl2
 SUB_FILES=	pkg-message
 
+CMAKE_OFF=	OE_USE_PREBUILT_DEPENDENCIES \
+		OE_BUILD_TESTS
+
 USE_GITHUB=	yes
-GH_ACCOUNT=	OpenEnroth CLIUtils:cli11 fastfloat:ff g-truc:glm \
-		LuaJIT:lj Neargye:me pulzed:mini nlohmann:nj mandreyel:mio
-GH_PROJECT=	OpenEnroth CLI11:cli11 fast_float:ff glm:glm \
-		LuaJIT:lj magic_enum:me mINI:mini json:nj mio:mio
-GH_TAGNAME=	c3b739a a6c4826:cli11 1ea4f27:ff 6ad79aa:glm \
-		03080b7:lj d01a4f9:me a1ff72e:mini 4c6cde7:nj 8b6b7d8:mio
+GH_ACCOUNT=	OpenEnroth CLIUtils:cli11 fastfloat:ff Neargye:me \
+		pulzed:mini mandreyel:mio
+GH_PROJECT=	OpenEnroth CLI11:cli11 fast_float:ff magic_enum:me \
+		mINI:mini mio:mio
+GH_TAGNAME=	f3bf460 9532482:cli11 1ea4f27:ff d01a4f9:me \
+		a1ff72e:mini 8b6b7d8:mio
 GH_SUBDIR=	thirdparty/cli11:cli11 thirdparty/fast_float:ff \
-		thirdparty/glm:glm thirdparty/luajit/luajit:lj \
 		thirdparty/magic_enum:me thirdparty/mini:mini \
-		thirdparty/nlohmann_json:nj thirdparty/mio:mio
+		thirdparty/mio:mio
 
 .include <bsd.port.options.mk>
-
-.if !exists(/usr/include/c++/v1/concepts)
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/unordered_map.hpp:devel/boost-libs
-USES+=		llvm:13
-CXX=		${LLVM_PREFIX}/bin/clang++
-.endif
 
 .if ${ARCH} == i386
 LLD_UNSAFE=	yes
@@ -45,22 +50,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 	    '/PROJECT_VERSION/s,unknown,git-${GH_TAGNAME:[1]},' \
 		${WRKSRC}/CMakeModules/Git.cmake
-	@${REINPLACE_CMD} -e '/fmt/d' \
-		${WRKSRC}/thirdparty/CMakeLists.txt
-	@${REINPLACE_CMD} -e '/^target_link_libraries/s,fmt::,pthread ,' \
-		${WRKSRC}/src/Utility/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's, c++abi,,' \
-		${WRKSRC}/thirdparty/luajit/cmake/src/CMakeLists.txt
-.if !exists(/usr/include/c++/v1/concepts)
-	@${REINPLACE_CMD} -e '/#include/s,unordered_map,boost/&.hpp,' \
-	    -e 's,std::unordered_map,boost::unordered_map,' \
-		${WRKSRC}/src/Library/Serialization/EnumSerializer.h
-	@${REINPLACE_CMD} -e '/#ifdef/s,ANDROID,${OPSYS},' \
-		${WRKSRC}/src/Utility/FileSystem.cpp
-.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/OpenEnroth \
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/src/Bin/OpenEnroth/OpenEnroth \
 		${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -a ${WRKSRC}/resources/shaders ${STAGEDIR}${DATADIR}
