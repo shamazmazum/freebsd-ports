@@ -1,6 +1,6 @@
---- src/Platform/Sdl/SdlWindow.cpp.orig	2023-02-06 04:44:16 UTC
+--- src/Platform/Sdl/SdlWindow.cpp.orig	2023-07-07 12:32:43 UTC
 +++ src/Platform/Sdl/SdlWindow.cpp
-@@ -163,23 +163,7 @@ Marginsi SdlWindow::frameMargins() const {
+@@ -162,23 +162,7 @@ uintptr_t SdlWindow::systemHandle() const {
  }
  
  uintptr_t SdlWindow::systemHandle() const {
