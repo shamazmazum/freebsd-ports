@@ -1,5 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.41.6
+DISTVERSION=	2.42.2
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
+COMMENT=	Opensource browser engine using the GTK 3 toolkit
 WWW=		https://webkitgtk.org/
 
 LICENSE=	GPLv2 BSD2CLAUSE

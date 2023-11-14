@@ -225,10 +225,10 @@ lib/girepository-1.0/WebKit2-4.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.0.typelib
 lib/libjavascriptcoregtk-4.0.so
 lib/libjavascriptcoregtk-4.0.so.18
-lib/libjavascriptcoregtk-4.0.so.18.23.5
+lib/libjavascriptcoregtk-4.0.so.18.23.11
 lib/libwebkit2gtk-4.0.so
 lib/libwebkit2gtk-4.0.so.37
-lib/libwebkit2gtk-4.0.so.37.66.0
+lib/libwebkit2gtk-4.0.so.37.67.5
 lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-4.0.pc
@@ -724,10 +724,14 @@ share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.delete_cookie_finish.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.delete_cookies_for_domain.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_accept_policy.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_accept_policy_finish.html
+share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_all_cookies.html
+share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_all_cookies_finish.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_cookies.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_cookies_finish.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_domains_with_cookies.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.get_domains_with_cookies_finish.html
+share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.replace_cookies.html
+share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.replace_cookies_finish.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.set_accept_policy.html
 share/gtk-doc/html/webkit2gtk-4.0/method.CookieManager.set_persistent_storage.html
 share/gtk-doc/html/webkit2gtk-4.0/method.Credential.copy.html
