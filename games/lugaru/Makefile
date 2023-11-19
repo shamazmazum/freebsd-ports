@@ -1,8 +1,8 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	lugaru
-DISTVERSION=	1.3-1
-DISTVERSIONSUFFIX=	-g9204227
+DISTVERSION=	1.3-4
+DISTVERSIONSUFFIX=	-gff054ff
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -25,7 +25,6 @@ USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
-GH_PROJECT=	lugaru
 
 OPTIONS_DEFINE=	DOCS
 
