@@ -1,5 +1,5 @@
 PORTNAME=	xatrix
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	games
 PKGNAMEPREFIX=	yquake2-
 
@@ -7,10 +7,8 @@ MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Improved version of Icculus Quake II (The Reconing mission pack)
 WWW=		https://www.yamagi.org/quake2/
 
-LICENSE=	UNKNOWN
-LICENSE_NAME=	LIMITED PROGRAM SOURCE CODE LICENSE
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept no-pkg-sell no-dist-sell
 
 RUN_DEPENDS=	yquake2:games/yquake2
 
@@ -20,7 +18,7 @@ USE_GITHUB=	yes
 MAKE_ARGS=	VERBOSE=1
 
 GH_ACCOUNT=	yquake2
-GH_TAGNAME=	XATRIX_2_11
+GH_TAGNAME=	XATRIX_2_12
 
 OPTIONS_DEFINE=	DOCS
 
