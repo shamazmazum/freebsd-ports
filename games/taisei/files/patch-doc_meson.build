@@ -1,0 +1,25 @@
+--- doc/meson.build.orig	2023-12-17 11:45:48 UTC
++++ doc/meson.build
+@@ -10,21 +10,8 @@ endif
+     )
+ endif
+ 
+-rst2html_variants = []
+-
+-# This is *completely* ridiculous, but apparently this thing has THAT many faces.
+-basenames = ['rst2html5', 'rst2html', 'rst2html4']
+-suffixes = ['', '-3', '3', '-docutils']
+-
+-foreach basename : basenames
+-    foreach suffix : suffixes
+-        variant = '@0@@1@'.format(basename, suffix)
+-        rst2html_variants += [variant, '@0@.py'.format(variant)]
+-    endforeach
+-endforeach
+-
+ rst2html5 = find_program(
+-    rst2html_variants,
++    'rst2html5.py',
+     required : get_option('docs')
+ )
+ 
