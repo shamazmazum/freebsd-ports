@@ -1,6 +1,5 @@
 PORTNAME=	devilutionX
-DISTVERSION=	1.5.0
-PORTREVISION=	1
+DISTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/download/${DATA_VERSION}/:data
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data
@@ -29,7 +28,7 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_SHAREDIR:PATH=${PREFIX}/share \
 		-DVERSION_NUM="${PORTVERSION}.0"
 CMAKE_ON=	FETCHCONTENT_FULLY_DISCONNECTED
 
-DATA_VERSION=	v3
+DATA_VERSION=	v4
 DATADIR=	${PREFIX}/share/diasurgical/devilutionx
 
 OPTIONS_DEFINE=		TEST SOUND LTO DEBUG
