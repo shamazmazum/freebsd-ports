@@ -357,13 +357,13 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/code/type.lisp
 %%XREF%%%%DATADIR%%/src/code/typep.lisp
 %%XREF%%%%DATADIR%%/src/code/uncross.lisp
+%%XREF%%%%DATADIR%%/src/code/unicode-norm.lisp
 %%XREF%%%%DATADIR%%/src/code/unix-foreign-load.lisp
 %%XREF%%%%DATADIR%%/src/code/unix-pathname.lisp
 %%XREF%%%%DATADIR%%/src/code/unix.lisp
 %%XREF%%%%DATADIR%%/src/code/warm-error.lisp
 %%XREF%%%%DATADIR%%/src/code/warm-lib.lisp
 %%XREF%%%%DATADIR%%/src/code/warm-mswin.lisp
-%%XREF%%%%DATADIR%%/src/code/warm-target-unicode.lisp
 %%XREF%%%%DATADIR%%/src/code/weak.lisp
 %%XREF%%%%DATADIR%%/src/code/win32-foreign-load.lisp
 %%XREF%%%%DATADIR%%/src/code/win32-os.lisp
