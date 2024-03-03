@@ -27,15 +27,15 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 USES=		gmake makeinfo tar:bzip2
 
-SUB_FILES=	pkg-message
+SUB_FILES=	sbclrc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
-OPTIONS_DEFINE=		COMPRESSION GARBAGE_COLLECTOR DOCS LINKABLE_RUNTIME QSHOW SAFEPOINT SIMD \
-			THREADS UNICODE XREF
+OPTIONS_DEFINE=		COMPRESSION GARBAGE_COLLECTOR DOCS LINKABLE_RUNTIME QSHOW \
+			SAFEPOINT SIMD THREADS UNICODE XREF
 OPTIONS_DEFAULT=	SBCL THREADS UNICODE
 
 OPTIONS_SINGLE=			BOOTSTRAP
@@ -124,6 +124,8 @@ DISTFILES:=	${DISTFILES} \
 . endfor
 .endif
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
 		${WRKSRC}/src/code/toplevel.lisp \
@@ -144,6 +146,10 @@ do-install:
 	DOC_DIR="${STAGEDIR}${DOCSDIR}" \
 	SBCL_HOME="" \
 	${SH} install.sh)
+.if ${PORT_OPTIONS:MXREF}
+	(cd ${WRKSRC}/src && ${RM} -rf runtime && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/src)
+	${INSTALL_DATA} ${WRKDIR}/sbclrc ${STAGEDIR}${PREFIX}/etc/sbclrc
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

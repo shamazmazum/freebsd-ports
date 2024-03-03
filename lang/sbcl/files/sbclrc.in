@@ -1,1 +1,1 @@
-(load "%%PREFIX%%/etc/asdf-init.lisp")
+(sb-ext:set-sbcl-source-location "%%DATADIR%%")
