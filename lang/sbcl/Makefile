@@ -5,6 +5,7 @@
 PORTNAME=	sbcl
 DISTVERSION=	2.4.1
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
@@ -23,11 +24,10 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
-RUN_DEPENDS=	cl-asdf>=0:devel/cl-asdf
 
 USES=		gmake makeinfo tar:bzip2
 
-SUB_FILES=	pkg-message sbclrc
+SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -109,22 +109,10 @@ MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
 SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd ${BOOTVERSION}-x86-freebsd \
 		${BOOTVERSION}-x86-64-dragonfly
 
-.include <bsd.port.options.mk>
-
 ARCHOS_PATTERN=	*-${ARCH:S/amd64/x86-64/:S/i386/x86/}-${OPSYS:tl}*
 BOOT_WRKSRC=	${WRKDIR}/${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}
 
-.if ${PORT_OPTIONS:MLINKABLE_RUNTIME}
-PLIST_SUB+=	LINKABLE_RUNTIME=""
-.else
-PLIST_SUB+=	LINKABLE_RUNTIME="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSIMD}
-PLIST_SUB+=	SIMD=""
-.else
-PLIST_SUB+=	SIMD="@comment "
-.endif
+OPTIONS_SUB=	yes
 
 # for port maintenance, invoke "make makesum PLUS_BOOTSTRAPS=1"
 .if defined (PLUS_BOOTSTRAPS)
@@ -156,7 +144,6 @@ do-install:
 	DOC_DIR="${STAGEDIR}${DOCSDIR}" \
 	SBCL_HOME="" \
 	${SH} install.sh)
-	${INSTALL_DATA} ${WRKDIR}/sbclrc ${STAGEDIR}${PREFIX}/etc/sbclrc.sample
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
