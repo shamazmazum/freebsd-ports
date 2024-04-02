@@ -1,14 +1,12 @@
-# Created by: Dominic Mitchell
-
 PORTNAME=	slime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.28
+DISTVERSION=	2.29.1
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Superior Lisp Interaction Mode for Emacs
-WWW=		http://common-lisp.net/project/slime/
+WWW=		https://common-lisp.net/project/slime/
 
 LICENSE=	PD
 
