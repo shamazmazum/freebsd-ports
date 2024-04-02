@@ -180,6 +180,7 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/code/cross-misc.lisp
 %%XREF%%%%DATADIR%%/src/code/cross-modular.lisp
 %%XREF%%%%DATADIR%%/src/code/cross-type.lisp
+%%XREF%%%%DATADIR%%/src/code/cross-sxhash.lisp
 %%XREF%%%%DATADIR%%/src/code/deadline.lisp
 %%XREF%%%%DATADIR%%/src/code/debug-info.lisp
 %%XREF%%%%DATADIR%%/src/code/debug-int.lisp
