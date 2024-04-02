@@ -39,8 +39,6 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libdrm.so:graphics/libdrm \
 		libjxl.so:graphics/libjxl
 
-PORTSCOUT=	limitw:1,even
-
 USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:build \
 		sqlite tar:xz xorg ruby:build
@@ -49,6 +47,8 @@ USE_GL=		gl egl glesv2 gbm
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XORG=	x11
+
+PORTSCOUT=	limitw:1,even
 
 CPE_VENDOR=	webkitgtk
 CPE_PRODUCT=	webkitgtk
@@ -70,9 +70,9 @@ CMAKE_OFF_powerpc=	ENABLE_JIT
 CMAKE_OFF_powerpc64=	ENABLE_JIT
 INSTALL_TARGET=		install
 
-OPTIONS_DEFINE=		GEOIP GSTREAMER WAYLAND
-OPTIONS_DEFAULT=	GEOIP GSTREAMER WAYLAND
 OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		GEOIP GSTREAMER WAYLAND DOCS
+OPTIONS_DEFAULT=	GEOIP GSTREAMER WAYLAND DOCS
 
 GEOIP_CMAKE_BOOL=	ENABLE_GEOLOCATION
 GEOIP_BUILD_DEPENDS=	geoclue>=2.4.3:net/geoclue
