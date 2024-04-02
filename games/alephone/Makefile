@@ -1,5 +1,5 @@
 PORTNAME=	alephone
-DISTVERSION=	20231125
+DISTVERSION=	20240119
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Aleph-One-Marathon/${PORTNAME}/releases/download/release-${DISTVERSION}/
 DISTNAME=	AlephOne-${DISTVERSION}
@@ -20,6 +20,7 @@ USE_SDL=	sdl2 image2 net2 ttf2
 USE_GL=		gl glu
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	*
 DATADIR=	${PREFIX}/share/AlephOne
