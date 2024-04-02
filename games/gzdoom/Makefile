@@ -1,6 +1,5 @@
 PORTNAME=	gzdoom
-PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTVERSION=	4.11.3
 DISTVERSIONPREFIX=	g
 CATEGORIES=	games
 
@@ -18,7 +17,9 @@ BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libzmusic.so:audio/zmusic \
-		libvpx.so:multimedia/libvpx
+		libvpx.so:multimedia/libvpx \
+		libvulkan.so:graphics/vulkan-loader \
+		libwebp.so:graphics/webp
 
 USES=		cmake compiler:c++11-lang gl gnome jpeg pkgconfig sdl
 
@@ -33,7 +34,7 @@ CMAKE_ARGS=	-DINSTALL_DOCS_PATH=${DOCSDIR}	\
 
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 USE_SDL=	sdl2
-USE_GL=		gl glu
+USE_GL=		gl glu glesv2
 CXXFLAGS+=	-DSHARE_DIR=\\\"${DATADIR}\\\"
 LDFLAGS+=	-Wl,--as-needed
 
