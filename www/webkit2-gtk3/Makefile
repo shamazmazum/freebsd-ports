@@ -1,5 +1,6 @@
 PORTNAME=	webkit
 DISTVERSION=	2.44.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -25,7 +26,6 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libnotify.so:devel/libnotify \
 		libhyphen.so:textproc/hyphen \
 		libicutu.so:devel/icu \
-		libopenjp2.so:graphics/openjpeg \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libsoup-3.0.so:devel/libsoup3 \
@@ -84,9 +84,7 @@ GSTREAMER_CMAKE_BOOL=	ENABLE_VIDEO ENABLE_WEB_AUDIO
 
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND_TARGET
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
-			libwpe-1.0.so:www/libwpe \
-			libWPEBackend-fdo-1.0.so:www/wpebackend-fdo
+WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 
 pre-configure:
 # .if !exists() evaluates too early before cairo has a chance to be installed
