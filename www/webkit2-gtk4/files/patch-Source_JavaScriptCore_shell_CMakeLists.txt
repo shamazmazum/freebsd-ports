@@ -1,0 +1,15 @@
+--- Source/JavaScriptCore/shell/CMakeLists.txt.orig	2024-02-04 13:13:28 UTC
++++ Source/JavaScriptCore/shell/CMakeLists.txt
+@@ -93,9 +93,9 @@ WEBKIT_EXECUTABLE(jsc)
+ 
+ WEBKIT_EXECUTABLE(jsc)
+ 
+-if (SHOULD_INSTALL_JS_SHELL)
+-    install(TARGETS jsc DESTINATION "${LIBEXEC_INSTALL_DIR}")
+-endif ()
++#if (SHOULD_INSTALL_JS_SHELL)
++#    install(TARGETS jsc DESTINATION "${LIBEXEC_INSTALL_DIR}")
++#endif ()
+ 
+ if (DEVELOPER_MODE)
+     WEBKIT_EXECUTABLE(testapi)
