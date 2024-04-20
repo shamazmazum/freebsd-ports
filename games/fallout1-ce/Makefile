@@ -1,6 +1,7 @@
 PORTNAME=	fallout1-ce
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -10,8 +11,6 @@ LICENSE=	${PORTNAME}
 LICENSE_NAME=	Sustainable Use License
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
-
-LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		cmake sdl
 USE_SDL=	sdl2
@@ -24,6 +23,9 @@ CMAKE_ARGS+=	-DFETCHCONTENT_SOURCE_DIR_FPATTERN="${WRKSRC}/_deps/fpattern-src"
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexbatalov
 GH_TUPLE=	LoadMaster:fpattern:96f42d0:fpattern/_deps/fpattern-src
+
+post-patch:
+	${REINPLACE_CMD} -e 's/Linux/FreeBSD/' ${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/fallout-ce ${STAGEDIR}${PREFIX}/bin
