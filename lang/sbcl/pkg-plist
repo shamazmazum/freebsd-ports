@@ -176,6 +176,7 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/code/cross-condition.lisp
 %%XREF%%%%DATADIR%%/src/code/cross-early.lisp
 %%XREF%%%%DATADIR%%/src/code/cross-float.lisp
+%%XREF%%%%DATADIR%%/src/code/cross-float-reader.lisp
 %%XREF%%%%DATADIR%%/src/code/cross-io.lisp
 %%XREF%%%%DATADIR%%/src/code/cross-misc.lisp
 %%XREF%%%%DATADIR%%/src/code/cross-modular.lisp
@@ -231,7 +232,6 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/code/fdefinition.lisp
 %%XREF%%%%DATADIR%%/src/code/filesys.lisp
 %%XREF%%%%DATADIR%%/src/code/final.lisp
-%%XREF%%%%DATADIR%%/src/code/float-inf-nan.lisp
 %%XREF%%%%DATADIR%%/src/code/float-trap.lisp
 %%XREF%%%%DATADIR%%/src/code/float.lisp
 %%XREF%%%%DATADIR%%/src/code/force-delayed-defbangstructs.lisp
@@ -485,6 +485,7 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/compiler/generic/pinned-objects.lisp
 %%XREF%%%%DATADIR%%/src/compiler/generic/primtype.lisp
 %%XREF%%%%DATADIR%%/src/compiler/generic/sanctify.lisp
+%%XREF%%%%DATADIR%%/src/compiler/generic/static-syms.lisp
 %%XREF%%%%DATADIR%%/src/compiler/generic/type-error.lisp
 %%XREF%%%%DATADIR%%/src/compiler/generic/type-vops.lisp
 %%XREF%%%%DATADIR%%/src/compiler/generic/utils.lisp
