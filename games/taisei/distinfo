@@ -1,10 +1,10 @@
-TIMESTAMP = 1702815514
-SHA256 (taisei-project-taisei-v1.4-ab6b26d_GH0.tar.gz) = 2651a3bf23c67a249b5e40e09acc83d364f003ebd42225a3af6cf701b49ee446
-SIZE (taisei-project-taisei-v1.4-ab6b26d_GH0.tar.gz) = 193811708
-SHA256 (taisei-project-koishi-aa21761_GH0.tar.gz) = 61f01c0ffc57106ba28a5266c5f720d49ce94bf8491f5cb8ff3d80681a532d68
-SIZE (taisei-project-koishi-aa21761_GH0.tar.gz) = 210903
-SHA256 (taisei-project-SDL_GameControllerDB-9316dec_GH0.tar.gz) = ecd82986dbe3155cfd73691788143a6fc2d1f1c4883b0bcf3ebb9ecf8dd4bc03
-SIZE (taisei-project-SDL_GameControllerDB-9316dec_GH0.tar.gz) = 62090
+TIMESTAMP = 1715428051
+SHA256 (taisei-project-taisei-v1.4.1-13aef2d_GH0.tar.gz) = 0e605a383b1bd6cbebbd1527e9d7fb3e4ac230a75b551db28a47420ffe36e25e
+SIZE (taisei-project-taisei-v1.4.1-13aef2d_GH0.tar.gz) = 193705551
+SHA256 (taisei-project-koishi-4adb182_GH0.tar.gz) = 87856628b6147b32271204f290c8d7a2e2cb1dda4559f78111df57b188d72c79
+SIZE (taisei-project-koishi-4adb182_GH0.tar.gz) = 210926
+SHA256 (taisei-project-SDL_GameControllerDB-232c738_GH0.tar.gz) = f132e133db910c25e8d3c1f0919c0962da413d68ea9bd330d8df9c6b727fc379
+SIZE (taisei-project-SDL_GameControllerDB-232c738_GH0.tar.gz) = 63198
 SHA256 (taisei-project-basis_universal-960a57a_GH0.tar.gz) = 2f52957d788ea877f85d356700e4b296f4c1c8edeb90e81e5daa0e3627f07b5a
 SIZE (taisei-project-basis_universal-960a57a_GH0.tar.gz) = 29161972
 SHA256 (taisei-project-python-zipfile-zstd-e596dd8_GH0.tar.gz) = 0d2c4a87470a02914ca8432396c40e4f1395dcfa88aa15364feae06d8e51083f

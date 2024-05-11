@@ -1,8 +1,11 @@
---- meson_options.txt.orig	2023-12-17 11:46:56 UTC
+--- meson_options.txt.orig	2024-05-11 12:00:37 UTC
 +++ meson_options.txt
-@@ -213,3 +213,5 @@ option(
-     value : false,
+@@ -214,6 +214,8 @@ option(
      description : 'Enable live-reloading workflow for stages (for development only)'
  )
-+
+ 
 +option('OPENSSLLIB', type : 'string')
++
+ option(
+     'gamemode',
+     type : 'feature',
