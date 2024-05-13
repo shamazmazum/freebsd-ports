@@ -1,0 +1,19 @@
+--- Source/XTool/CMakeLists.txt.orig	2024-05-13 04:03:21 UTC
++++ Source/XTool/CMakeLists.txt
+@@ -5,15 +5,7 @@ ENDIF ()
+     OPTION(OPTION_USE_BACKTRACE "Use libbacktrace if present" ON)
+ ENDIF ()
+ 
+-#GameMath retrieval
+-FetchContent_Declare(gamemath
+-		GIT_REPOSITORY    https://github.com/caiiiycuk/perimeter-gamemath
+-		GIT_TAG           "155ab00471b10b0a1e19c18588e6ccf9a356cb8a"
+-		GIT_SHALLOW       OFF
+-)
+-FetchContent_MakeAvailable(gamemath)
+-
+-SET(XTool_LINK_LIBS gamemath ZLIB::ZLIB)
++SET(XTool_LINK_LIBS m ZLIB::ZLIB)
+ 
+ IF(OPTION_DISABLE_STACKTRACE)
+     MESSAGE("Stacktrace: Disabled")
