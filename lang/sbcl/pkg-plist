@@ -202,7 +202,6 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/code/early-constants.lisp
 %%XREF%%%%DATADIR%%/src/code/early-defmethod.lisp
 %%XREF%%%%DATADIR%%/src/code/early-extensions.lisp
-%%XREF%%%%DATADIR%%/src/code/early-float.lisp
 %%XREF%%%%DATADIR%%/src/code/early-full-eval.lisp
 %%XREF%%%%DATADIR%%/src/code/early-impl.lisp
 %%XREF%%%%DATADIR%%/src/code/early-ntrace.lisp
@@ -331,6 +330,7 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/code/target-error.lisp
 %%XREF%%%%DATADIR%%/src/code/target-exception.lisp
 %%XREF%%%%DATADIR%%/src/code/target-extensions.lisp
+%%XREF%%%%DATADIR%%/src/code/target-float.lisp
 %%XREF%%%%DATADIR%%/src/code/target-format.lisp
 %%XREF%%%%DATADIR%%/src/code/target-hash-table.lisp
 %%XREF%%%%DATADIR%%/src/code/target-lfhash.lisp
