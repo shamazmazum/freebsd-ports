@@ -136,12 +136,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/test/slime-repl-tests.el
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/test/slime-repl-tests.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/.nosearch
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/cl-lib.el
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/cl-lib.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/ert-x.el
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/ert-x.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/ert.el
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/ert.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/hyperspec.el
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/hyperspec.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/lib/macrostep.el
