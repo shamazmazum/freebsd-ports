@@ -1,8 +1,8 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
 PORTNAME=	lugaru
-DISTVERSION=	1.3-4
-DISTVERSIONSUFFIX=	-gff054ff
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4
 PORTEPOCH=	1
 CATEGORIES=	games
 
