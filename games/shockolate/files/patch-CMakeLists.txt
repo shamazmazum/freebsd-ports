@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-05-03 19:35:13 UTC
+--- CMakeLists.txt.orig	2020-09-21 19:33:33 UTC
 +++ CMakeLists.txt
-@@ -276,6 +276,7 @@ set(GAME_SRC
+@@ -276,6 +276,7 @@ include_directories(
  )
  
  include_directories(
@@ -8,3 +8,14 @@
  	src/Libraries/2D/Source
  	src/Libraries/3D/Source
  	src/Libraries/AFILE/Source
+@@ -411,8 +412,8 @@ target_link_libraries(systemshock
+ 	FIXPP_LIB
+ 	ADLMIDI_LIB
+ 	${SDL2_LIBRARIES}
+-	${SDL2_MIXER_LIBRARIES}
+-	${FLUIDSYNTH_LIBRARIES}
++	${SDL2_MIXER_LINK_LIBRARIES}
++	${FLUIDSYNTH_LINK_LIBRARIES}
+ 	${OPENGL_LIBRARIES}
+ 	${ALSA_LIBRARIES}
+ )
