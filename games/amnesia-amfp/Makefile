@@ -1,6 +1,6 @@
 PORTNAME=	amnesia-amfp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -21,7 +21,6 @@ USES=		cmake gl sdl openal perl5
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
 USE_PERL5=	build
-USE_CXXSTD=	c++14
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
