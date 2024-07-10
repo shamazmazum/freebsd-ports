@@ -1,0 +1,7 @@
+Supaplex is a video game created by Philip Jespersen and Michael
+Stopp, two Swiss students, and published by Digital Integration in
+1991. It is an extended clone of Boulder Dash.
+
+OpenSupaplex is a 1:1 reimplementation of the original game in C and
+SDL, with just a few changes to make it easy to use with game
+controllers, and also easy to port to any platform.
