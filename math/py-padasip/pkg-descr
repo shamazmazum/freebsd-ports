@@ -1,0 +1,7 @@
+Padasip is designed to simplify adaptive signal processing tasks
+within python (filtering, prediction, reconstruction). For code
+optimisation, this library uses numpy for array operations.
+
+Also in this library is presented some new methods for adaptive signal
+processing. The library is designed to be used with datasets and also
+with real-time measuring (sample-after-sample feeding).
