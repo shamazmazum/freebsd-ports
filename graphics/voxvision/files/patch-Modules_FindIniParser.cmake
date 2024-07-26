@@ -1,0 +1,8 @@
+--- Modules/FindIniParser.cmake.orig	2024-07-26 05:38:58 UTC
++++ Modules/FindIniParser.cmake
+@@ -1,4 +1,4 @@
+-FIND_PATH(INIPARSER_INCLUDE_DIR NAMES iniparser.h)
++FIND_PATH(INIPARSER_INCLUDE_DIR NAMES iniparser/iniparser.h)
+ MARK_AS_ADVANCED(INIPARSER_INCLUDE_DIR)
+  
+ FIND_LIBRARY(INIPARSER_LIBRARY NAMES
