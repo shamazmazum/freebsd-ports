@@ -1,5 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.44.3
+DISTVERSION=	2.42.5
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -25,6 +25,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libnotify.so:devel/libnotify \
 		libhyphen.so:textproc/hyphen \
 		libicutu.so:devel/icu \
+		libopenjp2.so:graphics/openjpeg \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libsoup-3.0.so:devel/libsoup3 \
@@ -38,6 +39,8 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libdrm.so:graphics/libdrm \
 		libjxl.so:graphics/libjxl
 
+PORTSCOUT=	limitw:1,even
+
 USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:build \
 		sqlite tar:xz xorg ruby:build
@@ -45,9 +48,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
 USE_GL=		gl egl glesv2 gbm
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_XORG=	x11
-
-PORTSCOUT=	limitw:1,even
+USE_XORG=	x11 xcomposite xdamage xext xrender xt ice
 
 CPE_VENDOR=	webkitgtk
 CPE_PRODUCT=	webkitgtk
@@ -60,18 +61,16 @@ CMAKE_OFF=		ENABLE_GLES2 \
 			ENABLE_JOURNALD_LOG \
 			ENABLE_GAMEPAD \
 			USE_SOUP2 \
-			ENABLE_MINIBROWSER \
-			USE_GTK4 \
-			USE_LIBBACKTRACE
+			ENABLE_MINIBROWSER
 CMAKE_OFF_armv6=	ENABLE_JIT
 CMAKE_OFF_armv7=	ENABLE_JIT
 CMAKE_OFF_powerpc=	ENABLE_JIT
 CMAKE_OFF_powerpc64=	ENABLE_JIT
 INSTALL_TARGET=		install
 
+OPTIONS_DEFINE=		GEOIP GSTREAMER WAYLAND
+OPTIONS_DEFAULT=	GEOIP GSTREAMER WAYLAND
 OPTIONS_SUB=		yes
-OPTIONS_DEFINE=		GEOIP GSTREAMER WAYLAND DOCS
-OPTIONS_DEFAULT=	GEOIP GSTREAMER WAYLAND DOCS
 
 GEOIP_CMAKE_BOOL=	ENABLE_GEOLOCATION
 GEOIP_BUILD_DEPENDS=	geoclue>=2.4.3:net/geoclue
@@ -83,7 +82,9 @@ GSTREAMER_CMAKE_BOOL=	ENABLE_VIDEO ENABLE_WEB_AUDIO
 
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND_TARGET
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
+WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
+			libwpe-1.0.so:www/libwpe \
+			libWPEBackend-fdo-1.0.so:www/wpebackend-fdo
 
 pre-configure:
 # .if !exists() evaluates too early before cairo has a chance to be installed
