@@ -1,4 +1,6 @@
 bin/WebKitWebDriver
+bin/MiniBrowser-4
+bin/jsc-4
 include/webkitgtk-4.1/JavaScriptCore/JSBase.h
 include/webkitgtk-4.1/JavaScriptCore/JSContextRef.h
 include/webkitgtk-4.1/JavaScriptCore/JSObjectRef.h
@@ -233,6 +235,8 @@ libdata/pkgconfig/webkit2gtk-4.1.pc
 libdata/pkgconfig/webkit2gtk-web-extension-4.1.pc
 libexec/webkit2gtk-4.1/WebKitNetworkProcess
 libexec/webkit2gtk-4.1/WebKitWebProcess
+libexec/webkit2gtk-4.1/MiniBrowser
+libexec/webkit2gtk-4.1/jsc
 share/gir-1.0/JavaScriptCore-4.1.gir
 share/gir-1.0/WebKit2-4.1.gir
 share/gir-1.0/WebKit2WebExtension-4.1.gir

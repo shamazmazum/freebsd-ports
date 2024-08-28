@@ -1,5 +1,6 @@
 PORTNAME=	webkit
 DISTVERSION=	2.42.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -39,8 +40,6 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libdrm.so:graphics/libdrm \
 		libjxl.so:graphics/libjxl
 
-PORTSCOUT=	limitw:1,even
-
 USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:build \
 		sqlite tar:xz xorg ruby:build
@@ -50,6 +49,8 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XORG=	x11 xcomposite xdamage xext xrender xt ice
 
+PORTSCOUT=	limitw:1,even
+
 CPE_VENDOR=	webkitgtk
 CPE_PRODUCT=	webkitgtk
 
@@ -57,11 +58,10 @@ BINARY_ALIAS=		python=${PYTHON_CMD}
 CXXFLAGS_powerpc=	-DENABLE_YARR_JIT=0
 CXXFLAGS_powerpc64=	-DENABLE_YARR_JIT=0
 CMAKE_ARGS=		-DPORT=GTK
-CMAKE_OFF=		ENABLE_GLES2 \
-			ENABLE_JOURNALD_LOG \
+CMAKE_ON=		ENABLE_MINIBROWSER
+CMAKE_OFF=		ENABLE_JOURNALD_LOG \
 			ENABLE_GAMEPAD \
-			USE_SOUP2 \
-			ENABLE_MINIBROWSER
+			USE_SOUP2
 CMAKE_OFF_armv6=	ENABLE_JIT
 CMAKE_OFF_armv7=	ENABLE_JIT
 CMAKE_OFF_powerpc=	ENABLE_JIT
@@ -98,6 +98,10 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.1/jsc \
+		${STAGEDIR}${PREFIX}/bin/jsc-4
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.1/MiniBrowser \
+		${STAGEDIR}${PREFIX}/bin/MiniBrowser-4
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit2gtk-4.1/injected-bundle/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.1/*
