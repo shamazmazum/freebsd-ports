@@ -257,6 +257,7 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/code/late-condition.lisp
 %%XREF%%%%DATADIR%%/src/code/late-extensions.lisp
 %%XREF%%%%DATADIR%%/src/code/late-globaldb.lisp
+%%XREF%%%%DATADIR%%/src/code/linkage-space.lisp
 %%XREF%%%%DATADIR%%/src/code/linux-os.lisp
 %%XREF%%%%DATADIR%%/src/code/list.lisp
 %%XREF%%%%DATADIR%%/src/code/load.lisp
@@ -654,7 +655,6 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/compiler/sxhash.lisp
 %%XREF%%%%DATADIR%%/src/compiler/target-disassem.lisp
 %%XREF%%%%DATADIR%%/src/compiler/target-dstate.lisp
-%%XREF%%%%DATADIR%%/src/compiler/target-dump.lisp
 %%XREF%%%%DATADIR%%/src/compiler/target-main.lisp
 %%XREF%%%%DATADIR%%/src/compiler/tn.lisp
 %%XREF%%%%DATADIR%%/src/compiler/type-vop-macros.lisp
