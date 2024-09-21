@@ -17,6 +17,7 @@ include/webkitgtk-6.0/webkit/WebKitBackForwardList.h
 include/webkitgtk-6.0/webkit/WebKitBackForwardListItem.h
 include/webkitgtk-6.0/webkit/WebKitClipboardPermissionRequest.h
 include/webkitgtk-6.0/webkit/WebKitColorChooserRequest.h
+include/webkitgtk-6.0/webkit/WebKitConsoleMessage.h
 include/webkitgtk-6.0/webkit/WebKitContextMenu.h
 include/webkitgtk-6.0/webkit/WebKitContextMenuActions.h
 include/webkitgtk-6.0/webkit/WebKitContextMenuItem.h
@@ -96,16 +97,18 @@ lib/girepository-1.0/WebKit-6.0.typelib
 lib/girepository-1.0/WebKitWebProcessExtension-6.0.typelib
 lib/libjavascriptcoregtk-6.0.so
 lib/libjavascriptcoregtk-6.0.so.1
-lib/libjavascriptcoregtk-6.0.so.1.2.4
+lib/libjavascriptcoregtk-6.0.so.1.3.9
 lib/libwebkitgtk-6.0.so
 lib/libwebkitgtk-6.0.so.4
-lib/libwebkitgtk-6.0.so.4.5.4
+lib/libwebkitgtk-6.0.so.4.10.2
 lib/webkitgtk-6.0/injected-bundle/libwebkitgtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-6.0.pc
 libdata/pkgconfig/webkitgtk-6.0.pc
 libdata/pkgconfig/webkitgtk-web-process-extension-6.0.pc
+libexec/webkitgtk-6.0/MiniBrowser
 libexec/webkitgtk-6.0/WebKitNetworkProcess
 libexec/webkitgtk-6.0/WebKitWebProcess
+libexec/webkitgtk-6.0/jsc
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/RedHatDisplay-Black.woff
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/RedHatDisplay-Black.woff2
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/RedHatDisplay-BlackItalic.woff
@@ -285,7 +288,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.object_set_property_at_index.html
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.to_boolean.html
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.to_double.html
-%%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.to_int%%RUBY_SUFFIX%%.html
+%%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.to_int32.html
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.to_json.html
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.to_string.html
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/method.Value.to_string_as_bytes.html
@@ -793,6 +796,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.SecurityOrigin.ref.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.SecurityOrigin.to_string.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.SecurityOrigin.unref.html
+%%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.apply_from_key_file.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_allow_file_access_from_file_urls.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_allow_modal_dialogs.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_allow_top_navigation_to_data_urls.html
@@ -805,6 +809,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_default_monospace_font_size.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_disable_web_security.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_draw_compositing_indicators.html
+%%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_enable_2d_canvas_acceleration.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_enable_back_forward_navigation_gestures.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_enable_caret_browsing.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.get_enable_developer_extras.html
@@ -861,6 +866,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.set_default_monospace_font_size.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.set_disable_web_security.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.set_draw_compositing_indicators.html
+%%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.set_enable_2d_canvas_acceleration.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.set_enable_back_forward_navigation_gestures.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.set_enable_caret_browsing.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/method.Settings.set_enable_developer_extras.html
@@ -1159,6 +1165,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-6.0/property.Settings.default-monospace-font-size.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/property.Settings.disable-web-security.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/property.Settings.draw-compositing-indicators.html
+%%PORTDOCS%%share/doc/webkitgtk-6.0/property.Settings.enable-2d-canvas-acceleration.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/property.Settings.enable-back-forward-navigation-gestures.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/property.Settings.enable-caret-browsing.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/property.Settings.enable-developer-extras.html
@@ -1266,6 +1273,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-6.0/signal.AuthenticationRequest.authenticated.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/signal.AuthenticationRequest.cancelled.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/signal.AutomationSession.create-web-view.html
+%%PORTDOCS%%share/doc/webkitgtk-6.0/signal.AutomationSession.will-close.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/signal.BackForwardList.changed.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/signal.ColorChooserRequest.finished.html
 %%PORTDOCS%%share/doc/webkitgtk-6.0/signal.CookieManager.changed.html
@@ -1479,6 +1487,8 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/ctor.URIRequest.new.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/ctor.UserMessage.new.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/ctor.UserMessage.new_with_fd_list.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/enum.ConsoleMessageLevel.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/enum.ConsoleMessageSource.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/enum.ContextMenuAction.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/enum.UserMessageError.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/flags.HitTestResultContext.html
@@ -1489,6 +1499,13 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/index.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/index.json
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/main.js
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ConsoleMessage.copy.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ConsoleMessage.free.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ConsoleMessage.get_level.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ConsoleMessage.get_line.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ConsoleMessage.get_source.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ConsoleMessage.get_source_id.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ConsoleMessage.get_text.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ContextMenu.append.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ContextMenu.first.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/method.ContextMenu.get_event.html
@@ -1587,6 +1604,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebFormManager.form-controls-associated.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebFormManager.will-send-submit-event.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebFormManager.will-submit-form.html
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebPage.console-message-sent.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebPage.context-menu.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebPage.document-loaded.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebPage.send-request.html
@@ -1595,6 +1613,7 @@ libexec/webkitgtk-6.0/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/signal.WebProcessExtension.user-message-received.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/solarized-dark.css
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/solarized-light.css
+%%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/struct.ConsoleMessage.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/style.css
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/type_func.ScriptWorld.get_default.html
 %%PORTDOCS%%share/doc/webkitgtk-web-process-extension-6.0/type_func.UserMessage.error_quark.html

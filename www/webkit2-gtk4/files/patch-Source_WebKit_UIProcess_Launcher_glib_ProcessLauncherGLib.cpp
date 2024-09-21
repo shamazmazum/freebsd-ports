@@ -1,11 +1,19 @@
---- Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp.orig	2023-05-04 08:46:16 UTC
+--- Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp.orig	2024-09-21 16:06:53 UTC
 +++ Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
-@@ -91,7 +91,7 @@ static int connectionOptions()
+@@ -150,7 +150,7 @@ void ProcessLauncher::launchProcess()
+     }
  
- static bool isSandboxEnabled(const ProcessLauncher::LaunchOptions& launchOptions)
- {
--#if !USE(SYSTEM_MALLOC)
-+#if !USE(SYSTEM_MALLOC) && OS(LINUX)
-     if (RUNNING_ON_VALGRIND)
-         return false;
- #endif
+     realExecutablePath = FileSystem::fileSystemRepresentation(executablePath);
+-    unsigned nargs = 5; // size of the argv array for g_spawn_async()
++    unsigned nargs = 4; // size of the argv array for g_spawn_async()
+ 
+ #if ENABLE(DEVELOPER_MODE)
+     Vector<CString> prefixArgs;
+@@ -177,7 +177,6 @@ void ProcessLauncher::launchProcess()
+     argv[i++] = const_cast<char*>(realExecutablePath.data());
+     argv[i++] = processIdentifier.get();
+     argv[i++] = webkitSocket.get();
+-    argv[i++] = pidSocketString.get();
+ #if ENABLE(DEVELOPER_MODE)
+     if (configureJSCForTesting)
+         argv[i++] = const_cast<char*>("--configure-jsc-for-testing");
