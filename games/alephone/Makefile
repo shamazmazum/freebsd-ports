@@ -1,5 +1,6 @@
 PORTNAME=	alephone
 DISTVERSION=	20240822
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Aleph-One-Marathon/${PORTNAME}/releases/download/release-${DISTVERSION}/
 DISTNAME=	AlephOne-${DISTVERSION}
@@ -12,7 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libavcodec.so:multimedia/ffmpeg \
-		libsndfile.so:audio/libsndfile \
+		libsndfile.so:audio/libsndfile
 
 USES=		compiler:c++17-lang gmake localbase openal \
 		pkgconfig shared-mime-info sdl gl tar:bzip2
@@ -51,6 +52,14 @@ ZZIP_CONFIGURE_WITH=	zzip
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=int-conversion
 .endif
+
+DESKTOP_ENTRIES= \
+	"Alephone launcher" \
+	"" \
+	"" \
+	"alephone" \
+	"Game;ActionGame;" \
+	false
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
