@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2023-05-14 07:56:23 UTC
+--- CMakeLists.txt.orig	2024-09-21 15:55:53 UTC
 +++ CMakeLists.txt
-@@ -9,6 +9,8 @@
- cmake_minimum_required(VERSION 3.16)
+@@ -9,6 +9,8 @@ project(WebKit)
+ cmake_minimum_required(VERSION 3.20)
  project(WebKit)
  
 +link_directories(%%LIBDIR%%)
 +
- # Remove this cmake_policy() after upgrading cmake_minimum_required() to 3.20.
- if (${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.20")
-     cmake_policy(SET CMP0116 OLD)
+ # -----------------------------------------------------------------------------
+ # Common configuration
+ #------------------------------------------------------------------------------

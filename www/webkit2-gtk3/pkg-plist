@@ -1,4 +1,6 @@
+bin/MiniBrowser-4
 bin/WebKitWebDriver
+bin/jsc-4
 include/webkitgtk-4.1/JavaScriptCore/JSBase.h
 include/webkitgtk-4.1/JavaScriptCore/JSContextRef.h
 include/webkitgtk-4.1/JavaScriptCore/JSObjectRef.h
@@ -223,16 +225,18 @@ lib/girepository-1.0/WebKit2-4.1.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.1.typelib
 lib/libjavascriptcoregtk-4.1.so
 lib/libjavascriptcoregtk-4.1.so.0
-lib/libjavascriptcoregtk-4.1.so.0.5.7
+lib/libjavascriptcoregtk-4.1.so.0.6.9
 lib/libwebkit2gtk-4.1.so
 lib/libwebkit2gtk-4.1.so.0
-lib/libwebkit2gtk-4.1.so.0.13.7
+lib/libwebkit2gtk-4.1.so.0.16.2
 lib/webkit2gtk-4.1/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.1.pc
 libdata/pkgconfig/webkit2gtk-4.1.pc
 libdata/pkgconfig/webkit2gtk-web-extension-4.1.pc
+libexec/webkit2gtk-4.1/MiniBrowser
 libexec/webkit2gtk-4.1/WebKitNetworkProcess
 libexec/webkit2gtk-4.1/WebKitWebProcess
+libexec/webkit2gtk-4.1/jsc
 %%PORTDOCS%%share/doc/javascriptcoregtk-4.1/RedHatDisplay-Black.woff
 %%PORTDOCS%%share/doc/javascriptcoregtk-4.1/RedHatDisplay-Black.woff2
 %%PORTDOCS%%share/doc/javascriptcoregtk-4.1/RedHatDisplay-BlackItalic.woff
@@ -950,6 +954,7 @@ libexec/webkit2gtk-4.1/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.SecurityOrigin.ref.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.SecurityOrigin.to_string.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.SecurityOrigin.unref.html
+%%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.apply_from_key_file.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_allow_file_access_from_file_urls.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_allow_modal_dialogs.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_allow_top_navigation_to_data_urls.html
@@ -962,6 +967,7 @@ libexec/webkit2gtk-4.1/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_default_monospace_font_size.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_disable_web_security.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_draw_compositing_indicators.html
+%%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_enable_2d_canvas_acceleration.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_enable_accelerated_2d_canvas.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_enable_back_forward_navigation_gestures.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.get_enable_caret_browsing.html
@@ -1024,6 +1030,7 @@ libexec/webkit2gtk-4.1/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.set_default_monospace_font_size.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.set_disable_web_security.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.set_draw_compositing_indicators.html
+%%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.set_enable_2d_canvas_acceleration.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.set_enable_accelerated_2d_canvas.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.set_enable_back_forward_navigation_gestures.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/method.Settings.set_enable_caret_browsing.html
@@ -1380,6 +1387,7 @@ libexec/webkit2gtk-4.1/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/property.Settings.default-monospace-font-size.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/property.Settings.disable-web-security.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/property.Settings.draw-compositing-indicators.html
+%%PORTDOCS%%share/doc/webkit2gtk-4.1/property.Settings.enable-2d-canvas-acceleration.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/property.Settings.enable-accelerated-2d-canvas.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/property.Settings.enable-back-forward-navigation-gestures.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/property.Settings.enable-caret-browsing.html
@@ -1506,6 +1514,7 @@ libexec/webkit2gtk-4.1/WebKitWebProcess
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/signal.AuthenticationRequest.authenticated.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/signal.AuthenticationRequest.cancelled.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/signal.AutomationSession.create-web-view.html
+%%PORTDOCS%%share/doc/webkit2gtk-4.1/signal.AutomationSession.will-close.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/signal.BackForwardList.changed.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/signal.ColorChooserRequest.finished.html
 %%PORTDOCS%%share/doc/webkit2gtk-4.1/signal.CookieManager.changed.html

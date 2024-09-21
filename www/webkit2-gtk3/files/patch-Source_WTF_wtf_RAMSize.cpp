@@ -1,4 +1,4 @@
---- Source/WTF/wtf/RAMSize.cpp.orig	2023-05-14 07:57:21 UTC
+--- Source/WTF/wtf/RAMSize.cpp.orig	2024-08-19 06:28:38 UTC
 +++ Source/WTF/wtf/RAMSize.cpp
 @@ -31,10 +31,12 @@
  #if OS(WINDOWS)
@@ -14,7 +14,7 @@
  #endif // OS(LINUX) || OS(FREEBSD) || OS(UNIX)
  #else
  #include <bmalloc/bmalloc.h>
-@@ -56,14 +58,18 @@ static size_t computeRAMSize()
+@@ -60,14 +62,18 @@ static size_t computeRAMSize()
          return ramSizeGuess;
      return status.ullTotalPhys;
  #elif USE(SYSTEM_MALLOC)

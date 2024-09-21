@@ -1,3 +1,3 @@
-TIMESTAMP = 1724033949
-SHA256 (gnome/webkitgtk-2.44.3.tar.xz) = dc82d042ecaca981a4852357c06e5235743319cf10a94cd36ad41b97883a0b54
-SIZE (gnome/webkitgtk-2.44.3.tar.xz) = 37250176
+TIMESTAMP = 1726933296
+SHA256 (gnome/webkitgtk-2.46.0.tar.xz) = d4d433040f190151560c50bde840850089f87bad4fefa9ebdb4aae856a3df43a
+SIZE (gnome/webkitgtk-2.46.0.tar.xz) = 42764052
