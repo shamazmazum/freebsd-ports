@@ -1,6 +1,6 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
 PORTVERSION=	g20231110
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/shamazmazum/${GH_PROJECT}/commit/
@@ -13,6 +13,7 @@ PATCHFILES+=	d48e47f6f651.patch:-p1
 PATCHFILES+=	a3768fdf56ed.patch:-p1
 PATCHFILES+=	66f4b104391a.patch:-p1
 PATCHFILES+=	cccee7eafe67.patch:-p1
+PATCHFILES+=	69fda9bfb840.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open reimplementation of Might and Magic VI-VIII game engine
