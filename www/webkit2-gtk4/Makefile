@@ -14,7 +14,8 @@ LICENSE=	GPLv2 BSD2CLAUSE
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
-		${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR} \
+		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -36,7 +37,9 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libavif.so:graphics/libavif \
 		libepoxy.so:graphics/libepoxy \
 		libdrm.so:graphics/libdrm \
-		libjxl.so:graphics/libjxl
+		libjxl.so:graphics/libjxl \
+		libgraphene-1.0.so:graphics/graphene \
+		libvulkan.so:graphics/vulkan-loader
 
 USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:build \

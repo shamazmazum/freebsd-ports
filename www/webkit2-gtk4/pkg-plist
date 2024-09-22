@@ -105,10 +105,8 @@ lib/webkitgtk-6.0/injected-bundle/libwebkitgtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-6.0.pc
 libdata/pkgconfig/webkitgtk-6.0.pc
 libdata/pkgconfig/webkitgtk-web-process-extension-6.0.pc
-libexec/webkitgtk-6.0/MiniBrowser
 libexec/webkitgtk-6.0/WebKitNetworkProcess
 libexec/webkitgtk-6.0/WebKitWebProcess
-libexec/webkitgtk-6.0/jsc
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/RedHatDisplay-Black.woff
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/RedHatDisplay-Black.woff2
 %%PORTDOCS%%share/doc/javascriptcoregtk-6.0/RedHatDisplay-BlackItalic.woff
