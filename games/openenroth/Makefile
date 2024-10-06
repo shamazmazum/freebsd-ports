@@ -1,21 +1,8 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	g20231110
-PORTREVISION=	5
+PORTVERSION=	g20240909
 CATEGORIES=	games
 
-PATCH_SITES=	https://github.com/shamazmazum/${GH_PROJECT}/commit/
-PATCHFILES=	038126f9d75c.patch:-p1
-PATCHFILES+=	8b7803c6d5d4.patch:-p1
-PATCHFILES+=	9e82f4681add.patch:-p1
-PATCHFILES+=	6c1dfd3661d4.patch:-p1
-PATCHFILES+=	638abe4baf97.patch:-p1
-PATCHFILES+=	d48e47f6f651.patch:-p1
-PATCHFILES+=	a3768fdf56ed.patch:-p1
-PATCHFILES+=	66f4b104391a.patch:-p1
-PATCHFILES+=	cccee7eafe67.patch:-p1
-PATCHFILES+=	69fda9bfb840.patch:-p1
-
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Open reimplementation of Might and Magic VI-VIII game engine
 WWW=		https://github.com/OpenEnroth/OpenEnroth
 
@@ -25,7 +12,10 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
-		glm>0:math/glm
+		glm>0:math/glm \
+		sol2>0:devel/sol2 \
+		fast_float>0:math/fast_float \
+		cli11>0:devel/cli11
 
 USES=		cmake gl openal sdl luajit pkgconfig:build
 USE_GL=		gl
@@ -36,15 +26,15 @@ CMAKE_OFF=	OE_USE_PREBUILT_DEPENDENCIES \
 		OE_BUILD_TESTS
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	OpenEnroth CLIUtils:cli11 fastfloat:ff Neargye:me \
-		pulzed:mini mandreyel:mio
-GH_PROJECT=	OpenEnroth CLI11:cli11 fast_float:ff magic_enum:me \
-		mINI:mini mio:mio
-GH_TAGNAME=	f3bf460 9532482:cli11 1ea4f27:ff d01a4f9:me \
-		a1ff72e:mini 8b6b7d8:mio
-GH_SUBDIR=	thirdparty/cli11:cli11 thirdparty/fast_float:ff \
-		thirdparty/magic_enum:me thirdparty/mini:mini \
-		thirdparty/mio:mio
+GH_ACCOUNT=	OpenEnroth OpenEnroth:bwcpp vector-of-bool:cmrc Rookfighter:ini \
+		Neargye:me mandreyel:mio gharveymn:sv ocornut:imgui
+GH_PROJECT=	OpenEnroth backward-cpp:bwcpp cmrc:cmrc inifile-cpp:ini \
+		magic_enum:me mio:mio small_vector:sv imgui:imgui
+GH_TAGNAME=	9b135f7 51f0700:bwcpp 952ffdd:cmrc 7bb1ec3:ini d01a4f9:me \
+		8b6b7d8:mio 6b054e7:sv f5d18523:imgui
+GH_SUBDIR=	thirdparty/backward_cpp:bwcpp thirdparty/cmrc:cmrc \
+		thirdparty/inifile_cpp:ini thirdparty/magic_enum:me thirdparty/mio:mio \
+		thirdparty/small_vector:sv thirdparty/imgui/imgui:imgui
 
 .include <bsd.port.options.mk>
 
@@ -61,6 +51,8 @@ do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/src/Bin/OpenEnroth/OpenEnroth \
 		${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} -a ${WRKSRC}/resources/shaders ${STAGEDIR}${DATADIR}
+	${RM} ${WRKSRC}/resources/scripts/CMakeLists.txt
+	(cd ${WRKSRC}/resources && ${COPYTREE_SHARE} shaders ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/resources && ${COPYTREE_SHARE} scripts ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
