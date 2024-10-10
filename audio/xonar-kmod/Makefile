@@ -1,5 +1,6 @@
 PORTNAME=	xonar-kmod
-PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1
 CATEGORIES=	audio
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -12,7 +13,6 @@ USES=		kmod
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	xonar-dragonfly
-GH_TAGNAME=	v1.0
 
 PLIST_FILES=	${KMODDIR}/snd_xonar.ko \
 		man/man4/snd_xonar.4.gz
