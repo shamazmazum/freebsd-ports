@@ -97,10 +97,10 @@ lib/girepository-1.0/WebKit-6.0.typelib
 lib/girepository-1.0/WebKitWebProcessExtension-6.0.typelib
 lib/libjavascriptcoregtk-6.0.so
 lib/libjavascriptcoregtk-6.0.so.1
-lib/libjavascriptcoregtk-6.0.so.1.3.9
+lib/libjavascriptcoregtk-6.0.so.1.3.10
 lib/libwebkitgtk-6.0.so
 lib/libwebkitgtk-6.0.so.4
-lib/libwebkitgtk-6.0.so.4.10.2
+lib/libwebkitgtk-6.0.so.4.10.3
 lib/webkitgtk-6.0/injected-bundle/libwebkitgtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-6.0.pc
 libdata/pkgconfig/webkitgtk-6.0.pc
