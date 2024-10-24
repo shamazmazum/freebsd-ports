@@ -2,7 +2,7 @@
 
 PORTNAME=	violetland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -25,8 +25,7 @@ CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}" \
 USE_GITHUB=	yes
 GH_PROJECT=	violetland
 GH_ACCOUNT=	shamazmazum
-GH_TUPLE=	aminosbh:sdl2-cmake-modules:48fa6e2:sdl2_cmake_modules/Modules/sdl2 \
-		ooxi:CMake-Gettext:c7acd17:cmake_gettext/lib/CMake-Gettext
+GH_TUPLE=	ooxi:CMake-Gettext:c7acd17:cmake_gettext/lib/CMake-Gettext
 
 PORTDOCS=	*
 PORTDATA=	*
