@@ -1,5 +1,0 @@
-bin/quake2
-lib/quake2sdl/baseq2/game.so
-%%QMAX%%lib/quake2sdl/baseq2/maxpak.pak
-lib/quake2sdl/ref_sdlgl.so
-lib/quake2sdl/ref_softsdl.so
