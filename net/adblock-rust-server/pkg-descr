@@ -1,0 +1,4 @@
+Server wrapper for the adblock crate using Unix domain sockets.
+
+Created for blockit, but can be used in any program that supports Unix
+domain sockets.
