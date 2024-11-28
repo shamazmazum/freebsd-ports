@@ -14,11 +14,6 @@ USES=		cargo pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	dudik
 
-#CARGO_INSTALL_PATH=	${PORTNAME}
-#CARGO_FEATURES+=	--no-default-features
-#CARGO_CARGOTOML=	${WRKSRC}/Cargo.toml
-#CARGO_CARGOLOCK=	${WRKSRC}/Cargo.lock
-
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
