@@ -1,0 +1,2 @@
+Obj2voxel is an utility which converts wavefront OBJ models to voxel
+form stored as a numpy array.
