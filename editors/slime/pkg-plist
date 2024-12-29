@@ -1,7 +1,6 @@
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/.github/workflows/ci.yml
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/.gitref
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/bridge.el
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/bridge.elc
+%%PORTDOCS%%%%DOCSDIR%%/README-contrib.md
+%%PORTDOCS%%%%DOCSDIR%%/slime-refcard.pdf
+%%PORTDOCS%%%%DOCSDIR%%/slime-small.pdf
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/inferior-slime.el
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/inferior-slime.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-asdf.el
@@ -173,6 +172,3 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank/source-file-cache.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/swank/source-path-parser.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/xref.lisp
-%%PORTDOCS%%%%DOCSDIR%%/README-contrib.md
-%%PORTDOCS%%%%DOCSDIR%%/slime-refcard.pdf
-%%PORTDOCS%%%%DOCSDIR%%/slime-small.pdf

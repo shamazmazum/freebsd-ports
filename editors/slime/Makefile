@@ -1,6 +1,6 @@
 PORTNAME=	slime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.30
+DISTVERSION=	2.31
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -34,6 +34,7 @@ do-install:
 		"! ( -name CONTRIBUTING.md -o -name NEWS -o -name PROBLEMS \
 		-o -name README.md -o -name Makefile -o -name doc \
 		-o -path \./doc/* )")
+	(cd ${STAGEDIR}${SLIME_LISPDIR} && rm -rf .github .gitref)
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
