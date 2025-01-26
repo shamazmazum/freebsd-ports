@@ -1,5 +1,6 @@
 PORTNAME=	blockit
 DISTVERSION=	20241117
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	nyxt-
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/dudik/blockit
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	webkit2-gtk3>0:www/webkit2-gtk3
+BUILD_DEPENDS=	webkit2-gtk_41>0:www/webkit2-gtk@41
 
 USES=		gmake pkgconfig
 
