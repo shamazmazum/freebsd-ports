@@ -1,0 +1,9 @@
+bin/0ad
+bin/pyrogenesis
+lib/0ad/libCollada.so
+lib/0ad/libnvcore.so
+lib/0ad/libnvimage.so
+lib/0ad/libnvmath.so
+lib/0ad/libnvtt.so
+share/applications/0ad.desktop
+share/pixmaps/0ad.png
