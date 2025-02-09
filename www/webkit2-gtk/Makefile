@@ -1,14 +1,10 @@
 PORTNAME=	webkit
-DISTVERSION=	2.46.5
-PORTREVISION=	3
+DISTVERSION=	2.46.6
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk_${FLAVOR}
 DISTNAME=	${PORTNAME}gtk-${DISTVERSION}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://github.com/WebKit/WebKit/commit/
-PATCHFILES=	aa29001ade54425699e1345ce41bbd227dba805c.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK 3 toolkit
@@ -74,31 +70,34 @@ CMAKE_OFF_armv7=	ENABLE_JIT
 INSTALL_TARGET=		install
 
 .if ${FLAVOR:M60}
+BUILD_DEPENDS+=	vulkan-headers>0:graphics/vulkan-headers
+LIB_DEPENDS+=	libvulkan.so:graphics/vulkan-loader
 USE_GNOME+=	gtk40
 
 PLIST=	${.CURDIR}/pkg-plist_${FLAVOR}
 API_VERSION=	6.0
-WEBKIT_LIBRARY_VERSION=	4 10 7
-JAVASCRIPTCORE_LIBRARY_VERSION=	1 3 14
+WEBKIT_LIBRARY_VERSION=	4 10 8
+JAVASCRIPTCORE_LIBRARY_VERSION=	1 3 15
 .else
 USE_GNOME+=	gtk30
 
 CMAKE_OFF+=	USE_GTK4
+HAS_TWO=	2
 .endif
 .if ${FLAVOR:M40}
 LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 
 CMAKE_ON+=	USE_SOUP2
 API_VERSION=	4.0
-WEBKIT_LIBRARY_VERSION=	37 71 7
-JAVASCRIPTCORE_LIBRARY_VERSION=	18 25 14
+WEBKIT_LIBRARY_VERSION=	37 71 8
+JAVASCRIPTCORE_LIBRARY_VERSION=	18 25 15
 .else
 LIB_DEPENDS+=	libsoup-3.0.so:devel/libsoup3
 .endif
 .if ${FLAVOR:M41}
 API_VERSION=	4.1
-WEBKIT_LIBRARY_VERSION=	0 16 7
-JAVASCRIPTCORE_LIBRARY_VERSION=	0 6 14
+WEBKIT_LIBRARY_VERSION=	0 16 8
+JAVASCRIPTCORE_LIBRARY_VERSION=	0 6 15
 .endif
 
 PLIST_SUB=	API_VERSION=${API_VERSION} \
@@ -135,5 +134,9 @@ DEBUG_FLAGS=	-g1 # resulting package otherwise is huge
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver \
 		${STAGEDIR}${PREFIX}/bin/WebKitWebDriver-${API_VERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver-${API_VERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit${HAS_TWO}gtk-${API_VERSION}/injected-bundle/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/webkit${HAS_TWO}gtk-${API_VERSION}/*
 
 .include <bsd.port.mk>
