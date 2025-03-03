@@ -645,6 +645,7 @@ share/man/man1/sbcl.1.gz
 %%XREF%%%%DATADIR%%/src/compiler/x86-64/system.lisp
 %%XREF%%%%DATADIR%%/src/compiler/x86-64/target-avx2-insts.lisp
 %%XREF%%%%DATADIR%%/src/compiler/x86-64/target-insts.lisp
+%%XREF%%%%DATADIR%%/src/compiler/x86-64/tls.lisp
 %%XREF%%%%DATADIR%%/src/compiler/x86-64/type-vops.lisp
 %%XREF%%%%DATADIR%%/src/compiler/x86-64/values.lisp
 %%XREF%%%%DATADIR%%/src/compiler/x86-64/vm.lisp
