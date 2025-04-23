@@ -32,7 +32,7 @@ CMAKE_ARGS=	-DINSTALL_DOCS_PATH=${DOCSDIR}	\
 		-DINSTALL_PK3_PATH=${DMDIR}	\
 		-DINSTALL_SOUNDFONT_PATH=${DMDIR}
 
-USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf gtk30 pango
 USE_SDL=	sdl2
 USE_GL=		gl glu glesv2
 CXXFLAGS+=	-DSHARE_DIR=\\\"${DATADIR}\\\"
