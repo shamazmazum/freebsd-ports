@@ -1,5 +1,5 @@
 PORTNAME=	eduke32
-PORTVERSION=	20240725
+PORTVERSION=	20250411
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		LOCAL/pkubaj/:erp \
@@ -33,7 +33,7 @@ USES=		compiler:c11 dos2unix gl gmake localbase pkgconfig sdl tar:xz
 USE_GL=		gl glu
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
-GITREVISION=	10593-19c21b9ab
+GITREVISION=	10619-b87598471
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
@@ -69,7 +69,7 @@ FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == riscv64
+.if ${ARCH} == riscv64
 MAKE_ARGS+=	LTO=0
 .endif
 
@@ -91,7 +91,8 @@ post-extract-SHAREWARE-on:
 	@cd ${WRKDIR} && ${UNZIP_NATIVE_CMD} -qo DN3DSW13.SHR
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|' \
+	@${REINPLACE_CMD} \
+		's|"/usr/local/share/games/" APPBASENAME|"${DATADIR}"|' \
 		${WRKSRC}/source/duke3d/src/common.cpp
 
 do-install:
