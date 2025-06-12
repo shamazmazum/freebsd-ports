@@ -1,5 +1,5 @@
 PORTNAME=	blackshades
-PORTVERSION=	20200511
+PORTVERSION=	20250612
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -18,7 +18,7 @@ USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	blackshades
-GH_TAGNAME=	9b294f6
+GH_TAGNAME=	95b4a65
 
 post-patch:
 	@${REINPLACE_CMD} -e '/InitGL/ s|.*|chdir("${DATADIR}"); &|' ${WRKSRC}/Source/Main.cpp
