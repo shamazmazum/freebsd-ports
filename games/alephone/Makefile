@@ -1,6 +1,5 @@
 PORTNAME=	alephone
-DISTVERSION=	20240822
-PORTREVISION=	3
+DISTVERSION=	20250302
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Aleph-One-Marathon/${PORTNAME}/releases/download/release-${DISTVERSION}/
 DISTNAME=	AlephOne-${DISTVERSION}
