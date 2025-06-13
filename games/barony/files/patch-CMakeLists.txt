@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-10-10 06:09:57 UTC
+--- CMakeLists.txt.orig	2025-01-30 16:46:20 UTC
 +++ CMakeLists.txt
-@@ -515,7 +515,7 @@ if (NOT APPLE AND UNIX)
+@@ -631,7 +631,7 @@ if (NOT APPLE AND UNIX)
  if (NOT APPLE AND UNIX)
    include(GNUInstallDirs)
    if (DATA_DIR)

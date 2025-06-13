@@ -1,6 +1,6 @@
 PORTNAME=	barony
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.3.1
 CATEGORIES=	games
 
 MAINTAINER=	devnexen@gmail.com
@@ -10,8 +10,7 @@ WWW=		http://www.baronygame.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson \
-		nativefiledialog>=116:devel/nativefiledialog
+BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png \
 		libvorbisfile.so:audio/libvorbis

@@ -1,4 +1,4 @@
---- src/engine/audio/sound_game.cpp.orig	2023-10-29 15:18:21 UTC
+--- src/engine/audio/sound_game.cpp.orig	2025-01-30 16:46:20 UTC
 +++ src/engine/audio/sound_game.cpp
 @@ -18,6 +18,7 @@ ------------------------------------------------------
  #include "../../entity.hpp"
@@ -8,7 +8,7 @@
  #include "../../ui/GameUI.hpp"
  
  /*-------------------------------------------------------------------------------
-@@ -359,6 +360,16 @@ OPENAL_CHANNELGROUP* getChannelGroupForSoundIndex(Uint
+@@ -394,6 +395,16 @@ OPENAL_CHANNELGROUP* getChannelGroupForSoundIndex(Uint
  		return soundAmbient_group;
  	}
  	return sound_group;

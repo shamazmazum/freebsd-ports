@@ -1,4 +1,4 @@
---- src/engine/audio/sound.cpp.orig	2023-10-29 15:17:53 UTC
+--- src/engine/audio/sound.cpp.orig	2025-01-30 16:46:20 UTC
 +++ src/engine/audio/sound.cpp
 @@ -31,17 +31,30 @@ ------------------------------------------------------
  
@@ -49,7 +49,7 @@
  	notification = std::min(std::max(0.0, notification), 1.0);
  
  	music_group->setVolume(master * music);
-@@ -506,7 +519,6 @@ OPENAL_BUFFER** sounds = nullptr;
+@@ -513,7 +526,6 @@ OPENAL_BUFFER** sounds = nullptr;
  //#define openal_maxchannels 100
  
  OPENAL_BUFFER** sounds = nullptr;
@@ -57,7 +57,7 @@
  OPENAL_BUFFER** minesmusic = NULL;
  OPENAL_BUFFER** swampmusic = NULL;
  OPENAL_BUFFER** labyrinthmusic = NULL;
-@@ -727,12 +739,12 @@ static int get_firstfreechannel()
+@@ -734,12 +746,12 @@ static int get_firstfreechannel()
  	return i;
  }
  
@@ -76,7 +76,7 @@
  
  	OPENAL_ChannelGroup_SetVolume(music_group, master * music);
  	OPENAL_ChannelGroup_SetVolume(sound_group, master * gameplay);
-@@ -1214,9 +1226,9 @@ bool physfsSearchMusicToUpdate()
+@@ -1222,9 +1234,9 @@ bool physfsSearchMusicToUpdate()
  	return false;
  }
  
@@ -88,7 +88,7 @@
  	for ( int c = 0; c < numMusic; c++ )
  	{
  		snprintf(tempstr, 1000, filenameTemplate, c);
-@@ -1229,28 +1241,20 @@ FMOD_RESULT physfsReloadMusic_helper_reloadMusicArray(
+@@ -1237,28 +1249,20 @@ FMOD_RESULT physfsReloadMusic_helper_reloadMusicArray(
  				printlog("[PhysFS]: Loading music file %s...", tempstr);
  				if ( musicArray )
  				{
@@ -124,8 +124,8 @@
  
  void physfsReloadMusic(bool &introMusicChanged, bool reloadAll) //TODO: This should probably return an error.
  {
-@@ -1283,14 +1287,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
- 	themeMusic.push_back("sound/Death.ogg");
+@@ -1292,14 +1296,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+ 	themeMusic.push_back("sound/ui/StoryMusicV3.ogg");
  
  	int index = 0;
 -#ifdef USE_OPENAL
@@ -139,7 +139,7 @@
  	for ( std::vector<std::string>::iterator it = themeMusic.begin(); it != themeMusic.end(); ++it )
  	{
  		std::string filename = *it;
-@@ -1306,282 +1303,142 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+@@ -1315,295 +1312,155 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
  					case 0:
  						if ( introductionmusic )
  						{
@@ -461,9 +461,25 @@
 -						}
 +						fmod_result = OPENAL_CreateStreamSound(musicDir.c_str(), &gameovermusic);
  						break;
- 					default:
+ 					case 20:
+ 						if ( introstorymusic )
+ 						{
+-							introstorymusic->release();
++							OPENAL_Sound_Release (introstorymusic);
+ 						}
+ 						if ( musicPreload )
+ 						{
+-							fmod_result = fmod_system->createSound(musicDir.c_str(), FMOD_DEFAULT, nullptr, &introstorymusic);
++							fmod_result = OPENAL_CreateStreamSound(musicDir.c_str(), &introstorymusic);
+ 						}
+ 						else
+ 						{
+-							fmod_result = fmod_system->createStream(musicDir.c_str(), FMOD_DEFAULT, nullptr, &introstorymusic);
++							fmod_result = OPENAL_CreateStreamSound(musicDir.c_str(), &introstorymusic);
+ 						}
  						break;
-@@ -1597,7 +1454,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+ 					default:
+@@ -1620,7 +1477,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
  	}
  
  	int c;
@@ -472,7 +488,7 @@
  
  	if (FMOD_OK != (fmod_result = physfsReloadMusic_helper_reloadMusicArray(NUMMINESMUSIC, "music/mines%02d.ogg", minesmusic, reloadAll)) )
  	{
-@@ -1659,77 +1516,56 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+@@ -1682,77 +1539,56 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
  				music = intromusic;
  				if ( music )
  				{

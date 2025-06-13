@@ -1,7 +1,11 @@
---- src/engine/audio/music.cpp.orig	2023-10-29 15:17:42 UTC
+--- src/engine/audio/music.cpp.orig	2025-01-30 16:46:20 UTC
 +++ src/engine/audio/music.cpp
-@@ -26,53 +26,53 @@ bool loadMusic()
+@@ -24,56 +24,56 @@ bool loadMusic()
+ 
+ bool loadMusic()
  {
+-#ifdef USE_FMOD
++#ifdef SOUND
      if ( NUMMINESMUSIC > 0 )
      {
 -        minesmusic = (FMOD::Sound**)malloc(sizeof(FMOD::Sound*) * NUMMINESMUSIC);
@@ -72,9 +76,9 @@
 +        intromusic = (OPENAL_BUFFER**)malloc(sizeof(OPENAL_BUFFER*) * NUMINTROMUSIC);
 +        memset(intromusic, 0, sizeof(OPENAL_BUFFER*) * NUMINTROMUSIC);
      }
- 	
-     bool introMusicChanged;
-@@ -162,16 +162,6 @@ void playMusic(FMOD::Sound* sound, bool loop, bool cro
+ #endif
+ 
+@@ -164,16 +164,6 @@ void playMusic(FMOD::Sound* sound, bool loop, bool cro
  	}
  }
  #endif
