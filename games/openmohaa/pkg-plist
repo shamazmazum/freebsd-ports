@@ -1,0 +1,14 @@
+bin/openmohaa
+bin/omohaaded
+libexec/openmohaa/cgame.%%ARCH%%.so
+libexec/openmohaa/game.%%ARCH%%.so
+libexec/openmohaa/launch_openmohaa_base.%%ARCH%%
+libexec/openmohaa/launch_openmohaa_breakthrough.%%ARCH%%
+libexec/openmohaa/launch_openmohaa_spearhead.%%ARCH%%
+libexec/openmohaa/omohaaded.%%ARCH%%
+libexec/openmohaa/openmohaa.%%ARCH%%
+share/applications/org.openmoh.openmohaa.desktop
+share/applications/org.openmoh.openmohaab.desktop
+share/applications/org.openmoh.openmohaas.desktop
+share/icons/hicolor/symbolic/apps/org.openmoh.openmohaa.svg
+share/metainfo/org.openmoh.openmohaa.metainfo.xml
