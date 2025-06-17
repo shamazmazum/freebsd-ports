@@ -1,6 +1,7 @@
 PORTNAME=	openmohaa
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.81.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -24,8 +25,8 @@ GH_ACCOUNT=	openmoh
 ARCH_SUB=	${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc$/ppc/:S/powerpc64$/ppc64/}
 PLIST_SUB=	ARCH="${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc$/ppc/:S/powerpc64$/ppc64/}"
 
-post-install:
-	${RLN} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/openmohaa.${ARCH_SUB} ${STAGEDIR}${PREFIX}/bin/openmohaa
-	${RLN} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/omohaaded.${ARCH_SUB} ${STAGEDIR}${PREFIX}/bin/omohaaded
+post-patch:
+	${REINPLACE_CMD} -e 's|%%BINARYPATH%%|"${PREFIX}/libexec/openmohaa"|' \
+		${WRKSRC}/code/sys/sys_main.c
 
 .include <bsd.port.mk>
