@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	g20240909
+PORTVERSION=	g20250415
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -10,7 +10,8 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfmt.so:devel/libfmt \
-		libspdlog.so:devel/spdlog
+		libspdlog.so:devel/spdlog \
+		libpng16.so:graphics/png
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		glm>0:math/glm \
 		sol2>0:devel/sol2 \
@@ -27,14 +28,15 @@ CMAKE_OFF=	OE_USE_PREBUILT_DEPENDENCIES \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenEnroth OpenEnroth:bwcpp vector-of-bool:cmrc Rookfighter:ini \
-		Neargye:me mandreyel:mio gharveymn:sv ocornut:imgui
+		Neargye:me mandreyel:mio gharveymn:sv ocornut:imgui TartanLlama:gen
 GH_PROJECT=	OpenEnroth backward-cpp:bwcpp cmrc:cmrc inifile-cpp:ini \
-		magic_enum:me mio:mio small_vector:sv imgui:imgui
-GH_TAGNAME=	9b135f7 51f0700:bwcpp 952ffdd:cmrc 7bb1ec3:ini d01a4f9:me \
-		8b6b7d8:mio 6b054e7:sv f5d18523:imgui
+		magic_enum:me mio:mio small_vector:sv imgui:imgui generator:gen
+GH_TAGNAME=	b6fd866 51f0700:bwcpp 952ffdd:cmrc 7bb1ec3:ini d01a4f9:me \
+		8b6b7d8:mio 6b054e7:sv f5d18523:imgui 2a91250:gen
 GH_SUBDIR=	thirdparty/backward_cpp:bwcpp thirdparty/cmrc:cmrc \
 		thirdparty/inifile_cpp:ini thirdparty/magic_enum:me thirdparty/mio:mio \
-		thirdparty/small_vector:sv thirdparty/imgui/imgui:imgui
+		thirdparty/small_vector:sv thirdparty/imgui/imgui:imgui \
+		thirdparty/generator:gen
 
 .include <bsd.port.options.mk>
 

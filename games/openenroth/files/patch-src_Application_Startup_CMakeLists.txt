@@ -1,0 +1,10 @@
+--- src/Application/Startup/CMakeLists.txt.orig	2025-06-25 22:14:11 UTC
++++ src/Application/Startup/CMakeLists.txt
+@@ -35,3 +35,7 @@ target_link_libraries(application_startup
+         scripting
+         utility)
+ 
++target_include_directories(application_startup PRIVATE
++  ${LuaJit_INCLUDE_DIRS}
++  ${SOL2_INCLUDE_DIRS}
++)

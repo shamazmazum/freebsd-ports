@@ -1,0 +1,15 @@
+--- src/Scripting/CMakeLists.txt.orig	2025-06-25 22:14:11 UTC
++++ src/Scripting/CMakeLists.txt
+@@ -38,5 +38,10 @@ target_link_libraries(scripting
+         library_logger
+         gui_overlay
+         PRIVATE
+-        libluajit
+-        sol2::sol2)
++        ${LuaJit_LDFLAGS}
++        ${SOL2_LDFLAGS})
++
++target_include_directories(scripting PRIVATE
++  ${LuaJit_INCLUDE_DIRS}
++  ${SOL2_INCLUDE_DIRS}
++)
