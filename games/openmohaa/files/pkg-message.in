@@ -6,7 +6,7 @@ want "mainta" for the expansion pack Spearhead or "maintt" for Breakthrough.
 
 Launching:
 
-openmohaa.%%ARCH%% +set com_target_game 0 (or just openmohaa.%%ARCH%) for the
+openmohaa.%%ARCH%% +set com_target_game 0 (or just openmohaa.%%ARCH%%) for the
 original game
 openmohaa.%%ARCH%% +set com_target_game 1 for the Spearhead pack
 openmohaa.%%ARCH%% +set com_target_game 2 for the Breakthrough pack
