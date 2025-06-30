@@ -2,6 +2,7 @@ PORTNAME=	openmohaa
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.81.1-162
 DISTVERSIONSUFFIX=	-g0b12d160
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -23,7 +24,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openmoh
 
 ARCH_SUB=	${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc$/ppc/:S/powerpc64$/ppc64/}
-PLIST_SUB=	ARCH="${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc$/ppc/:S/powerpc64$/ppc64/}"
+PLIST_SUB=	ARCH=${ARCH_SUB}
+
+SUB_FILES=	pkg-message
+SUB_LIST=	ARCH=${ARCH_SUB}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%BINARYPATH%%|"${PREFIX}/libexec/openmohaa"|' \
