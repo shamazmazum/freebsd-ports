@@ -1,5 +1,6 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
 PORTVERSION=	g20250415
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -38,11 +39,7 @@ GH_SUBDIR=	thirdparty/backward_cpp:bwcpp thirdparty/cmrc:cmrc \
 		thirdparty/small_vector:sv thirdparty/imgui/imgui:imgui \
 		thirdparty/generator:gen
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386
-LLD_UNSAFE=	yes
-.endif
+PLIST_FILES=	bin/OpenEnroth
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -52,9 +49,5 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/src/Bin/OpenEnroth/OpenEnroth \
 		${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${RM} ${WRKSRC}/resources/scripts/CMakeLists.txt
-	(cd ${WRKSRC}/resources && ${COPYTREE_SHARE} shaders ${STAGEDIR}${DATADIR})
-	(cd ${WRKSRC}/resources && ${COPYTREE_SHARE} scripts ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
