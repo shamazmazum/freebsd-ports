@@ -1,7 +1,7 @@
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	49
-DISTVERSIONSUFFIX=	-rc8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_FreeBSD_15_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276702
 BROKEN_FreeBSD_15_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276702
 
-LIB_DEPENDS=	libavcodec.so.60:multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libboost_thread.so:devel/boost-libs \
 		libMyGUIEngine.so:x11-toolkits/mygui \
 		libBulletCollision.so:devel/bullet@double \
