@@ -3,7 +3,7 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.5.5
+DISTVERSION=	2.5.6
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
@@ -34,7 +34,7 @@ PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
 OPTIONS_DEFINE=		COMPRESSION GARBAGE_COLLECTOR DOCS QSHOW \
-			SAFEPOINT SIMD THREADS UNICODE XREF
+			SAFEPOINT SIMD THREADS UNICODE XREF SOURCES
 OPTIONS_DEFAULT=	SBCL THREADS UNICODE
 
 OPTIONS_SINGLE=			BOOTSTRAP
@@ -52,6 +52,7 @@ SAFEPOINT_DESC=		Using safepoints instead of signals
 SBCL_DESC=		Steel Bank Common Lisp
 SIMD_DESC=		Enable SB-SIMD (requires CPUs supporting AVX2)
 XREF_DESC=		XREF data for SBCL internals
+SOURCES_DESC=		Install SBCL source files (useful for M-. in SLIME)
 
 ABCL_BUILD_DEPENDS=	abcl:lang/abcl
 ABCL_VARS=		XC_HOST="abcl"
@@ -141,7 +142,7 @@ do-install:
 	DOC_DIR="${STAGEDIR}${DOCSDIR}" \
 	SBCL_HOME="" \
 	${SH} install.sh)
-.if ${PORT_OPTIONS:MXREF}
+.if ${PORT_OPTIONS:MSOURCES}
 	(cd ${WRKSRC}/src && ${RM} -rf runtime && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/src)
 	${INSTALL_DATA} ${WRKDIR}/sbclrc ${STAGEDIR}${PREFIX}/etc/sbclrc
 .endif
