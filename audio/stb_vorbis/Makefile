@@ -1,5 +1,6 @@
 PORTNAME=	stb_vorbis
 DISTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -14,18 +15,18 @@ GH_ACCOUNT=	nothings
 GH_PROJECT=	stb
 GH_TAGNAME=	f58f558
 
-PLIST_FILES=	lib/libstb-vorbis.so.1.22 \
-		lib/libstb-vorbis.so.1 \
-		lib/libstb-vorbis.so
+PLIST_FILES=	lib/libstb_vorbis.so.1.22 \
+		lib/libstb_vorbis.so.1 \
+		lib/libstb_vorbis.so
 
 do-build:
-	${CC} -fpic -shared -o ${WRKDIR}/libstb-vorbis.so.1.22 ${WRKSRC}/stb_vorbis.c
+	${CC} -fpic -shared -o ${WRKDIR}/libstb_vorbis.so.1.22 ${WRKSRC}/stb_vorbis.c
 
 do-install:
-	${INSTALL_LIB} ${WRKDIR}/libstb-vorbis.so.1.22 ${STAGEDIR}${PREFIX}/lib
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libstb-vorbis.so.1.22 \
-		${STAGEDIR}${PREFIX}/lib/libstb-vorbis.so.1
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libstb-vorbis.so.1.22 \
-		${STAGEDIR}${PREFIX}/lib/libstb-vorbis.so
+	${INSTALL_LIB} ${WRKDIR}/libstb_vorbis.so.1.22 ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libstb_vorbis.so.1.22 \
+		${STAGEDIR}${PREFIX}/lib/libstb_vorbis.so.1
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libstb_vorbis.so.1.22 \
+		${STAGEDIR}${PREFIX}/lib/libstb_vorbis.so
 
 .include <bsd.port.mk>
