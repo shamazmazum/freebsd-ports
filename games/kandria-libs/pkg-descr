@@ -1,0 +1,7 @@
+Kandria is an opensource game written in Common Lisp. This package
+contains its C dependencies.
+
+Explore a ruined open world of caverns and settlements. Hack and slash
+your way through missions: patrol, repair, scavenge - choose your
+quests and dialogue. Or go fishing, forage mushrooms, and race the
+clock! The old world is gone - the future is up to you.
