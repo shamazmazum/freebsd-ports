@@ -6,7 +6,7 @@ PORTNAME=	sbcl
 DISTVERSION=	2.5.7
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
@@ -35,7 +35,7 @@ PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
 OPTIONS_DEFINE=		COMPRESSION GARBAGE_COLLECTOR DOCS QSHOW \
-			SAFEPOINT SIMD THREADS UNICODE XREF SOURCES
+			SIMD THREADS UNICODE XREF SOURCES
 OPTIONS_DEFAULT=	SBCL THREADS UNICODE
 
 OPTIONS_SINGLE=			BOOTSTRAP
@@ -49,7 +49,6 @@ CMUCL_DESC=		Carnegie Mellon University Common Lisp
 COMPRESSION_DESC=	Enable core compression
 GARBAGE_COLLECTOR_DESC=	Enable mark-region parallel garbage collector
 QSHOW_DESC=		C runtime with low-level debugging output
-SAFEPOINT_DESC=		Using safepoints instead of signals
 SBCL_DESC=		Steel Bank Common Lisp
 SIMD_DESC=		Enable SB-SIMD (requires CPUs supporting AVX2)
 XREF_DESC=		XREF data for SBCL internals
@@ -76,10 +75,6 @@ GARBAGE_COLLECTOR_VARS_OFF=	MAKE_SH_ARGS+="--with-gencgc --without-mark-region-g
 
 QSHOW_VARS=	MAKE_SH_ARGS+="--with-sb-qshow"
 QSHOW_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-qshow"
-
-SAFEPOINT_IMPLIES=	THREADS
-SAFEPOINT_VARS=		MAKE_SH_ARGS+="--with-sb-safepoint --with-sb-thruption --with-sb-wtimer"
-SAFEPOINT_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-safepoint --without-sb-thruption --without-sb-wtimer"
 
 SBCL_DISTFILES=	${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}-binary${EXTRACT_SUFX}:binaries
 SBCL_VARS=	XC_HOST="${BOOT_WRKSRC}/src/runtime/sbcl --core ${BOOT_WRKSRC}/output/sbcl.core --noinform --disable-debugger --no-sysinit --no-userinit"
