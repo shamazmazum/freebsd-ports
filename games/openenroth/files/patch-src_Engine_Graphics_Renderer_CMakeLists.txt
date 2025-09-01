@@ -1,4 +1,4 @@
---- src/Engine/Graphics/Renderer/CMakeLists.txt.orig	2025-06-25 22:14:11 UTC
+--- src/Engine/Graphics/Renderer/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
 +++ src/Engine/Graphics/Renderer/CMakeLists.txt
 @@ -25,15 +25,19 @@ target_link_libraries(engine_graphics_renderer
  target_check_style(engine_graphics_renderer)

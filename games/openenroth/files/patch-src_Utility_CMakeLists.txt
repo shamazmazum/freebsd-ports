@@ -1,20 +1,21 @@
---- src/Utility/CMakeLists.txt.orig	2025-06-25 22:14:11 UTC
+--- src/Utility/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
 +++ src/Utility/CMakeLists.txt
-@@ -60,11 +60,14 @@ target_link_libraries(utility
+@@ -63,12 +63,14 @@ target_link_libraries(utility
  add_library(utility STATIC ${UTILITY_SOURCES} ${UTILITY_HEADERS})
  target_check_style(utility)
  target_link_libraries(utility
 -        PUBLIC
 -        fmt::fmt
 -        gch::small_vector
+-        Boost::lambda2
 -        PRIVATE
 -        mio::mio)
 +  PUBLIC
 +  gch::small_vector
 +  ${FMT_LDFLAGS}
++  Boost::lambda2
 +  PRIVATE
-+  mio::mio
-+)
++  mio::mio)
 +
 +target_include_directories(utility PUBLIC ${FMT_INCLUDE_DIRS})
  

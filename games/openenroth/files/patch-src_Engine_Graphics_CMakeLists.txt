@@ -1,6 +1,6 @@
---- src/Engine/Graphics/CMakeLists.txt.orig	2025-06-25 22:14:11 UTC
+--- src/Engine/Graphics/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
 +++ src/Engine/Graphics/CMakeLists.txt
-@@ -66,16 +66,22 @@ target_link_libraries(engine_graphics
+@@ -66,16 +66,20 @@ target_link_libraries(engine_graphics
  target_check_style(engine_graphics)
  
  target_link_libraries(engine_graphics
@@ -25,14 +25,12 @@
 +  library_color
 +  library_image
 +  OpenGL::GL
-+  ${LuaJit_LDFLAGS}
-+  ${SOL2_LDFLAGS}
++  libluajit
++  sol2
 +  PRIVATE
 +  glad
 +)
 +
 +target_include_directories(engine_graphics PRIVATE
-+  ${LuaJit_INCLUDE_DIRS}
-+  ${SOL2_INCLUDE_DIRS}
 +  ${GLM_INCLUDE_DIR}
 +)
