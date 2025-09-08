@@ -3,10 +3,9 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.5.7
+DISTVERSION=	2.5.8
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
-PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
@@ -35,7 +34,7 @@ PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
 OPTIONS_DEFINE=		COMPRESSION GARBAGE_COLLECTOR DOCS QSHOW \
-			SIMD THREADS UNICODE XREF SOURCES
+			SIMD THREADS UNICODE XREF SOURCES MODERNX86
 OPTIONS_DEFAULT=	SBCL THREADS UNICODE
 
 OPTIONS_SINGLE=			BOOTSTRAP
@@ -53,6 +52,7 @@ SBCL_DESC=		Steel Bank Common Lisp
 SIMD_DESC=		Enable SB-SIMD (requires CPUs supporting AVX2)
 XREF_DESC=		XREF data for SBCL internals
 SOURCES_DESC=		Install SBCL source files (useful for M-. in SLIME)
+MODERNX86_DESC=		Unconditionally use modern X86-64 instruction sets (POPCNT, SSE4, CMOV)
 
 ABCL_BUILD_DEPENDS=	abcl:lang/abcl
 ABCL_VARS=		XC_HOST="abcl"
@@ -90,6 +90,8 @@ UNICODE_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-unicode"
 
 XREF_VARS=	MAKE_SH_ARGS+="--with-sb-xref-for-internals"
 XREF_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-xref-for-internals"
+
+MODERNX86_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-customize-backend-subfeatures.lisp
 
 BOOTVERSION=	1.2.7
 MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
