@@ -1,0 +1,17 @@
+bin/denseSift3D
+bin/kpSift3D
+bin/regSift3D
+include/sift3d/immacros.h
+include/sift3d/imtypes.h
+include/sift3d/imutil.h
+include/sift3d/kernels.cl
+include/sift3d/reg.h
+include/sift3d/sift.h
+include/sift3d/templates/sep_fir_3d.template
+lib/cmake/sift3d/SIFT3D-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/sift3d/SIFT3D-targets.cmake
+lib/cmake/sift3d/SIFT3DConfig.cmake
+lib/cmake/sift3d/SIFT3DConfigVersion.cmake
+lib/sift3d/libimutil.so
+lib/sift3d/libreg.so
+lib/sift3d/libsift3D.so
