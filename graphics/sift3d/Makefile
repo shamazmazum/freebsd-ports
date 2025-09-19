@@ -1,6 +1,6 @@
 PORTNAME=	sift3d
 DISTVERSION=	1.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 USES=		cmake
 
 USE_GCC=	yes
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	bbrister
 GH_PROJECT=	SIFT3D
