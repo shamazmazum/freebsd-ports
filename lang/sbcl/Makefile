@@ -3,10 +3,9 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.5.8
+DISTVERSION=	2.5.9
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
