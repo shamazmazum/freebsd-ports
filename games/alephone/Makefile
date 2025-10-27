@@ -1,5 +1,5 @@
 PORTNAME=	alephone
-DISTVERSION=	20250302
+DISTVERSION=	20250829
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Aleph-One-Marathon/${PORTNAME}/releases/download/release-${DISTVERSION}/
 DISTNAME=	AlephOne-${DISTVERSION}
@@ -13,10 +13,11 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libavcodec.so:multimedia/ffmpeg \
 		libsndfile.so:audio/libsndfile
+BUILD_DEPENDS=  ${PREFIX}/include/asio.hpp:net/asio
 
 USES=		compiler:c++17-lang gmake localbase openal \
 		pkgconfig shared-mime-info sdl gl tar:bzip2
-USE_SDL=	sdl2 image2 net2 ttf2
+USE_SDL=	sdl2 image2 ttf2
 USE_GL=		gl glu
 
 GNU_CONFIGURE=	yes
