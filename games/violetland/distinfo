@@ -1,5 +1,7 @@
-TIMESTAMP = 1729752207
+TIMESTAMP = 1761838257
 SHA256 (shamazmazum-violetland-v0.5.2_GH0.tar.gz) = 8416f7e3ef274172ccc7af425b9a09f1525a7464a63e60b40b627bc409a38ca4
 SIZE (shamazmazum-violetland-v0.5.2_GH0.tar.gz) = 9542499
 SHA256 (ooxi-CMake-Gettext-c7acd17_GH0.tar.gz) = cf6fdca4ac1c2ac3004a38a83e36951867e89e32ec0121a6b1bff69ea8e9ba4e
 SIZE (ooxi-CMake-Gettext-c7acd17_GH0.tar.gz) = 3595
+SHA256 (a308e62fbae1d1fe9863a0d0726b8393bc33bb04.patch) = fe2cd949743fb26f7dcf7603a7d54f59faf7d8aeeb1c6f927f05591266c0e7ea
+SIZE (a308e62fbae1d1fe9863a0d0726b8393bc33bb04.patch) = 1353

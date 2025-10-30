@@ -3,7 +3,11 @@
 PORTNAME=	violetland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2
+PORTREVISION=	2
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a308e62fbae1d1fe9863a0d0726b8393bc33bb04.patch:-p1
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Top-down survival shoot'em 'up
