@@ -696,6 +696,7 @@ share/man/man1/sbcl.1.gz
 %%SOURCES%%%%DATADIR%%/src/pcl/defs.lisp
 %%SOURCES%%%%DATADIR%%/src/pcl/dfun.lisp
 %%SOURCES%%%%DATADIR%%/src/pcl/dlisp.lisp
+%%SOURCES%%%%DATADIR%%/src/pcl/dlisp2.lisp
 %%SOURCES%%%%DATADIR%%/src/pcl/dlisp3.lisp
 %%SOURCES%%%%DATADIR%%/src/pcl/documentation.lisp
 %%SOURCES%%%%DATADIR%%/src/pcl/ecd.lisp
