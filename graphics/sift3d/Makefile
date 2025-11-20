@@ -1,6 +1,6 @@
 PORTNAME=	sift3d
 DISTVERSION=	1.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
