@@ -1,6 +1,6 @@
 PORTNAME=	sift3d
-DISTVERSION=	1.4.6
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -16,19 +16,24 @@ LIB_DEPENDS=	libblas.so:math/blas \
 USES=		cmake
 
 USE_GCC=	yes
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_GITHUB=	yes
-GH_ACCOUNT=	bbrister
+GH_ACCOUNT=	fatimp
 GH_PROJECT=	SIFT3D
 
-OPTIONS_DEFINE=		NIFTI DICOM
-OPTIONS_DEFAULT=	NIFTI
-
-NIFTI_DESC=		NIFTI-1 file format support
-DICOM_DESC=		DICOM file format support
+OPTIONS_DEFINE=		EXAMPLES DOCS
+OPTIONS_DEFAULT=	EXAMPLES
+OPTIONS_SUB=		yes
 
 # Built as a static library
-NIFTI_BUILD_DEPENDS=	nifticlib>0:science/nifticlib
-DICOM_LIB_DEPENDS=	libdcmimage.so:graphics/dcmtk
+EXAMPLES_BUILD_DEPENDS=	nifticlib>0:science/nifticlib
+EXAMPLES_CMAKE_BOOL=	WITH_EXAMPLES
+
+DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen
+DOCS_ALL_TARGET=	doc
+
+post-install-DOCS-on:
+	(cd ${INSTALL_WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
+		${SED} 's|${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
