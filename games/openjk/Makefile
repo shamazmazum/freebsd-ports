@@ -1,5 +1,5 @@
 PORTNAME=	openjk
-PORTVERSION=	g20231123
+PORTVERSION=	g20251207
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -15,9 +15,8 @@ USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	JACoders
 GH_PROJECT=	OpenJK
-GH_TAGNAME=	2ed26b3
+GH_TAGNAME=	407a56f
 USE_SDL=	sdl2
-#USE_XORG=	x11
 
 OPENJK_ARCH=	${ARCH:S/powerpc64$/ppc64/:S/powerpc$/ppc/:C/armv.*/arm/}
 PLIST_SUB=	ARCH="${OPENJK_ARCH}"
