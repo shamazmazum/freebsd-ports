@@ -1,6 +1,6 @@
---- meson_options.txt.orig	2024-05-11 12:00:37 UTC
+--- meson_options.txt.orig	2025-12-20 05:54:51 UTC
 +++ meson_options.txt
-@@ -214,6 +214,8 @@ option(
+@@ -229,6 +229,8 @@ option(
      description : 'Enable live-reloading workflow for stages (for development only)'
  )
  

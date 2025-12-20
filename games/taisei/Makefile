@@ -1,5 +1,5 @@
 PORTNAME=	taisei
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -28,7 +28,7 @@ GH_ACCOUNT=	taisei-project taisei-project:koishi taisei-project:gc taisei-projec
 		taisei-project:zstd
 GH_PROJECT=	taisei koishi:koishi SDL_GameControllerDB:gc basis_universal:bu \
 		python-zipfile-zstd:zstd
-GH_TAGNAME=	c098579 232c738:gc 4adb182:koishi 960a57a:bu e596dd8:zstd
+GH_TAGNAME=	6a484e6 1849728:gc f899ac2:koishi 380ef93:bu e596dd8:zstd
 GH_SUBDIR=	external/gamecontrollerdb:gc external/koishi:koishi \
 		external/basis_universal:bu external/python-zipfile-zstd:zstd
 
@@ -37,8 +37,9 @@ USES=		compiler:c11 desktop-file-utils meson pkgconfig \
 SHEBANG_FILES=	scripts/*.py
 MESON_ARGS=	-Db_lto=false --wrap-mode=nofallback -DOPENSSLLIB="${OPENSSLLIB}" \
 		-Dinstall_macos_bundle=disabled -Dshader_transpiler=disabled \
-		-Dinstall_relocatable=disabled -Dgamemode=disabled
-USE_SDL=	sdl2# ttf2 mixer2
+		-Dshader_transpiler_dxbc=disabled -Dinstall_relocatable=disabled \
+		-Dgamemode=disabled
+USE_SDL=	sdl3
 
 PORTDOCS=	*
 PORTDATA=	*
@@ -49,7 +50,7 @@ DOCS_BUILD_DEPENDS=	rst2html5:textproc/py-docutils
 DOCS_MESON_TRUE=	docs
 
 post-patch:
-	@${ECHO} "v1.4" > ${WRKSRC}/.VERSION
+	@${ECHO} "${DISTVERSIONPREFIX}${PORTVERSION}" > ${WRKSRC}/.VERSION
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING.txt

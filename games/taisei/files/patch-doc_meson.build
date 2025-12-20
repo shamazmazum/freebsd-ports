@@ -1,4 +1,4 @@
---- doc/meson.build.orig	2024-05-11 11:58:29 UTC
+--- doc/meson.build.orig	2025-12-20 05:53:20 UTC
 +++ doc/meson.build
 @@ -10,21 +10,8 @@ endif
      )
