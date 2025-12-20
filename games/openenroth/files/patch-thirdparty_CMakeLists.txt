@@ -1,18 +1,18 @@
---- thirdparty/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
+--- thirdparty/CMakeLists.txt.orig	2025-12-19 21:35:54 UTC
 +++ thirdparty/CMakeLists.txt
-@@ -8,11 +8,7 @@ add_subdirectory(cmrc EXCLUDE_FROM_ALL)
+@@ -8,11 +8,6 @@ add_subdirectory(cmrc EXCLUDE_FROM_ALL)
  
  # Using EXCLUDE_FROM_ALL when adding subdirectories so that we dont add the libs to install target.
  add_subdirectory(cmrc EXCLUDE_FROM_ALL)
 -add_subdirectory(fast_float EXCLUDE_FROM_ALL)
 -add_subdirectory(glm EXCLUDE_FROM_ALL)
- add_subdirectory(magic_enum EXCLUDE_FROM_ALL)
+-add_subdirectory(magic_enum EXCLUDE_FROM_ALL)
 -add_subdirectory(cli11 EXCLUDE_FROM_ALL)
 -add_subdirectory(nlohmann_json EXCLUDE_FROM_ALL)
  add_subdirectory(mio EXCLUDE_FROM_ALL)
  add_subdirectory(imgui EXCLUDE_FROM_ALL)
  
-@@ -20,13 +16,6 @@ target_compile_definitions(sol2 INTERFACE SOL_EXCEPTIO
+@@ -20,13 +15,6 @@ target_compile_definitions(sol2 INTERFACE SOL_EXCEPTIO
  add_subdirectory(sol2 EXCLUDE_FROM_ALL)
  target_compile_definitions(sol2 INTERFACE SOL_EXCEPTIONS_ALWAYS_UNSAFE=1) # Make sure sol2 doesn't propagate C++ exceptions to luajit.
  
@@ -26,7 +26,7 @@
  # glad
  add_subdirectory(glad EXCLUDE_FROM_ALL)
  target_include_directories(glad INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
-@@ -44,14 +33,6 @@ add_subdirectory(small_vector EXCLUDE_FROM_ALL)
+@@ -44,14 +32,6 @@ add_subdirectory(small_vector EXCLUDE_FROM_ALL)
  
  # small_vector
  add_subdirectory(small_vector EXCLUDE_FROM_ALL)

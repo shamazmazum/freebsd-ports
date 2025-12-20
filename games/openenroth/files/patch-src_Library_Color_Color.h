@@ -1,6 +1,6 @@
---- src/Library/Color/Color.h.orig	2025-08-18 20:25:46 UTC
+--- src/Library/Color/Color.h.orig	2025-12-19 21:35:54 UTC
 +++ src/Library/Color/Color.h
-@@ -103,8 +103,10 @@ struct fmt::formatter<ColorTag> {
+@@ -107,8 +107,10 @@ struct fmt::formatter<ColorTag> {
          // for ColorTag. Also makes it easier to distinguish color tags in the format string.
          auto pos = ctx.begin();
          auto end = ctx.end();
