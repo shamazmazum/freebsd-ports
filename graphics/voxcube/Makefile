@@ -1,6 +1,6 @@
 PORTNAME=	voxcube
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
 USES=		cmake compiler:c++17-lang gl sdl
 USE_GL=		gl
-USE_SDL=	sdl2 ttf2
+USE_SDL=	sdl3 ttf3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
