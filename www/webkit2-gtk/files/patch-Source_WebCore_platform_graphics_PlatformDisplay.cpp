@@ -1,8 +1,8 @@
---- Source/WebCore/platform/graphics/PlatformDisplay.cpp.orig	2024-08-22 11:14:10 UTC
+--- Source/WebCore/platform/graphics/PlatformDisplay.cpp.orig	2025-12-16 12:13:47 UTC
 +++ Source/WebCore/platform/graphics/PlatformDisplay.cpp
-@@ -87,28 +87,29 @@ PlatformDisplay::PlatformDisplay(std::unique_ptr<GLDis
-     RELEASE_ASSERT(m_eglDisplay);
- 
+@@ -88,28 +88,29 @@ PlatformDisplay::PlatformDisplay(Ref<GLDisplay>&& glDi
+     : m_eglDisplay(WTFMove(glDisplay))
+ {
      eglDisplays().add(this);
 +}
  

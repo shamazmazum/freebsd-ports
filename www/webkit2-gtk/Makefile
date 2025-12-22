@@ -1,5 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.46.6
+DISTVERSION=	2.50.4
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk_${FLAVOR}
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 
 BROKEN_riscv64=	error: Unknown Architecture
 
+BUILD_DEPENDS=	rubygem-getoptlong>0:devel/rubygem-getoptlong
 LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libdrm.so:graphics/libdrm \
 		libenchant-2.so:textproc/enchant2 \
@@ -35,11 +36,12 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libsysinfo.so:devel/libsysinfo \
 		libtasn1.so:security/libtasn1 \
 		libwebp.so:graphics/webp \
-		libwoff2dec.so:devel/woff2
+		libwoff2dec.so:devel/woff2 \
+		libsoup-3.0.so:devel/libsoup3
 
 PORTSCOUT=	limitw:1,even
 
-FLAVORS=	60 41 40
+FLAVORS=	60 41
 FLAVOR?=	${FLAVORS:[1]}
 
 USES=		bison cmake compiler:c++23-lang cpe gettext gl gnome gperf \
@@ -58,11 +60,12 @@ BINARY_ALIAS=		python=${PYTHON_CMD}
 CXXFLAGS+=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=32 \
 			-I${LOCALBASE}/include -lsysinfo
 CMAKE_ARGS=		-DPORT=GTK
+CMAKE_ON=		USE_SYSTEM_MALLOC
 CMAKE_OFF=		${CMAKE_OFF_${ARCH}:U} \
 			ENABLE_GAMEPAD \
 			ENABLE_JOURNALD_LOG \
+			ENABLE_SPEECH_SYNTHESIS \
 			USE_LIBBACKTRACE \
-			USE_SYSTEM_MALLOC \
 			USE_SYSPROF_CAPTURE \
 			USE_SYSTEM_SYSPROF_CAPTURE
 CMAKE_OFF_armv6=	ENABLE_JIT
@@ -75,36 +78,15 @@ LIB_DEPENDS+=	libvulkan.so:graphics/vulkan-loader
 USE_GNOME+=	gtk40
 
 PLIST=	${.CURDIR}/pkg-plist_${FLAVOR}
+
 API_VERSION=	6.0
-WEBKIT_LIBRARY_VERSION=	4 10 8
-JAVASCRIPTCORE_LIBRARY_VERSION=	1 3 15
 .else
 USE_GNOME+=	gtk30
 
 CMAKE_OFF+=	USE_GTK4
 HAS_TWO=	2
-.endif
-.if ${FLAVOR:M40}
-LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
-
-CMAKE_ON+=	USE_SOUP2
-API_VERSION=	4.0
-WEBKIT_LIBRARY_VERSION=	37 71 8
-JAVASCRIPTCORE_LIBRARY_VERSION=	18 25 15
-.else
-LIB_DEPENDS+=	libsoup-3.0.so:devel/libsoup3
-.endif
-.if ${FLAVOR:M41}
 API_VERSION=	4.1
-WEBKIT_LIBRARY_VERSION=	0 16 8
-JAVASCRIPTCORE_LIBRARY_VERSION=	0 6 15
 .endif
-
-PLIST_SUB=	API_VERSION=${API_VERSION} \
-		WEBKIT_LIBRARY_VERSION=${WEBKIT_LIBRARY_VERSION:ts.} \
-		WEBKIT_LIBRARY_VERSION_MAJOR=${WEBKIT_LIBRARY_VERSION:[1]} \
-		JAVASCRIPTCORE_LIBRARY_VERSION=${JAVASCRIPTCORE_LIBRARY_VERSION:ts.} \
-		JAVASCRIPTCORE_LIBRARY_VERSION_MAJOR=${JAVASCRIPTCORE_LIBRARY_VERSION:[1]}
 
 OPTIONS_DEFINE=		DOCS GEOIP GSTREAMER WAYLAND
 OPTIONS_DEFAULT=	GEOIP GSTREAMER WAYLAND
@@ -134,6 +116,10 @@ DEBUG_FLAGS=	-g1 # resulting package otherwise is huge
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver \
 		${STAGEDIR}${PREFIX}/bin/WebKitWebDriver-${API_VERSION}
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit${HAS_TWO}gtk-${API_VERSION}/MiniBrowser \
+		${STAGEDIR}${PREFIX}/bin/MiniBrowser-${API_VERSION}
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit${HAS_TWO}gtk-${API_VERSION}/jsc \
+		${STAGEDIR}${PREFIX}/bin/jsc-${API_VERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver-${API_VERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit${HAS_TWO}gtk-${API_VERSION}/injected-bundle/*.so

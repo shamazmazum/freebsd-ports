@@ -1,9 +1,0 @@
---- Source/WebCore/PAL/pal/CMakeLists.txt.orig	2023-09-19 08:27:49 UTC
-+++ Source/WebCore/PAL/pal/CMakeLists.txt
-@@ -85,4 +85,6 @@ WEBKIT_COPY_FILES(PAL_CopyHeaders
-     FILES ${PAL_PUBLIC_HEADERS}
- )
- 
-+list(APPEND PAL_SOURCES ${PAL_DERIVED_SOURCES})
-+
- WEBKIT_FRAMEWORK(PAL)

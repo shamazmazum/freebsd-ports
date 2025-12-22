@@ -1,6 +1,6 @@
---- Source/bmalloc/bmalloc/EligibilityResult.h.orig	2024-08-19 06:28:40 UTC
+--- Source/bmalloc/bmalloc/EligibilityResult.h.orig	2025-08-08 09:17:56 UTC
 +++ Source/bmalloc/bmalloc/EligibilityResult.h
-@@ -32,7 +32,7 @@ enum class EligibilityKind {
+@@ -39,7 +39,7 @@ enum class EligibilityKind {
  namespace bmalloc {
  
  enum class EligibilityKind {
@@ -9,7 +9,7 @@
      Full,
      OutOfMemory
  };
-@@ -44,7 +44,7 @@ struct EligibilityResult {
+@@ -51,7 +51,7 @@ struct EligibilityResult {
      EligibilityResult(EligibilityKind);
      EligibilityResult(IsoPage<Config>*);
      

@@ -1,11 +1,15 @@
---- Source/WTF/wtf/glib/FileSystemGlib.cpp.orig	2024-08-19 06:28:38 UTC
+--- Source/WTF/wtf/glib/FileSystemGlib.cpp.orig	2025-08-08 09:17:54 UTC
 +++ Source/WTF/wtf/glib/FileSystemGlib.cpp
-@@ -68,7 +68,7 @@ CString currentExecutablePath()
-         return { };
-     return CString({ readLinkBuffer, static_cast<size_t>(result) });
- }
--#elif OS(HURD)
-+#elif OS(HURD) || OS(FREEBSD) || OS(OPENBSD)
+@@ -78,11 +78,7 @@ CString currentExecutablePath()
+ #elif OS(UNIX)
  CString currentExecutablePath()
  {
-     return { };
+-    static char readLinkBuffer[PATH_MAX];
+-    ssize_t result = readlink("/proc/curproc/file", readLinkBuffer, PATH_MAX);
+-    if (result == -1)
+-        return { };
+-    return CString(readLinkBuffer, result);
++    return { };
+ }
+ #elif OS(WINDOWS)
+ CString currentExecutablePath()

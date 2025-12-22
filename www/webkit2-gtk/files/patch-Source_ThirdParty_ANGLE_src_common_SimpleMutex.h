@@ -1,4 +1,4 @@
---- Source/ThirdParty/ANGLE/src/common/SimpleMutex.h.orig	2024-08-19 06:28:35 UTC
+--- Source/ThirdParty/ANGLE/src/common/SimpleMutex.h.orig	2025-08-08 09:17:51 UTC
 +++ Source/ThirdParty/ANGLE/src/common/SimpleMutex.h
 @@ -42,6 +42,9 @@
  // Assume support.
