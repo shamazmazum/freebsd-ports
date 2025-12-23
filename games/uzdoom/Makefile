@@ -1,5 +1,6 @@
 PORTNAME=	uzdoom
 PORTVERSION=	4.14.3
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 		libwebpmux.so:graphics/webp \
 		libvulkan.so:graphics/vulkan-loader
 
-USES=		cmake sdl pkgconfig
+USES=		cmake gl sdl pkgconfig
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,6 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	UZDoom
 GH_PROJECT=	UZDoom
 
+USE_GL=		gl glu glesv2
 USE_SDL=	sdl2
 
 DATADIR=	${DMDIR}/${PORTNAME}
