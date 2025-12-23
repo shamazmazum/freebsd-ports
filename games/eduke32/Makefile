@@ -1,5 +1,5 @@
 PORTNAME=	eduke32
-PORTVERSION=	20250411
+PORTVERSION=	20251111
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		LOCAL/pkubaj/:erp \
@@ -33,7 +33,7 @@ USES=		compiler:c11 dos2unix gl gmake localbase pkgconfig sdl tar:xz
 USE_GL=		gl glu
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
-GITREVISION=	10619-b87598471
+GITREVISION=	10652-39967d866
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
