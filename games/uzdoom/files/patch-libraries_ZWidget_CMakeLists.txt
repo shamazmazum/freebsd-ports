@@ -1,0 +1,14 @@
+--- libraries/ZWidget/CMakeLists.txt.orig	2025-12-23 15:48:39 UTC
++++ libraries/ZWidget/CMakeLists.txt
+@@ -147,8 +147,10 @@ endif()
+ 	#set_source_files_properties(${ZWIDGET_SOURCES} PROPERTIES COMPILE_FLAGS "/wd4244 /wd4267 /wd4005 /wd4018 -D_CRT_SECURE_NO_WARNINGS")
+ endif()
+ 
++find_package (SDL2 REQUIRED CONFIG)
++
+ add_library(zwidget STATIC ${ZWIDGET_SOURCES} ${ZWIDGET_INCLUDES})
+-target_link_libraries(zwidget ${ZWIDGET_LIBS})
++target_link_libraries(zwidget ${ZWIDGET_LIBS} SDL2::SDL2)
+ set_target_properties(zwidget PROPERTIES CXX_STANDARD 17)
+ 
+ if(MSVC)

@@ -1,0 +1,10 @@
+UZDoom is a modern, feature-rich source port for the classic game DOOM.
+
+A continuation of ZDoom and GZDoom, UZDoom enhances the original DOOM
+engine, providing advanced features like:
+
+High-Resolution Graphics
+Dynamic lighting
+3D Floors
+Extensive Modding Support
+Support for modern OpenGL and Vulkan renderers
