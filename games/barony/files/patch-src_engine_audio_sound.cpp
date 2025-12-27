@@ -1,10 +1,15 @@
---- src/engine/audio/sound.cpp.orig	2025-01-30 16:46:20 UTC
+--- src/engine/audio/sound.cpp.orig	2025-06-15 02:47:47 UTC
 +++ src/engine/audio/sound.cpp
-@@ -31,17 +31,30 @@ ------------------------------------------------------
+@@ -31,17 +31,35 @@ ------------------------------------------------------
  
  #ifdef USE_FMOD
  #elif defined USE_OPENAL
 +void setAudioDevice(const std::string& device)
++{
++	return;
++}
++
++void setRecordDevice(const std::string& device)
 +{
 +	return;
 +}
@@ -32,7 +37,7 @@
  #ifdef USE_FMOD
  
  bool FMODErrorCheck()
-@@ -79,11 +92,11 @@ void setGlobalVolume(real_t master, real_t music, real
+@@ -106,11 +124,11 @@ void setGlobalVolume(real_t master, real_t music, real
  }
  
  void setGlobalVolume(real_t master, real_t music, real_t gameplay, real_t ambient, real_t environment, real_t notification) {
@@ -49,7 +54,7 @@
  	notification = std::min(std::max(0.0, notification), 1.0);
  
  	music_group->setVolume(master * music);
-@@ -513,7 +526,6 @@ OPENAL_BUFFER** sounds = nullptr;
+@@ -550,7 +568,6 @@ OPENAL_BUFFER** sounds = nullptr;
  //#define openal_maxchannels 100
  
  OPENAL_BUFFER** sounds = nullptr;
@@ -57,7 +62,7 @@
  OPENAL_BUFFER** minesmusic = NULL;
  OPENAL_BUFFER** swampmusic = NULL;
  OPENAL_BUFFER** labyrinthmusic = NULL;
-@@ -734,12 +746,12 @@ static int get_firstfreechannel()
+@@ -771,12 +788,12 @@ static int get_firstfreechannel()
  	return i;
  }
  
@@ -76,7 +81,7 @@
  
  	OPENAL_ChannelGroup_SetVolume(music_group, master * music);
  	OPENAL_ChannelGroup_SetVolume(sound_group, master * gameplay);
-@@ -1222,9 +1234,9 @@ bool physfsSearchMusicToUpdate()
+@@ -1259,9 +1276,9 @@ bool physfsSearchMusicToUpdate()
  	return false;
  }
  
@@ -88,7 +93,7 @@
  	for ( int c = 0; c < numMusic; c++ )
  	{
  		snprintf(tempstr, 1000, filenameTemplate, c);
-@@ -1237,28 +1249,20 @@ FMOD_RESULT physfsReloadMusic_helper_reloadMusicArray(
+@@ -1274,28 +1291,20 @@ FMOD_RESULT physfsReloadMusic_helper_reloadMusicArray(
  				printlog("[PhysFS]: Loading music file %s...", tempstr);
  				if ( musicArray )
  				{
@@ -124,7 +129,7 @@
  
  void physfsReloadMusic(bool &introMusicChanged, bool reloadAll) //TODO: This should probably return an error.
  {
-@@ -1292,14 +1296,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+@@ -1329,14 +1338,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
  	themeMusic.push_back("sound/ui/StoryMusicV3.ogg");
  
  	int index = 0;
@@ -139,7 +144,7 @@
  	for ( std::vector<std::string>::iterator it = themeMusic.begin(); it != themeMusic.end(); ++it )
  	{
  		std::string filename = *it;
-@@ -1315,295 +1312,155 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+@@ -1352,295 +1354,155 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
  					case 0:
  						if ( introductionmusic )
  						{
@@ -479,7 +484,7 @@
  						}
  						break;
  					default:
-@@ -1620,7 +1477,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+@@ -1657,7 +1519,7 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
  	}
  
  	int c;
@@ -488,7 +493,7 @@
  
  	if (FMOD_OK != (fmod_result = physfsReloadMusic_helper_reloadMusicArray(NUMMINESMUSIC, "music/mines%02d.ogg", minesmusic, reloadAll)) )
  	{
-@@ -1682,77 +1539,56 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
+@@ -1719,77 +1581,56 @@ void physfsReloadMusic(bool &introMusicChanged, bool r
  				music = intromusic;
  				if ( music )
  				{
