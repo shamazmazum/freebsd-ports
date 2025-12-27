@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-01-04 17:01:52 UTC
+--- CMakeLists.txt.orig	2025-08-03 00:21:35 UTC
 +++ CMakeLists.txt
-@@ -124,25 +124,10 @@ endif()
+@@ -105,25 +105,10 @@ endif()
  	endif()
  endif()
  
@@ -26,9 +26,9 @@
 +set(CMAKE_INSTALL_BINDIR bin)
 +set(CMAKE_INSTALL_LIBDIR libexec/openmohaa)
  include(GNUInstallDirs)
- 
- #
-@@ -168,6 +153,7 @@ target_link_libraries(omohaaded PRIVATE qcommon qcommo
+ # Enable unit testing
+ include(CTest)
+@@ -151,6 +136,7 @@ target_link_libraries(omohaaded PRIVATE qcommon qcommo
  target_link_libraries(omohaaded PRIVATE omohserver)
  target_link_libraries(omohaaded PRIVATE syslib)
  target_link_libraries(omohaaded PRIVATE qcommon qcommon_standalone)
@@ -36,7 +36,7 @@
  
  # Add the gamespy dependency
  target_include_directories(omohaaded PUBLIC "code/qcommon" "code/script" "code/gamespy" "code/server")
-@@ -197,6 +183,7 @@ if (NOT BUILD_NO_CLIENT)
+@@ -180,6 +166,7 @@ if (NOT BUILD_NO_CLIENT)
  	target_link_libraries(openmohaa PRIVATE omohclient)
  	target_link_libraries(openmohaa PRIVATE omohrenderer)
  	target_link_libraries(openmohaa PRIVATE qcommon qcommon_standalone)

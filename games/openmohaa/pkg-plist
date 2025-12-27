@@ -1,10 +1,10 @@
-bin/launch_openmohaa_base.%%ARCH%%
-bin/launch_openmohaa_breakthrough.%%ARCH%%
-bin/launch_openmohaa_spearhead.%%ARCH%%
-bin/omohaaded.%%ARCH%%
-bin/openmohaa.%%ARCH%%
-libexec/openmohaa/cgame.%%ARCH%%.so
-libexec/openmohaa/game.%%ARCH%%.so
+bin/launch_openmohaa_base
+bin/launch_openmohaa_breakthrough
+bin/launch_openmohaa_spearhead
+bin/omohaaded
+bin/openmohaa
+libexec/openmohaa/cgame.so
+libexec/openmohaa/game.so
 share/applications/org.openmoh.openmohaa.desktop
 share/applications/org.openmoh.openmohaab.desktop
 share/applications/org.openmoh.openmohaas.desktop
