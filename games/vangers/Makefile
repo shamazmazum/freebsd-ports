@@ -1,6 +1,7 @@
 PORTNAME=	vangers
 DISTVERSION=	2.0-90
 DISTVERSIONSUFFIX=	-g72145fe
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libclunk.so:audio/clunk-sdl2 \
-		libavcodec.so.60:multimedia/ffmpeg
+		libavcodec.so:multimedia/ffmpeg
 
 USES=		cmake dos2unix iconv:build sdl gl
 USE_SDL=	sdl2 net2
