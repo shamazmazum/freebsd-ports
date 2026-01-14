@@ -5,11 +5,17 @@
 PORTNAME=	sbcl
 DISTVERSION=	2.6.0
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+# Fixes (reduce #'append ... :initial-value ...)
+# Will be fixed in 2.6.1
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	3f57e70440ae3d6233b674556b9540c0ad89c0d7.patch:-p1
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
