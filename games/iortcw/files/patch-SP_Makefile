@@ -1,0 +1,48 @@
+--- SP/Makefile.orig	2026-01-18 12:55:20 UTC
++++ SP/Makefile
+@@ -89,14 +89,6 @@ export ARCH
+ endif
+ export ARCH
+ 
+-# For historical compatibility reasons on non-windows
+-# platform output files use i386 instead of x86
+-ifeq ($(ARCH),x86)
+-  ifndef MINGW
+-    FILE_ARCH=i386
+-  endif
+-endif
+-
+ ifndef FILE_ARCH
+ FILE_ARCH=$(ARCH)
+ endif
+@@ -360,11 +352,11 @@ CLIENT_EXTRA_FILES=
+ EXTRA_FILES=
+ CLIENT_EXTRA_FILES=
+ 
+-ifneq (,$(findstring "$(COMPILE_PLATFORM)", "linux" "gnu_kfreebsd" "kfreebsd-gnu" "gnu"))
++ifneq (,$(findstring "$(COMPILE_PLATFORM)", "linux" "gnu_kfreebsd" "kfreebsd-gnu" "gnu" "freebsd"))
+   TOOLS_CFLAGS += -DARCH_STRING=\"$(COMPILE_ARCH)\"
+ endif
+ 
+-ifneq (,$(findstring "$(PLATFORM)", "linux" "gnu_kfreebsd" "kfreebsd-gnu" "gnu"))
++ifneq (,$(findstring "$(PLATFORM)", "linux" "gnu_kfreebsd" "kfreebsd-gnu" "gnu" "freebsd"))
+   BASE_CFLAGS = -Wall -fno-strict-aliasing \
+     -pipe -DUSE_ICON -DARCH_STRING=\\\"$(FILE_ARCH)\\\"
+   CLIENT_CFLAGS += $(SDL_CFLAGS)
+@@ -809,7 +801,7 @@ ifeq ($(PLATFORM),freebsd)
+   OPTIMIZE = $(OPTIMIZEVM) -ffast-math
+ 
+   SHLIBEXT=so
+-  SHLIBCFLAGS=-fPIC
++  SHLIBCFLAGS=-fPIC -fvisibility=hidden
+   SHLIBLDFLAGS=-shared $(LDFLAGS)
+ 
+   THREAD_LIBS=-lpthread
+@@ -823,6 +815,7 @@ ifeq ($(PLATFORM),freebsd)
+ 
+   # optional features/libraries
+   ifeq ($(USE_OPENAL),1)
++    CLIENT_CFLAGS += $(OPENAL_CFLAGS)
+     ifeq ($(USE_OPENAL_DLOPEN),1)
+       CLIENT_LIBS += $(THREAD_LIBS) $(OPENAL_LIBS)
+     endif
