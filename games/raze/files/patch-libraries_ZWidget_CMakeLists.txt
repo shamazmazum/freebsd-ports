@@ -1,0 +1,20 @@
+--- libraries/ZWidget/CMakeLists.txt.orig	2025-02-22 17:18:42 UTC
++++ libraries/ZWidget/CMakeLists.txt
+@@ -1,6 +1,8 @@ project(zwidget)
+ cmake_minimum_required(VERSION 3.11)
+ project(zwidget)
+ 
++find_package (SDL2 REQUIRED CONFIG)
++
+ set(ZWIDGET_SOURCES
+ 	src/core/canvas.cpp
+ 	src/core/font.cpp
+@@ -144,7 +146,7 @@ add_library(zwidget STATIC ${ZWIDGET_SOURCES} ${ZWIDGE
+ endif()
+ 
+ add_library(zwidget STATIC ${ZWIDGET_SOURCES} ${ZWIDGET_INCLUDES})
+-target_link_libraries(zwidget ${ZWIDGET_LIBS})
++target_link_libraries(zwidget ${ZWIDGET_LIBS} SDL2::SDL2)
+ set_target_properties(zwidget PROPERTIES CXX_STANDARD 17)
+ 
+ if(MSVC)

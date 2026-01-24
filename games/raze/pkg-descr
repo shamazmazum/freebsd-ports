@@ -1,0 +1,14 @@
+Raze is a fork of Build engine games backed by GZDoom tech and
+combines Duke Nukem 3D, Blood, Redneck Rampage, Shadow Warrior and
+Exhumed/Powerslave in a single package. It is also capable of playing
+Nam and WW2 GI.
+
+The game modules are based on the following sources:
+* Duke Nukem: JFDuke, EDuke 2.0, World Tour extensions from DukeGDX
+  and some minor fixes from EDuke32.
+* Redneck Rampage: Nuke.YKT's reconstructed source available in the
+  Rednukem Git repo.
+* Blood: NBlood.
+* Shadow Warrior: SWP and VoidSW.
+* Exhumed/Powerslave: PCExhumed, with some enhancements inspired by
+  PowerslaveGDX.

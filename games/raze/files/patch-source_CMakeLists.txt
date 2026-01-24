@@ -1,0 +1,44 @@
+--- source/CMakeLists.txt.orig	2025-02-22 17:18:42 UTC
++++ source/CMakeLists.txt
+@@ -324,7 +324,6 @@ list( APPEND PROJECT_LIBRARIES "zwidget" )
+ endif()
+ 
+ list( APPEND PROJECT_LIBRARIES "zwidget" )
+-list( APPEND PROJECT_LIBRARIES "webp" )
+ 
+ # ZMUSIC
+ 
+@@ -1325,11 +1324,24 @@ endif()
+ 	endif()
+ endif()
+ 
+-target_link_libraries( ${PROJECT_NAME} ${PROJECT_LIBRARIES} ${ZMUSIC_LIBRARIES} lzma )
++target_link_directories (${PROJECT_NAME} PUBLIC
++  ${WEBPMUX_LIBRARY_DIRS} 
++  ${WEBPDECODER_LIBRARY_DIRS}
++)
+ 
++target_link_libraries( ${PROJECT_NAME}
++  ${PROJECT_LIBRARIES}
++  ${ZMUSIC_LIBRARIES}
++  ${WEBPMUX_LIBRARIES}
++  ${WEBPDECODER_LIBRARIES}
++  lzma
++)
++
+ include_directories(
+ 	BEFORE
+ 	${CMAKE_CURRENT_SOURCE_DIR}
++        ${WEBPMUX_INCLUDE_DIRS}
++        ${WEBPDECODER_INCLUDE_DIRS}
+ 	build/include
+ 	libxmp-lite/include
+ 	libxmp-lite/include/libxmp-lite
+@@ -1387,7 +1399,6 @@ include_directories(
+ 	launcher
+ 	../libraries/ZVulkan/include
+ 	../libraries/ZWidget/include
+-	../libraries/webp/include
+ 	${SYSTEM_SOURCES_DIR}
+ )
+ 
