@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+To complete the installation of this port, you need to copy the files
+fury.grp and fury.grpinfo from the original Ion Fury
+distribution to ~/.config/fury.
+EOM
+}
+]
