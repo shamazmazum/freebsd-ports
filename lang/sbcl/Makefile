@@ -5,19 +5,14 @@
 PORTNAME=	sbcl
 DISTVERSION=	2.6.1
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	https://github.com/shamazmazum/${PORTNAME}/commit/
-PATCHFILES=	3d3cbdc8ef187a3909c3dcd3d7d33f05082e27d5.patch:-p1 \
-		793b631c088b7f66e7f24ecab04ed43a1b986a0a.patch:-p1 \
-		c5d81e1d23ef1b8f45e2d508a7bd682b86255ac5.patch:-p1
-
-MAINTAINER=	shamaz.mazum@gmail.com
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
 WWW=		http://sbcl.sourceforge.io/
 
