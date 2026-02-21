@@ -1,6 +1,7 @@
 PORTNAME=	scummvm
-DISTVERSION=	3.0.0
+DISTVERSION=	2026.1.0
 CATEGORIES=	games emulators
+MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
@@ -24,14 +25,13 @@ USES=		compiler:c++11-lang cpe gl gmake gnome iconv jpeg \
 		localbase:ldflags pkgconfig sdl tar:xz
 USE_GL=		gl glew
 USE_SDL=	sdl2
-USE_GITHUB=	yes
-GH_TAGNAME=	desc/3.0.0pre
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa \
 		--disable-debug \
 		--disable-fluidlite \
 		--disable-gtk \
+		--disable-mpcdec \
 		--disable-nasm \
 		--disable-seq-midi \
 		--disable-tremor \
