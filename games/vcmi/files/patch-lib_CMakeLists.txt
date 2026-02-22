@@ -1,6 +1,6 @@
---- lib/CMakeLists.txt.orig	2025-04-24 19:50:03 UTC
+--- lib/CMakeLists.txt.orig	2025-01-09 19:59:03 UTC
 +++ lib/CMakeLists.txt
-@@ -799,6 +799,11 @@ endif()
+@@ -793,6 +793,11 @@ if(WIN32)
  	)
  endif()
  
