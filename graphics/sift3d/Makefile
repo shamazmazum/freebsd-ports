@@ -1,6 +1,6 @@
 PORTNAME=	sift3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0
+DISTVERSION=	2.0.1
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -14,6 +14,19 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 
 USES=		cmake
+
+FLAVORS=	icoshist gridhist
+FLAVOR?=	${FLAVORS:[1]}
+gridhist_PKGNAMESUFFIX=	-gridhist
+
+icoshist_CONFLICTS_INSTALL=	${PORTNAME}${gridhist_PKGNAMESUFFIX}
+gridhist_CONFLICTS_INSTALL=	${PORTNAME}
+
+.if ${FLAVOR} == icoshist
+CMAKE_ON=	ICOS_HIST
+.else
+CMAKE_OFF=	ICOS_HIST
+.endif
 
 USE_GCC=	yes
 USE_GITHUB=	yes
