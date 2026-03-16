@@ -1,5 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.50.4
+DISTVERSION=	2.50.6
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk_${FLAVOR}
@@ -37,7 +37,8 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libtasn1.so:security/libtasn1 \
 		libwebp.so:graphics/webp \
 		libwoff2dec.so:devel/woff2 \
-		libsoup-3.0.so:devel/libsoup3
+		libsoup-3.0.so:devel/libsoup3 \
+		libexpat.so:textproc/expat2
 
 PORTSCOUT=	limitw:1,even
 
