@@ -192,6 +192,7 @@ share/man/man1/sbcl.1.gz
 %%SOURCES%%%%DATADIR%%/src/code/fdefinition.lisp
 %%SOURCES%%%%DATADIR%%/src/code/filesys.lisp
 %%SOURCES%%%%DATADIR%%/src/code/final.lisp
+%%SOURCES%%%%DATADIR%%/src/code/float-from-bits.lisp
 %%SOURCES%%%%DATADIR%%/src/code/float-trap.lisp
 %%SOURCES%%%%DATADIR%%/src/code/float.lisp
 %%SOURCES%%%%DATADIR%%/src/code/force-delayed-defbangstructs.lisp
