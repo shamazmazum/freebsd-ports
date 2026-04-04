@@ -3,16 +3,15 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.6.2
+DISTVERSION=	2.6.3
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Common Lisp development system derived from the CMU CL system
 WWW=		http://sbcl.sourceforge.io/
 
