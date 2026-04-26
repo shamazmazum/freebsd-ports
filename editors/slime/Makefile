@@ -1,32 +1,27 @@
 PORTNAME=	slime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.32
+PORTREVISION=	1
 CATEGORIES=	editors elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Superior Lisp Interaction Mode for Emacs
 WWW=		https://common-lisp.net/project/slime/
 
 LICENSE=	PD
 
-BUILD_DEPENDS=	texinfo>=5.2:print/texinfo
+USES=		emacs
 
-USES=		emacs gmake
 USE_GITHUB=	yes
-
-ALL_TARGET=	all contrib-compile
-NO_ARCH=	yes
-PORTDOCS=	CONTRIBUTING.md NEWS PROBLEMS README.md
-SUB_FILES=	pkg-message
-SUB_LIST=	SLIME_LISPDIR="${SLIME_LISPDIR}"
 
 OPTIONS_DEFINE=	DOCS
 
-SLIME_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/slime
+SLIME_LISPDIR=	${PREFIX}/${EMACS_SITE_LISPDIR}/slime
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/doc/Makefile
+NO_BUILD=	yes
+PORTDOCS=	CONTRIBUTING.md NEWS PROBLEMS README.md
+SUB_FILES=	pkg-message
+SUB_LIST=	SLIME_LISPDIR="${SLIME_LISPDIR}"
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${SLIME_LISPDIR}
@@ -34,14 +29,10 @@ do-install:
 		"! ( -name CONTRIBUTING.md -o -name NEWS -o -name PROBLEMS \
 		-o -name README.md -o -name Makefile -o -name doc \
 		-o -path \./doc/* )")
-	(cd ${STAGEDIR}${SLIME_LISPDIR} && rm -rf .github .gitref)
+	(cd ${STAGEDIR}${SLIME_LISPDIR} && ${RM} -rf .github .gitref)
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/contrib/README.md \
-		${STAGEDIR}${DOCSDIR}/README-contrib.md
-	(cd ${INSTALL_WRKSRC}/doc && ${INSTALL_DATA} slime-refcard.pdf \
-		slime-small.pdf ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
