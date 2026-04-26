@@ -1,6 +1,6 @@
---- CMakeModules/Dependencies.cmake.orig	2025-12-19 21:35:54 UTC
+--- CMakeModules/Dependencies.cmake.orig	2026-02-17 22:13:45 UTC
 +++ CMakeModules/Dependencies.cmake
-@@ -106,6 +106,14 @@ macro(resolve_dependencies) # Intentionally a macro - 
+@@ -116,6 +116,14 @@ macro(resolve_dependencies) # Intentionally a macro - 
          # Prebuilt & user-supplied deps are resolved using the same code here.
          find_package(ZLIB REQUIRED)
          find_package(FFmpeg REQUIRED)

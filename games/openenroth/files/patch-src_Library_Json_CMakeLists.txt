@@ -1,4 +1,4 @@
---- src/Library/Json/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
+--- src/Library/Json/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
 +++ src/Library/Json/CMakeLists.txt
 @@ -11,10 +11,14 @@ target_link_libraries(library_json
  add_library(library_json STATIC ${LIBRARY_JSON_SOURCES} ${LIBRARY_JSON_HEADERS})

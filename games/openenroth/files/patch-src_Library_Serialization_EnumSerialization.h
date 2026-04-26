@@ -1,4 +1,4 @@
---- src/Library/Serialization/EnumSerialization.h.orig	2025-12-20 18:25:39 UTC
+--- src/Library/Serialization/EnumSerialization.h.orig	2026-02-17 22:13:45 UTC
 +++ src/Library/Serialization/EnumSerialization.h
 @@ -7,7 +7,7 @@
  

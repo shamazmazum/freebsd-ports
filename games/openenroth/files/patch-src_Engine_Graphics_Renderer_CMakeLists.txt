@@ -1,6 +1,6 @@
---- src/Engine/Graphics/Renderer/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
+--- src/Engine/Graphics/Renderer/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
 +++ src/Engine/Graphics/Renderer/CMakeLists.txt
-@@ -25,15 +25,19 @@ target_link_libraries(engine_graphics_renderer
+@@ -26,17 +26,21 @@ target_link_libraries(engine_graphics_renderer
  target_check_style(engine_graphics_renderer)
  
  target_link_libraries(engine_graphics_renderer
@@ -15,7 +15,9 @@
 -        OpenGL::GL
 -        engine_graphics
 -        PRIVATE
--        glad)
+-        glad
+-        library_filesystem_sub
+-        library_preprocessor)
 +  PUBLIC
 +  engine
 +  engine_graphics
@@ -27,6 +29,8 @@
 +  engine_graphics
 +  PRIVATE
 +  glad
++  library_filesystem_sub
++  library_preprocessor
 +)
 +
 +target_include_directories(engine_graphics_renderer PRIVATE

@@ -1,4 +1,4 @@
---- src/Media/FFmpegBlobInputStream.cpp.orig	2026-01-13 09:33:28 UTC
+--- src/Media/FFmpegBlobInputStream.cpp.orig	2026-02-17 22:13:45 UTC
 +++ src/Media/FFmpegBlobInputStream.cpp
 @@ -67,6 +67,8 @@ void FFmpegBlobInputStream::closeInternal() {
      _ctx = nullptr;

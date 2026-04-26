@@ -1,6 +1,6 @@
---- src/Utility/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
+--- src/Utility/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
 +++ src/Utility/CMakeLists.txt
-@@ -63,12 +63,14 @@ target_link_libraries(utility
+@@ -61,12 +61,14 @@ target_link_libraries(utility
  add_library(utility STATIC ${UTILITY_SOURCES} ${UTILITY_HEADERS})
  target_check_style(utility)
  target_link_libraries(utility

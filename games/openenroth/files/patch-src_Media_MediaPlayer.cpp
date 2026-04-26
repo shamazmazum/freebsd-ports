@@ -1,4 +1,4 @@
---- src/Media/MediaPlayer.cpp.orig	2025-12-19 21:35:54 UTC
+--- src/Media/MediaPlayer.cpp.orig	2026-02-17 22:13:45 UTC
 +++ src/Media/MediaPlayer.cpp
 @@ -75,7 +75,7 @@ class AVStreamWrapper {
          dec = nullptr;

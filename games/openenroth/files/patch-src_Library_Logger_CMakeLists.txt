@@ -1,4 +1,4 @@
---- src/Library/Logger/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
+--- src/Library/Logger/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
 +++ src/Library/Logger/CMakeLists.txt
 @@ -22,7 +22,16 @@ add_library(library_logger STATIC ${LIBRARY_LOGGER_SOU
          RotatingLogSink.h)

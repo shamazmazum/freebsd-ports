@@ -1,6 +1,6 @@
---- src/Engine/Graphics/CMakeLists.txt.orig	2025-08-18 20:25:46 UTC
+--- src/Engine/Graphics/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
 +++ src/Engine/Graphics/CMakeLists.txt
-@@ -66,16 +66,20 @@ target_link_libraries(engine_graphics
+@@ -67,16 +67,20 @@ target_link_libraries(engine_graphics
  target_check_style(engine_graphics)
  
  target_link_libraries(engine_graphics

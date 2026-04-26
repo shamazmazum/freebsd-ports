@@ -1,4 +1,4 @@
---- thirdparty/CMakeLists.txt.orig	2025-12-19 21:35:54 UTC
+--- thirdparty/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
 +++ thirdparty/CMakeLists.txt
 @@ -8,11 +8,6 @@ add_subdirectory(cmrc EXCLUDE_FROM_ALL)
  
@@ -26,7 +26,7 @@
  # glad
  add_subdirectory(glad EXCLUDE_FROM_ALL)
  target_include_directories(glad INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
-@@ -44,14 +32,6 @@ add_subdirectory(small_vector EXCLUDE_FROM_ALL)
+@@ -49,14 +37,6 @@ add_subdirectory(small_vector EXCLUDE_FROM_ALL)
  
  # small_vector
  add_subdirectory(small_vector EXCLUDE_FROM_ALL)
