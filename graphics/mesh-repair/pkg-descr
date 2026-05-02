@@ -1,0 +1,4 @@
+mesh-repair is a tiny program which removes degenerate faces from a
+polygonal mesh and performs border stitching (removing of duplicate
+vertices and edges). mesh-repair uses CGAL and can read/write
+Wavefront OBJ meshes and whatever else CGAL can read/write.
