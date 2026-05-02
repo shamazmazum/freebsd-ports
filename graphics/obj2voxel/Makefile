@@ -1,6 +1,6 @@
 PORTNAME=	obj2voxel
 PORTVERSION=	20220607
-CATEGORIES=	misc
+CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Wavefront OBJ to voxel converter
