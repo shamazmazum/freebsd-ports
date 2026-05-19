@@ -1,6 +1,7 @@
 PORTNAME=	ref_vk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 PKGNAMEPREFIX=	yquake2-
@@ -15,8 +16,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 RUN_DEPENDS=	yquake2:games/yquake2
 
-USES=		sdl gmake
-USE_SDL=	sdl2
+USES=		sdl gmake pkgconfig
+USE_SDL=	sdl3
+
+MAKE_ARGS=	WITH_SDL3=yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yquake2
