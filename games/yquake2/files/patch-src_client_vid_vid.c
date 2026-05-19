@@ -1,6 +1,6 @@
---- src/client/vid/vid.c.orig	2022-12-09 11:37:27 UTC
+--- src/client/vid/vid.c.orig	2025-09-14 05:35:31 UTC
 +++ src/client/vid/vid.c
-@@ -318,7 +318,13 @@ const char* lib_ext = "so";
+@@ -319,7 +319,13 @@ VID_GetRendererLibPath(const char *renderer, char *pat
  static void
  VID_GetRendererLibPath(const char *renderer, char *path, size_t len)
  {
