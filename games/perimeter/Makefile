@@ -1,7 +1,5 @@
 PORTNAME=	perimeter
-DISTVERSION=	3.0.10-563
-DISTVERSIONSUFFIX=	-gbb7c88b8
-PORTREVISION=	1
+DISTVERSION=	3.1.10
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -18,17 +16,20 @@ USE_GL=		gl
 
 PLIST_FILES=	bin/perimeter
 
-CMAKE_OFF=	OPTION_D3D9 OPTION_FFMPEG_MOVIES
+CMAKE_ON=	OPTION_DISABLE_STACKTRACE
+CMAKE_OFF=	OPTION_D3D9 OPTION_STATIC_LIB_STD
 CMAKE_ARGS+=	-DFETCHCONTENT_SOURCE_DIR_SIMPLEINI="${WRKSRC}/_deps/simpleini-src" \
 		-DFETCHCONTENT_SOURCE_DIR_PEVENTS="${WRKSRC}/_deps/pevents-src" \
-		-DFETCHCONTENT_SOURCE_DIR_SOKOL="${WRKSRC}/_deps/sokol-src"
+		-DFETCHCONTENT_SOURCE_DIR_SOKOL="${WRKSRC}/_deps/sokol-src" \
+		-DFETCHCONTENT_SOURCE_DIR_IMGUI="${WRKSRC}/_deps/imgui-src"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KD-lab-Open-Source
 GH_PROJECT=	Perimeter
 GH_TUPLE=	brofield:simpleini:7350fcc:simpleini/_deps/simpleini-src \
 		neosmart:pevents:d6afcbc:pevents/_deps/pevents-src \
-		floooh:sokol:6733919:sokol/_deps/sokol-src
+		floooh:sokol:4bda146:sokol/_deps/sokol-src \
+		ocornut:imgui:cb16568:imgui/_deps/imgui-src
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/CMakeLists.txt
