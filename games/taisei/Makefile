@@ -1,5 +1,5 @@
 PORTNAME=	taisei
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -8,32 +8,31 @@ COMMENT=	Open source Touhou clone
 WWW=		https://taisei-project.org/ \
 		https://github.com/taisei-project/taisei
 
-LICENSE=	MIT CC0-1.0 PD
+LICENSE=	MIT CC0-1.0 CC-BY-4.0 PD
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+BUILD_DEPENDS=	glslc:graphics/shaderc \
+		${PY_BACKPORTS.ZSTD}
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libzip.so:archivers/libzip \
 		libwebp.so:graphics/webp \
 		libfreetype.so:print/freetype2 \
 		libopusfile.so:audio/opusfile \
 		libcglm.so:math/cglm \
-		libzstd.so:archivers/zstd
-
-BUILD_DEPENDS=	glslc:graphics/shaderc \
-		${PYTHON_PKGNAMEPREFIX}zstandard>=0.15:archivers/py-zstandard@${PY_FLAVOR}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	taisei-project taisei-project:koishi taisei-project:gc taisei-project:bu \
-		taisei-project:zstd
-GH_PROJECT=	taisei koishi:koishi SDL_GameControllerDB:gc basis_universal:bu \
-		python-zipfile-zstd:zstd
-GH_TAGNAME=	6a484e6 1849728:gc f899ac2:koishi 380ef93:bu e596dd8:zstd
-GH_SUBDIR=	external/gamecontrollerdb:gc external/koishi:koishi \
-		external/basis_universal:bu external/python-zipfile-zstd:zstd
+		libzstd.so:archivers/zstd \
+		libunibreak.so:textproc/libunibreak
 
 USES=		compiler:c11 desktop-file-utils meson pkgconfig \
-		python:build sdl ssl shebangfix shared-mime-info
+		python:build sdl ssl shebangfix shared-mime-info gettext-tools
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	taisei-project taisei-project:koishi taisei-project:gc taisei-project:bu
+GH_PROJECT=	taisei koishi:koishi SDL_GameControllerDB:gc basis_universal:bu
+GH_TAGNAME=	7988b5e:gc f899ac2:koishi 380ef93:bu
+GH_SUBDIR=	external/gamecontrollerdb:gc external/koishi:koishi \
+		external/basis_universal:bu
+
 SHEBANG_FILES=	scripts/*.py
 MESON_ARGS=	-Db_lto=false --wrap-mode=nofallback -DOPENSSLLIB="${OPENSSLLIB}" \
 		-Dinstall_macos_bundle=disabled -Dshader_transpiler=disabled \
