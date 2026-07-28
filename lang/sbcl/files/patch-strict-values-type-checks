@@ -1,6 +1,6 @@
---- src/code/type.lisp.orig	2026-03-22 18:24:34 UTC
+--- src/code/type.lisp.orig	2026-06-28 08:33:53 UTC
 +++ src/code/type.lisp
-@@ -1174,8 +1174,7 @@
+@@ -1189,8 +1189,7 @@
          (t
           (values (values-type-op type1 (coerce-to-values type2)
                                   #'type-intersection
@@ -10,9 +10,9 @@
  
  ;;; This is like TYPES-EQUAL-OR-INTERSECT, except that it sort of
  ;;; works on VALUES types. Note that due to the semantics of
---- tests/type.pure.lisp.orig	2026-03-22 18:19:14 UTC
+--- tests/type.pure.lisp.orig	2026-06-28 08:33:53 UTC
 +++ tests/type.pure.lisp
-@@ -1283,10 +1283,12 @@
+@@ -1284,10 +1284,12 @@
     (eq (values-subtypep (values-specifier-type '(values t &optional))
                          (values-specifier-type '(values t &optional t)))
         t))

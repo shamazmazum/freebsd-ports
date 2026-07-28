@@ -20,6 +20,8 @@ lib/sbcl/contrib/sb-grovel.asd
 lib/sbcl/contrib/sb-grovel.fasl
 lib/sbcl/contrib/sb-introspect.asd
 lib/sbcl/contrib/sb-introspect.fasl
+lib/sbcl/contrib/sb-manual.asd
+lib/sbcl/contrib/sb-manual.fasl
 lib/sbcl/contrib/sb-md5.asd
 lib/sbcl/contrib/sb-md5.fasl
 lib/sbcl/contrib/sb-mpfr.asd
@@ -398,6 +400,7 @@ share/man/man1/sbcl.1.gz
 %%SOURCES%%%%DATADIR%%/src/compiler/arm64/pred.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/arm64/sap.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/arm64/show.lisp
+%%SOURCES%%%%DATADIR%%/src/compiler/arm64/simd-pack.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/arm64/subprim.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/arm64/system.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/arm64/target-insts.lisp
@@ -464,6 +467,7 @@ share/man/man1/sbcl.1.gz
 %%SOURCES%%%%DATADIR%%/src/compiler/globaldb.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/gtn.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/info-vector.lisp
+%%SOURCES%%%%DATADIR%%/src/compiler/int-sset.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/integer-tran.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/ir1-translators.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/ir1final.lisp
@@ -654,6 +658,7 @@ share/man/man1/sbcl.1.gz
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/arith.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/array.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/avx2-insts.lisp
+%%SOURCES%%%%DATADIR%%/src/compiler/x86-64/avx512-insts.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/c-call.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/call.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/cell.lisp
@@ -670,6 +675,7 @@ share/man/man1/sbcl.1.gz
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/sap.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/show.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/simd-pack-256.lisp
+%%SOURCES%%%%DATADIR%%/src/compiler/x86-64/simd-pack-512.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/simd-pack.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/subprim.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/x86-64/system.lisp
