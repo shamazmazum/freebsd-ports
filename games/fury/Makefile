@@ -1,5 +1,5 @@
 PORTNAME=	fury
-PORTVERSION=	20260203
+PORTVERSION=	20260807
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/
 DISTFILES=	eduke32_src_${PORTVERSION}-${GITREVISION}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ USES=		compiler:c11 dos2unix gl gmake localbase pkgconfig sdl tar:xz
 USE_GL=		gl glu
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/eduke32_${PORTVERSION}-${GITREVISION}
-GITREVISION=	10664-ba6b7bb1d
+GITREVISION=	10669-ec5824db8
 DATADIR=	${PREFIX}/share/fury
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CC=${CC} CXX=${CXX} CLANG=1 PRETTY_OUTPUT=0 \
