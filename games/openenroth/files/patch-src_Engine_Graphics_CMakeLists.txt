@@ -1,35 +1,15 @@
---- src/Engine/Graphics/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
+--- src/Engine/Graphics/CMakeLists.txt.orig	2026-07-15 21:30:22 UTC
 +++ src/Engine/Graphics/CMakeLists.txt
-@@ -67,16 +67,20 @@ target_link_libraries(engine_graphics
- target_check_style(engine_graphics)
- 
- target_link_libraries(engine_graphics
--        PUBLIC
--        engine
--        engine_graphics_renderer
--        utility
--        library_serialization
--        library_color
--        library_image
+@@ -74,9 +74,12 @@ target_link_libraries(engine_graphics
+         library_serialization
+         library_color
+         library_image
 -        glm::glm
--        OpenGL::GL
--        libluajit
--        sol2
--        PRIVATE
--        glad)
-+  PUBLIC
-+  engine
-+  engine_graphics_renderer
-+  utility
-+  library_serialization
-+  library_color
-+  library_image
-+  OpenGL::GL
-+  libluajit
-+  sol2
-+  PRIVATE
-+  glad
-+)
+         OpenGL::GL
+         libluajit
+         sol2
+         PRIVATE
+         glad)
 +
 +target_include_directories(engine_graphics PRIVATE
 +  ${GLM_INCLUDE_DIR}

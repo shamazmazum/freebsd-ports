@@ -1,4 +1,4 @@
---- CMakeModules/FindGLM.cmake.orig	2025-09-01 04:48:18 UTC
+--- CMakeModules/FindGLM.cmake.orig	2026-08-12 09:02:13 UTC
 +++ CMakeModules/FindGLM.cmake
 @@ -0,0 +1,62 @@
 +# FindGLM - attempts to locate the glm matrix/vector library.

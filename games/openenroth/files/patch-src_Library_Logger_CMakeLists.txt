@@ -1,20 +1,19 @@
---- src/Library/Logger/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
+--- src/Library/Logger/CMakeLists.txt.orig	2026-07-15 21:30:22 UTC
 +++ src/Library/Logger/CMakeLists.txt
-@@ -22,7 +22,16 @@ add_library(library_logger STATIC ${LIBRARY_LOGGER_SOU
+@@ -22,7 +22,15 @@ add_library(library_logger STATIC ${LIBRARY_LOGGER_SOU
          RotatingLogSink.h)
  
  add_library(library_logger STATIC ${LIBRARY_LOGGER_SOURCES} ${LIBRARY_LOGGER_HEADERS})
 -target_link_libraries(library_logger PUBLIC library_serialization library_filesystem_interface utility PRIVATE spdlog::spdlog)
-+target_link_libraries(library_logger
-+  PUBLIC library_serialization library_filesystem_interface utility
-+  PRIVATE ${SPDLOG_LDFLAGS}
-+)
++target_link_libraries(library_logger PUBLIC library_serialization library_filesystem_interface utility PRIVATE ${SPDLOG_LDFLAGS})
++
 +target_include_directories(library_logger PRIVATE ${SPDLOG_INCLUDE_DIRS})
 +target_compile_definitions(library_logger PRIVATE
 +  SPDLOG_FMT_EXTERNAL
 +  SPDLOG_DISABLE_DEFAULT_LOGGER
 +  SPDLOG_WCHAR_SUPPORT
 +)
++
  target_check_style(library_logger)
  
  if(OE_BUILD_TESTS)

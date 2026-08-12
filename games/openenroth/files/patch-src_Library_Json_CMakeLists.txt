@@ -1,21 +1,16 @@
---- src/Library/Json/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
+--- src/Library/Json/CMakeLists.txt.orig	2026-07-15 21:30:22 UTC
 +++ src/Library/Json/CMakeLists.txt
-@@ -11,10 +11,14 @@ target_link_libraries(library_json
- add_library(library_json STATIC ${LIBRARY_JSON_SOURCES} ${LIBRARY_JSON_HEADERS})
- target_check_style(library_json)
+@@ -13,9 +13,11 @@ target_link_libraries(library_json
  target_link_libraries(library_json
--        PUBLIC
--        utility
+         PUBLIC
+         utility
 -        library_serialization
 -        nlohmann_json)
-+  PUBLIC
-+  utility
-+  library_serialization
-+)
-+
++        library_serialization)
+ 
 +target_include_directories(library_json PRIVATE
 +  ${NLOHMANN_JSON_INCLUDE_DIRS}
 +)
  
- 
  if(OE_BUILD_TESTS)
+     set(TEST_LIBARY_JSON_SOURCES Tests/Json_ut.cpp)

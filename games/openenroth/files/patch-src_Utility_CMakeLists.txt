@@ -1,23 +1,17 @@
---- src/Utility/CMakeLists.txt.orig	2026-02-17 22:13:45 UTC
+--- src/Utility/CMakeLists.txt.orig	2026-07-15 21:30:22 UTC
 +++ src/Utility/CMakeLists.txt
-@@ -61,12 +61,14 @@ target_link_libraries(utility
- add_library(utility STATIC ${UTILITY_SOURCES} ${UTILITY_HEADERS})
+@@ -58,13 +58,13 @@ target_link_libraries(utility
  target_check_style(utility)
  target_link_libraries(utility
--        PUBLIC
+         PUBLIC
 -        fmt::fmt
--        gch::small_vector
--        Boost::lambda2
--        PRIVATE
--        mio::mio)
-+  PUBLIC
-+  gch::small_vector
-+  ${FMT_LDFLAGS}
-+  Boost::lambda2
-+  PRIVATE
-+  mio::mio)
-+
-+target_include_directories(utility PUBLIC ${FMT_INCLUDE_DIRS})
+         gch::small_vector
+         Boost::lambda2
+         PRIVATE
+         ztd::text
+         mio::mio)
  
- if(OE_BUILD_TESTS)
-     set(TEST_UTILITY_SOURCES
++target_include_directories(utility PUBLIC ${FMT_INCLUDE_DIRS})
+ # Tweak ztd buffer size, default is 512Kb, but default stack size of non-main threads on MacOS is also 512Kb.
+ target_compile_definitions(utility PRIVATE ZTD_INTERMEDIATE_BUFFER_SUGGESTED_BYTE_SIZE=65536)
+ 

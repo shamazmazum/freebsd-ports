@@ -1,4 +1,4 @@
---- CMakeModules/Dependencies.cmake.orig	2026-02-17 22:13:45 UTC
+--- CMakeModules/Dependencies.cmake.orig	2026-07-15 21:30:22 UTC
 +++ CMakeModules/Dependencies.cmake
 @@ -116,6 +116,14 @@ macro(resolve_dependencies) # Intentionally a macro - 
          # Prebuilt & user-supplied deps are resolved using the same code here.
