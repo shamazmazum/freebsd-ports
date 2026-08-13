@@ -23,6 +23,8 @@ MAKE_ARGS=	WITH_SDL3=yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	yquake2
 
+PLIST_FILES=	lib/yquake2/ref_vk.so
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/yquake2
 	${INSTALL_LIB} ${BUILD_WRKSRC}/release/ref_vk.so ${STAGEDIR}${PREFIX}/lib/yquake2
