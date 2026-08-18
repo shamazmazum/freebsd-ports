@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Install assets for the desired port to %%PREFIX%%/share/dhewm3
+
+For more information visit https://dhewm3.org/mods.html
+EOM
+}
+]

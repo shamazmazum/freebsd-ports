@@ -1,0 +1,4 @@
+This port contains various mods for Doom 3 ported to dhewm3 engine.
+It provides only .so files needed to run the mod. You should download
+game assets manually from ModDB. Visit https://dhewm3.org/mods.html for
+more info.
