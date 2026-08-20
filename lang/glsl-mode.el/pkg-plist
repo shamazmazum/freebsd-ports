@@ -1,0 +1,3 @@
+%%EMACS_SITE_LISPDIR%%/glsl-db.el
+%%EMACS_SITE_LISPDIR%%/glsl-mode.el
+%%EMACS_SITE_LISPDIR%%/glsl-ts-mode.el
