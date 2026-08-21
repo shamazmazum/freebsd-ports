@@ -1,15 +1,13 @@
 PORTNAME=	glsl-mode.el
 PORTVERSION=	20260603
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	shamaz.mazum@gmail.com
 COMMENT=	Emacs major mode for GLSL
 WWW=		https://github.com/jimhourihan/glsl-mode
 
-LICENSE=	UNKNOWN
-LICENSE_NAME=	unknown
-LICENSE_TEXT=	License is unknown, honestly
-LICENSE_PERMS=  dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+LICENSE=	GPLv3
 
 USES=		emacs
 USE_GITHUB=	yes
