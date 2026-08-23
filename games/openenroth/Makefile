@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	g20260716
+PORTVERSION=	g20260821
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -45,10 +45,10 @@ GH_PROJECT=	OpenEnroth backward-cpp:bwcpp cmrc:cmrc inifile-cpp:ini \
 		tcpp:tcpp ztd_text:ztd \
 		cmake:ztdcmake idk:ztdidk inline_containers:ztdic encoding_tables:ztdet \
 		cuneicode:ztdcuneicode platform:ztdplatform
-GH_TAGNAME=	c96180b 51f0700:bwcpp 952ffdd:cmrc 7bb1ec3:ini \
+GH_TAGNAME=	4f48764 51f0700:bwcpp 952ffdd:cmrc 7bb1ec3:ini \
 		8b6b7d8:mio e8e63fe:sv 1f7f1f5:imgui 2a91250:gen 336f76c3:sol \
 		97813fb:lua 6446221:luacmake dddfec6:lambda 8041d01:tcpp \
-		c7b7cd6:ztd \
+		c17bbb1:ztd \
 		382e34f:ztdcmake a8f2f9d:ztdidk 80c5acb:ztdic c0c5de5:ztdet \
 		8ed6b88:ztdcuneicode d03b150:ztdplatform
 GH_SUBDIR=	thirdparty/backward_cpp:bwcpp thirdparty/cmrc:cmrc \
