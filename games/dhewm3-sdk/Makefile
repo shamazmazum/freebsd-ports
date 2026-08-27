@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 RUN_DEPENDS=	dhewm3>0:games/dhewm3
 
 FLAVORS=	rivensin bloodmod bloodmod_roe d3le eoc \
-		desolated hardcorps dentonmod perfected
+		desolated hardcorps dentonmod perfected \
+		perfected_roe
 FLAVOR?=	${FLAVORS:[1]}
 
 USES=		cmake
@@ -27,6 +28,7 @@ desolated_PKGNAMESUFFIX=	-desolated
 hardcorps_PKGNAMESUFFIX=	-hardcorps
 dentonmod_PKGNAMESUFFIX=	-dentonmod
 perfected_PKGNAMESUFFIX=	-perfected
+perfected_roe_PKGNAMESUFFIX=	-perfected_roe
 
 .if ${FLAVOR:U} == rivensin
 GITTAG=		a4dfc7c
@@ -45,6 +47,8 @@ GITTAG=		b767e8c
 .elif ${FLAVOR:U} == dentonmod
 GITTAG=		9342a53
 .elif ${FLAVOR:U} == perfected
+GITTAG=		0976ee1
+.elif ${FLAVOR:U} == perfected_roe
 GITTAG=		0976ee1
 .endif
 
