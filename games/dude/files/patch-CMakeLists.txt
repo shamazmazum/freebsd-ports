@@ -1,0 +1,41 @@
+--- CMakeLists.txt.orig	2026-08-19 13:25:29 UTC
++++ CMakeLists.txt
+@@ -544,16 +544,6 @@ if(D3_COMPILER_IS_GCC_OR_CLANG)
+ 		set(OPT_LEVEL "-O2")
+ 	endif()
+ 
+-	set(CMAKE_C_FLAGS_DEBUG "-g -ggdb -D_DEBUG -O0")
+-	set(CMAKE_C_FLAGS_DEBUGALL "-g -ggdb -D_DEBUG")
+-	set(CMAKE_C_FLAGS_PROFILE "-g -ggdb -D_DEBUG -O1 -fno-omit-frame-pointer")
+-	set(CMAKE_C_FLAGS_RELEASE "${OPT_LEVEL} -fomit-frame-pointer")
+-	set(CMAKE_C_FLAGS_RELWITHDEBINFO "-g -ggdb ${OPT_LEVEL} -fno-omit-frame-pointer")
+-	set(CMAKE_C_FLAGS_MINSIZEREL "-Os -fomit-frame-pointer")
+-
+-	set(CMAKE_CXX_FLAGS_DEBUGALL ${CMAKE_C_FLAGS_DEBUGALL})
+-	set(CMAKE_CXX_FLAGS_PROFILE ${CMAKE_C_FLAGS_PROFILE})
+-
+ 	# these options (together with -ffinite-math-only) should make compilers use direct
+ 	# CPU instructions (if available) instead of libm calls for many math operations
+ 	add_compile_options(-fno-math-errno -fno-trapping-math)
+@@ -692,12 +682,6 @@ endif()
+ 	message(FATAL_ERROR "Unsupported compiler")
+ endif()
+ 
+-set(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG})
+-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_C_FLAGS_RELWITHDEBINFO})
+-# disable assertions in release builds
+-set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${CMAKE_C_FLAGS_RELEASE}")
+-set(CMAKE_CXX_FLAGS_MINSIZEREL "-DNDEBUG ${CMAKE_C_FLAGS_MINSIZEREL}")
+-
+ # mingw and msvc
+ if(WIN32)
+ 	add_definitions(-DWINVER=0x0501)
+@@ -753,7 +737,7 @@ set(bindir		"${CMAKE_INSTALL_FULL_BINDIR}")
+ endif()
+ 
+ set(bindir		"${CMAKE_INSTALL_FULL_BINDIR}")
+-set(libdir		"${CMAKE_INSTALL_FULL_LIBDIR}/dhewm3")
++set(libdir		"${CMAKE_INSTALL_FULL_LIBDIR}/dude")
+ set(datadir		"${CMAKE_INSTALL_FULL_DATADIR}/dhewm3")
+ 
+ configure_file(

@@ -1,0 +1,9 @@
+DUDE is a fork of dhewm3 (itself the GPL source port of DOOM 3) that
+modernizes the renderer while keeping the classic DOOM 3 look and
+gameplay faithful. The stock renderer's ARB assembly shaders are
+translated to a shared GLSL source tree serving two new backends —
+OpenGL 3.3 core and Vulkan (1.4, with hardware ray tracing where
+available) — selectable via the r_graphicsAPI cvar, with the original
+ARB renderer kept intact as the faithful reference. All visual
+enhancements are opt-in, driven by in-game quality presets whose floor
+is the unmodified classic look.
