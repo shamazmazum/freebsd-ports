@@ -1,14 +1,14 @@
---- lib/CMakeLists.txt.orig	2025-01-09 19:59:03 UTC
+--- lib/CMakeLists.txt.orig	2026-08-13 14:13:18 UTC
 +++ lib/CMakeLists.txt
-@@ -793,6 +793,11 @@ if(WIN32)
- 	)
+@@ -845,6 +845,11 @@ endif()
+ 	add_library(vcmi SHARED ${lib_SRCS} ${lib_HEADERS})
  endif()
  
 +if(BSD)
-+	set_source_files_properties(CConsoleHandler.cpp PROPERTIES
++	set_target_properties(vcmi PROPERTIES
 +		COMPILE_FLAGS -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED)
 +endif(BSD)
 +
- # Use '-Wa,-mbig-obj' for files that generate very large object files
- # when compiling with MinGW lest you get "too many sections" assembler errors
- if(MINGW AND CMAKE_BUILD_TYPE STREQUAL "Debug")
+ set_target_properties(vcmi PROPERTIES COMPILE_DEFINITIONS "VCMI_DLL=1")
+ target_link_libraries(vcmi PUBLIC
+ 	minizip::minizip ZLIB::ZLIB

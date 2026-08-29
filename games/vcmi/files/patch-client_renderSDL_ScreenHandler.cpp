@@ -1,6 +1,6 @@
---- client/renderSDL/ScreenHandler.cpp.orig	2025-05-07 07:53:39 UTC
+--- client/renderSDL/ScreenHandler.cpp.orig	2026-08-13 14:13:18 UTC
 +++ client/renderSDL/ScreenHandler.cpp
-@@ -141,10 +141,10 @@ Point ScreenHandler::getRenderResolution() const
+@@ -150,10 +150,10 @@ Point ScreenHandler::getRenderResolution() const
  
  Point ScreenHandler::getRenderResolution() const
  {
