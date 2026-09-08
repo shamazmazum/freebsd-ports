@@ -1,6 +1,6 @@
---- Source/Utils/Folders.cpp.orig	2020-04-21 07:50:34.476506000 +0300
-+++ Source/Utils/Folders.cpp	2020-04-21 07:54:42.422477000 +0300
-@@ -36,7 +36,7 @@
+--- Source/Utils/Folders.cpp.orig	2026-09-08 07:06:05 UTC
++++ Source/Utils/Folders.cpp
+@@ -36,7 +36,7 @@ along with Lugaru.  If not, see <http://www.gnu.org/li
  #include <windows.h>
  #endif
  

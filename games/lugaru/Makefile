@@ -2,7 +2,7 @@
 
 PORTNAME=	lugaru
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4
+DISTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libjsoncpp.so:devel/jsoncpp
 
-USES=		cmake compiler:c++11-lang gl jpeg openal:soft pkgconfig sdl
+USES=		cmake compiler:c++20-lang gl jpeg openal:soft pkgconfig sdl
 USE_GL=		gl glu
 USE_SDL=	sdl2
 
