@@ -1,0 +1,156 @@
+Author: Vasily Postnicov <shamaz.mazum@gmail.com>
+Date:   Sun Feb 1 17:08:25 2026 +0300
+
+    Improve NODE-CONSERVATIVE-TYPE for conses.
+
+    This means that you can elide type declarations for cons args
+    if you already have a FTYPE declaration and aren't doing bad things
+    to the arg. E.g.:
+
+    (declaim (ftype (function ((cons fixnum fixnum)) (values t &optional)) foo))
+    (defun foo (x)
+      (declare (optimize (speed 3))
+               ;; You can remove the following declaration and get this
+               ;; function compiled without notes.
+               #+nil
+               (type (cons fixnum fixnum) x))
+      (logand (car x) (cdr x)))
+--- src/compiler/ir1opt.lisp.orig	2026-08-28 16:31:42 UTC
++++ src/compiler/ir1opt.lisp
+@@ -240,21 +240,36 @@
+   (let* ((derived-values-type (node-derived-type node))
+          (derived-type (single-value-type derived-values-type)))
+     (if (ref-p node)
+-        (let ((leaf (ref-leaf node)))
++        (let ((leaf (ref-leaf node))
++              (cons-type (specifier-type 'cons)))
+           (if (and (basic-var-p leaf)
+                    (cdr (leaf-refs leaf)))
+-              (coerce-to-values
+-               (if (eq :declared (leaf-where-from leaf))
+-                   (let ((leaf-type (leaf-type leaf))
+-                         (cons-type (specifier-type 'cons)))
+-                     ;; If LEAF-TYPE is (or null some-cons-type) and
+-                     ;; DERIVED-TYPE is known to be non-null, use
+-                     ;; SOME-CONS-TYPE in that case, because a cons
+-                     ;; can't become null.
+-                     (if (csubtypep derived-type cons-type)
+-                         (type-intersection leaf-type cons-type)
+-                         leaf-type))
+-                   (conservative-type derived-type)))
++              (or (and
++                   ;; Works only for conses
++                   (csubtypep derived-type cons-type)
++                   ;; All functions for which this var is an arg are
++                   ;; pure.
++                   (every
++                    (lambda (ref)
++                      (let ((dest (node-principal-dest ref)))
++                        (and (combination-p dest)
++                             (flushable-combination-p dest))))
++                    (leaf-refs leaf))
++                   ;; This var is not assigned to and we have no
++                   ;; other dests.
++                   (null (basic-var-sets leaf))
++                   derived-values-type)
++                  (coerce-to-values
++                   (if (eq :declared (leaf-where-from leaf))
++                       (let ((leaf-type (leaf-type leaf)))
++                         ;; If LEAF-TYPE is (or null some-cons-type) and
++                         ;; DERIVED-TYPE is known to be non-null, use
++                         ;; SOME-CONS-TYPE in that case, because a cons
++                         ;; can't become null.
++                         (if (csubtypep derived-type cons-type)
++                             (type-intersection leaf-type cons-type)
++                             leaf-type))
++                       (conservative-type derived-type))))
+               derived-values-type))
+         derived-values-type)))
+ 
+--- src/compiler/ir1util.lisp.orig	2026-08-28 16:31:42 UTC
++++ src/compiler/ir1util.lisp
+@@ -53,6 +53,16 @@
+         (setf (node-next (block-last block)) nil)
+         block))))
+ 
++
++;; Find the node's dest bypassing casts.
++(defun node-principal-dest (node)
++  (declare (type node node))
++  (labels ((%go (node)
++             (let ((dest (node-dest node)))
++               (if (cast-p dest)
++                   (node-principal-dest dest)
++                   dest))))
++    (%go node)))
+ ;;;; lvar use hacking
+ 
+ ;;; Return a list of all the nodes which use LVAR.
+--- tests/compiler-2.pure.lisp.orig	2026-08-28 16:31:42 UTC
++++ tests/compiler-2.pure.lisp
+@@ -4644,14 +4644,23 @@
+    (lambda ()
+      (let ((x '(1 2 3)))
+        (values (pop x) (pop x))))
+-   (values (integer 1 3) (or null (integer 1 3)) &optional))
++   (values (integer 1 3) (integer 1 3) &optional))
+   (assert-type
+    (lambda ()
+      (declare (optimize speed (debug 1)))
+      (destructuring-bind (a b) '(1 2)
+        (values a b)))
+-   (values (integer 1 2) (or null (integer 1 2)) &optional))
++   (values (integer 1 2) (integer 1 2) &optional))
+   (assert-type
++   (lambda ()
++     (let ((x '(1 2)))
++       (values (pop x)
++               (pop x)
++               (pop x))))
++   (values (integer 1 2)
++           (integer 1 2)
++           (or (integer 1 2) null) &optional))
++  (assert-type
+    (lambda (n)
+      (loop for x in '(a b c)
+            when (eql n x)
+@@ -4704,6 +4713,39 @@
+        (map nil (lambda (x) (when j (return (+ x 1)))) nil)
+        0))
+    (eql 0)))
++
++(with-test (:name :cons-conservative-type)
++  (macrolet ((do-check (type &body bindings)
++               `(assert-type
++                 (lambda (x)
++                   (let* (,@bindings)
++                     (declare (type (function ((cons fixnum fixnum))
++                                              (values t &optional))
++                                    f))
++                     (funcall f x)))
++                 ,type)))
++    (do-check fixnum
++      (f (lambda (cons)
++           (logand (car cons)
++                   (cdr cons)))))
++    (do-check integer
++      (foo (lambda (x) x))
++      (f (lambda (cons)
++           (funcall foo cons)
++           (logand (car cons)
++                   (cdr cons)))))
++    (do-check integer
++      (f (lambda (cons)
++           (let ((foo cons))
++             (declare (special foo))
++             (logand (car cons)
++                     (cdr cons))))))
++    (do-check integer
++      (f (lambda (cons)
++           (let ((foo cons))
++             (setf (car foo) (random (expt 2 100)))
++             (logand (car foo)
++                     (cdr foo))))))))
+ 
+ (with-test (:name :test-headers-lowtag-only)
+   (checked-compile-and-assert
