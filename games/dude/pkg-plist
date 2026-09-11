@@ -1,4 +1,5 @@
 bin/dude
 lib/dude/base.so
+lib/dude/d3le.so
 lib/dude/d3xp.so
 share/pixmaps/dude-doom3.png
