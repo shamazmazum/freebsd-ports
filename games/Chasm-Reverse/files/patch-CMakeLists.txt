@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2026-09-16 15:06:01 UTC
+--- CMakeLists.txt.orig	2025-12-09 18:56:31 UTC
 +++ CMakeLists.txt
+@@ -2,7 +2,7 @@ project(Chasm-Reverse)
+ 
+ project(Chasm-Reverse)
+ 
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 23)
+ 
+ if(MSVC)
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /D _CRT_SECURE_NO_WARNINGS /MP")
 @@ -59,19 +59,14 @@ if(WIN32)
  	set(CHASM_RESOURCES
  		res/PanzerChasm.rc
