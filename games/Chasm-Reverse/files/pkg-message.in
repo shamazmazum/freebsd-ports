@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+You need CSM.BIN file from original Chasm: The Rift
+Place it under %%DATADIR%%.
+
+CSM.BIN from the remastered version from Steam will not do.
+EOM
+}
+]

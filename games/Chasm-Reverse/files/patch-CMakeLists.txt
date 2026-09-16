@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2026-09-16 15:06:01 UTC
++++ CMakeLists.txt
+@@ -59,19 +59,14 @@ if(WIN32)
+ 	set(CHASM_RESOURCES
+ 		res/PanzerChasm.rc
+ 	)
+-elseif(APPLE)
++else(WIN32)
+ 	find_package(OpenGL REQUIRED)
+ 	include_directories(${OPENGL_INCLUDE_DIR})
+ 	set(CHASM_LIBS
+ 		${CHASM_LIBS}
+ 		${OPENGL_LIBRARIES}
+ 	)
+-else()
+-	set(CHASM_LIBS
+-		${CHASM_LIBS}
+-		GL
+-	)
+-endif()
++endif(WIN32)
+ 
+ # Configure executable
+ 
