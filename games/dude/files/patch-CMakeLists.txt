@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-08-19 13:25:29 UTC
+--- CMakeLists.txt.orig	2026-09-18 16:01:13 UTC
 +++ CMakeLists.txt
-@@ -544,16 +544,6 @@ if(D3_COMPILER_IS_GCC_OR_CLANG)
+@@ -545,16 +545,6 @@ if(D3_COMPILER_IS_GCC_OR_CLANG)
  		set(OPT_LEVEL "-O2")
  	endif()
  
@@ -17,7 +17,7 @@
  	# these options (together with -ffinite-math-only) should make compilers use direct
  	# CPU instructions (if available) instead of libm calls for many math operations
  	add_compile_options(-fno-math-errno -fno-trapping-math)
-@@ -692,12 +682,6 @@ endif()
+@@ -693,12 +683,6 @@ endif()
  	message(FATAL_ERROR "Unsupported compiler")
  endif()
  
@@ -30,7 +30,7 @@
  # mingw and msvc
  if(WIN32)
  	add_definitions(-DWINVER=0x0501)
-@@ -753,7 +737,7 @@ set(bindir		"${CMAKE_INSTALL_FULL_BINDIR}")
+@@ -754,7 +738,7 @@ set(bindir		"${CMAKE_INSTALL_FULL_BINDIR}")
  endif()
  
  set(bindir		"${CMAKE_INSTALL_FULL_BINDIR}")
