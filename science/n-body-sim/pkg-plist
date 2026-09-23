@@ -1,5 +1,0 @@
-bin/n-body-sim
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_position
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_velocity
-%%DATADIR%%/process.cl
