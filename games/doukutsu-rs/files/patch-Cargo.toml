@@ -1,0 +1,13 @@
+--- Cargo.toml.orig	2026-09-23 11:35:03 UTC
++++ Cargo.toml
+@@ -108,8 +108,8 @@ objc = "0.2"
+ objc = "0.2"
+ 
+ [target.'cfg(not(target_os = "android"))'.dependencies]
+-sdl2 = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "244ae85833cff4f97ab4b58331741be20e422bd7", optional = true, features = ["unsafe_textures", "bundled", "static-link"] }
+-sdl2-sys = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "244ae85833cff4f97ab4b58331741be20e422bd7", optional = true, features = ["bundled", "static-link"] }
++sdl2 = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "244ae85833cff4f97ab4b58331741be20e422bd7", optional = true, features = ["unsafe_textures"] }
++sdl2-sys = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "244ae85833cff4f97ab4b58331741be20e422bd7", optional = true }
+ 
+ [target.'cfg(target_os = "android")'.dependencies]
+ ndk = "0.7"

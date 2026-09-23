@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Copy the directory "data" from GOG.com or legacy Steam installation to %%DATADIR%%
+before running the game.
+EOM
+}
+]
