@@ -1,6 +1,5 @@
 PORTNAME=	uzdoom
-PORTVERSION=	4.14.3
-PORTREVISION=	1
+PORTVERSION=	5.0.1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -15,7 +14,9 @@ LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 		libzmusic.so:audio/zmusic \
 		libvpx.so:multimedia/libvpx \
 		libwebpmux.so:graphics/webp \
-		libvulkan.so:graphics/vulkan-loader
+		libvulkan.so:graphics/vulkan-loader \
+		libabsl_base.so:devel/abseil \
+		libdbus-1.so:devel/dbus
 
 USES=		cmake gl sdl pkgconfig
 
@@ -27,6 +28,12 @@ GH_PROJECT=	UZDoom
 
 USE_GL=		gl glu glesv2
 USE_SDL=	sdl2
+
+EXTRACT_AFTER_ARGS+=	--exclude libraries/ZVulkan/include/vulkan \
+			--exclude libraries/webp \
+			--exclude libraries/abseil \
+			--exclude libraries/bzip2 \
+			--exclude libraries/ZMusic
 
 DATADIR=	${DMDIR}/${PORTNAME}
 CMAKE_ARGS=	-DINSTALL_DOCS_PATH=${DOCSDIR}	\
@@ -40,11 +47,9 @@ CMAKE_ON=	VULKAN_USE_WAYLAND
 
 OPTIONS_SUB=	yes
 
+post-install:
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/*
+	${RM} -rf ${STAGEDIR}${PREFIX}/include/*
+
 .include "${.CURDIR}/../doom-data/Makefile.include"
-
-post-extract:
-	${RM} -rf ${WRKSRC}/libraries/ZVulkan/include/vulkan
-	${RM} -rf ${WRKSRC}/libraries/bzip2
-	${RM} -rf ${WRKSRC}/libraries/webp
-
 .include <bsd.port.mk>

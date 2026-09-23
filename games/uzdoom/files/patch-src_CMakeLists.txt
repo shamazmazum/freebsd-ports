@@ -1,40 +1,48 @@
---- src/CMakeLists.txt.orig	2025-11-28 23:13:58 UTC
+--- src/CMakeLists.txt.orig	2026-09-23 07:32:31 UTC
 +++ src/CMakeLists.txt
-@@ -327,7 +327,6 @@ list( APPEND PROJECT_LIBRARIES "zwidget" )
+@@ -302,7 +302,6 @@ list( APPEND PROJECT_LIBRARIES "zwidget" )
  endif()
  
  list( APPEND PROJECT_LIBRARIES "zwidget" )
 -list( APPEND PROJECT_LIBRARIES "webp" )
  
- # ZMUSIC
+ message("Building for target architecture: ${TARGET_ARCHITECTURE}")
  
-@@ -1249,7 +1248,11 @@ add_executable( zdoom WIN32 MACOSX_BUNDLE ${GAME_SOURC
+@@ -346,7 +345,7 @@ endif()
+ 	message( SEND_ERROR "Could not find libvpx" )
+ endif()
  
- add_executable( zdoom WIN32 MACOSX_BUNDLE ${GAME_SOURCES} )
+-include_directories( SYSTEM "${BZIP2_INCLUDE_DIR}" "${LZMA_INCLUDE_DIR}" "${ZMUSIC_INCLUDE_DIR}")
++include_directories( SYSTEM "${BZIP2_INCLUDE_DIR}" "${LZMA_INCLUDE_DIR}")
+ 
+ if( ${HAVE_VM_JIT} )
+ 	add_definitions( -DHAVE_VM_JIT )
+@@ -1281,7 +1280,11 @@ add_executable( zdoom MACOSX_BUNDLE ${GAME_SOURCES} )
+ 
+ add_executable( zdoom MACOSX_BUNDLE ${GAME_SOURCES} )
  
 -target_include_directories( zdoom PRIVATE ${CMAKE_BINARY_DIR} )
-+target_include_directories( zdoom PRIVATE
++target_include_directories( zdoom PRIVATE 
 +  ${CMAKE_BINARY_DIR}
 +  ${WEBPMUX_INCLUDE_DIRS}
 +  ${WEBPDECODER_INCLUDE_DIRS}
 +)
  
- target_precompile_headers( zdoom PRIVATE g_pch.h )
- 
-@@ -1272,8 +1275,19 @@ endif()
+ option(USE_PCH "Enable Pre-compiled headers" ON)
+ if (USE_PCH)
+@@ -1328,7 +1331,18 @@ endif()
  	endif()
  endif()
  
--target_link_libraries( zdoom ${PROJECT_LIBRARIES} lzma ${ZMUSIC_LIBRARIES} )
-+target_link_directories (zdoom PUBLIC
-+  ${WEBPMUX_LIBRARY_DIRS} 
-+  ${WEBPDECODER_LIBRARY_DIRS}
-+)
- 
-+target_link_libraries( zdoom
-+  ${PROJECT_LIBRARIES}
-+  lzma
-+  ${ZMUSIC_LIBRARIES}
+-target_link_libraries( zdoom ${PROJECT_LIBRARIES} lzma ${ZMUSIC_LIBRARIES} absl::base absl::flat_hash_map absl::strings absl::hash )
++target_link_libraries( zdoom 
++  ${PROJECT_LIBRARIES} 
++  lzma 
++  ZMusic::zmusic
++  absl::base 
++  absl::flat_hash_map 
++  absl::strings 
++  absl::hash
 +  ${WEBPMUX_LIBRARIES}
 +  ${WEBPDECODER_LIBRARIES}
 +)
@@ -42,11 +50,67 @@
  include_directories(
  	BEFORE
  	.
-@@ -1337,7 +1351,6 @@ include_directories(
+@@ -1391,7 +1405,6 @@ include_directories(
  	launcher
  	../libraries/ZVulkan/include
  	../libraries/ZWidget/include
 -	../libraries/webp/include
+ 	../libraries/range_map/include
  	${SYSTEM_SOURCES_DIR}
  )
+@@ -1439,13 +1452,6 @@ else()
+ 	add_custom_command( TARGET zdoom POST_BUILD
+ 		COMMAND chmod +x ${CMAKE_CURRENT_BINARY_DIR}/link-make
+ 		COMMAND ${CMAKE_CURRENT_BINARY_DIR}/link-make )
+-	IF ("${INSTALL_RPATH}" STREQUAL "")
+-		set_target_properties(zdoom PROPERTIES
+-			#allow libzmusic.so.1 library in same folder as executable at runtime
+-			INSTALL_RPATH "\$ORIGIN:\$ORIGIN/zmusic/build/source"
+-			BUILD_WITH_INSTALL_RPATH ON
+-		)
+-	endif()
+ endif()
  
+ add_custom_command(TARGET zdoom POST_BUILD
+@@ -1467,22 +1473,6 @@ add_custom_command(TARGET zdoom POST_BUILD
+ 	VERBATIM
+ )
+ 
+-if ( NOT ZMUSIC_SYSTEM_INSTALL AND (NOT DEFINED BUILD_SHARED_LIBS OR BUILD_SHARED_LIBS))
+-	# bring zmusic in
+-	add_custom_command(TARGET zdoom POST_BUILD
+-		COMMAND ${CMAKE_COMMAND} -E copy_if_different
+-			$<TARGET_FILE:zmusic> $<TARGET_FILE_DIR:zdoom>)
+-	if ( NOT WIN32 )
+-		add_custom_command(TARGET zdoom POST_BUILD
+-			COMMAND ${CMAKE_COMMAND} -E create_symlink
+-				$<TARGET_FILE_NAME:zmusic> $<TARGET_SONAME_FILE_NAME:zmusic>
+-			COMMAND ${CMAKE_COMMAND} -E create_symlink
+-				$<TARGET_SONAME_FILE_NAME:zmusic> $<TARGET_LINKER_FILE_NAME:zmusic>
+-			WORKING_DIRECTORY $<TARGET_FILE_DIR:zdoom>)
+-	endif()
+-	add_dependencies(zdoom zmusic)
+-endif()
+-
+ if (VCPKG_TOOLCHAIN)
+ 	x_vcpkg_install_local_dependencies(TARGETS zdoom DESTINATION ".")
+ endif()
+@@ -1550,18 +1540,6 @@ if( APPLE )
+ 	# Dymanic libraries like libvulkan.dylib or libMoltenVK.dylib will be loaded by dlopen()
+ 	# if placed in the directory with the main executable
+ 	set( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -rpath @executable_path" )
+-endif()
+-
+-if ( NOT ZMUSIC_SYSTEM_INSTALL )
+-	if ( WIN32 OR APPLE )
+-		# nothing to do
+-	else()
+-		install(TARGETS zmusic
+-			LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-			PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+-			COMPONENT "Game executable"
+-		)
+-	endif()
+ endif()
+ 
+ if( WIN32 )

@@ -1,7 +1,7 @@
---- libraries/ZVulkan/CMakeLists.txt.orig	2025-12-23 15:42:08 UTC
+--- libraries/ZVulkan/CMakeLists.txt.orig	2026-09-23 07:25:40 UTC
 +++ libraries/ZVulkan/CMakeLists.txt
-@@ -1,6 +1,8 @@ project(zvulkan)
- cmake_minimum_required(VERSION 3.15)
+@@ -2,6 +2,8 @@ project(zvulkan)
+ 
  project(zvulkan)
  
 +find_package (VulkanHeaders REQUIRED CONFIG)
@@ -9,7 +9,7 @@
  option( VULKAN_USE_XLIB "Use Vulkan xlib (X11) WSI integration" ON )
  option( VULKAN_USE_WAYLAND "Use Vulkan Wayland WSI integration" OFF )
  
-@@ -134,33 +136,6 @@ set(ZVULKAN_UNIX_SOURCES
+@@ -135,33 +137,6 @@ set(ZVULKAN_UNIX_SOURCES
  	src/glslang/glslang/OSDependent/Unix/ossource.cpp
  )
  
@@ -40,17 +40,17 @@
 -	include/vulkan/vulkan_xlib_xrandr.h
 -)
 -
- source_group("src" REGULAR_EXPRESSION "${CMAKE_CURRENT_SOURCE_DIR}/src/.+")
- source_group("src\\glslang" REGULAR_EXPRESSION "${CMAKE_CURRENT_SOURCE_DIR}/src/glslang/.+")
- source_group("src\\glslang\\glslang" REGULAR_EXPRESSION "${CMAKE_CURRENT_SOURCE_DIR}/src/glslang/glslang/.+")
-@@ -205,8 +180,8 @@ endif()
+ set(EXAMPLE_SOURCES
+ 	example/example.cpp
+ )
+@@ -216,8 +191,8 @@ endif()
  	#set_source_files_properties(${ZVULKAN_SOURCES} PROPERTIES COMPILE_FLAGS "/wd4244 /wd4267 /wd4005 /wd4018 -D_CRT_SECURE_NO_WARNINGS")
  endif()
  
 -add_library(zvulkan STATIC ${ZVULKAN_SOURCES} ${ZVULKAN_INCLUDES} ${VULKAN_INCLUDES})
--target_link_libraries(zvulkan ${ZVULKAN_LIBS})
+-target_link_libraries(zvulkan PUBLIC ${ZVULKAN_LIBS})
 +add_library(zvulkan STATIC ${ZVULKAN_SOURCES} ${ZVULKAN_INCLUDES})
-+target_link_libraries(zvulkan ${ZVULKAN_LIBS} Vulkan::Headers)
++target_link_libraries(zvulkan PUBLIC ${ZVULKAN_LIBS} Vulkan::Headers)
  set_target_properties(zvulkan PROPERTIES CXX_STANDARD 17)
  
  if(MSVC)
