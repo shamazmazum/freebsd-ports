@@ -1,0 +1,35 @@
+--- source/CMakeLists.txt.orig	2026-09-23 06:54:09 UTC
++++ source/CMakeLists.txt
+@@ -129,13 +129,15 @@ endif()
+ 	)
+ endif()
+ 
+-target_link_libraries(zmusic-obj INTERFACE dumb gme libxmp miniz ${CMAKE_DL_LIBS})
++target_link_libraries(zmusic-obj INTERFACE
++  dumb gme libxmp miniz ${CMAKE_DL_LIBS}
++  PkgConfig::GME
++)
+ 
+-target_include_directories(zmusic-obj
+-INTERFACE
+-	../include
+-	${CMAKE_CURRENT_SOURCE_DIR}
+-	zmusic
++target_include_directories(zmusic-obj INTERFACE
++  ../include
++  ${CMAKE_CURRENT_SOURCE_DIR}
++  zmusic
+ )
+ 
+ propagate_object_links(zmusic-obj)
+@@ -153,8 +155,8 @@ target_include_directories(zmusiclite INTERFACE $<INST
+ target_include_directories(zmusic INTERFACE $<INSTALL_INTERFACE:include> $<BUILD_INTERFACE:${ZMusic_SOURCE_DIR}/include>)
+ target_include_directories(zmusiclite INTERFACE $<INSTALL_INTERFACE:include> $<BUILD_INTERFACE:${ZMusic_SOURCE_DIR}/include>)
+ 
+-target_link_libraries_hidden(zmusic zmusic-obj adl oplsynth opn timidity timidityplus wildmidi fluidsynth)
+-target_link_libraries_hidden(zmusiclite zmusic-obj fluidsynth)
++target_link_libraries_hidden(zmusic zmusic-obj adl oplsynth opn timidity timidityplus wildmidi FluidSynth::libfluidsynth)
++target_link_libraries_hidden(zmusiclite zmusic-obj FluidSynth::libfluidsynth)
+ 
+ target_compile_definitions(zmusic PUBLIC $<$<STREQUAL:$<TARGET_PROPERTY:zmusic,TYPE>,STATIC_LIBRARY>:ZMUSIC_STATIC>)
+ target_compile_definitions(zmusiclite PRIVATE ZMUSIC_LITE=1 PUBLIC $<$<STREQUAL:$<TARGET_PROPERTY:zmusiclite,TYPE>,STATIC_LIBRARY>:ZMUSIC_STATIC>)
