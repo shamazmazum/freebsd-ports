@@ -75,6 +75,7 @@ include/faiss/c_api/error_impl.h
 include/faiss/c_api/faiss_c.h
 include/faiss/c_api/impl/AuxIndexStructures_c.h
 include/faiss/c_api/impl/io_c.h
+include/faiss/c_api/invlists/DirectMap_c.h
 include/faiss/c_api/index_factory_c.h
 include/faiss/c_api/index_io_c.h
 include/faiss/c_api/macros_impl.h
@@ -195,7 +196,7 @@ include/faiss/utils/hamming.h
 include/faiss/utils/hamming_distance/common.h
 include/faiss/utils/hamming_distance/hamming_computer-avx2.h
 include/faiss/utils/hamming_distance/hamming_computer-avx512.h
-include/faiss/utils/hamming_distance/hamming_computer-avx512_spr.h
+include/faiss/utils/hamming_distance/hamming_computer-avx512_vpopcnt.h
 include/faiss/utils/hamming_distance/hamming_computer-generic.h
 include/faiss/utils/hamming_distance/hamming_computer-neon.h
 include/faiss/utils/hamming_distance/hamming_computer-rvv.h
