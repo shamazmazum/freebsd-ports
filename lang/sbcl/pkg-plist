@@ -616,6 +616,7 @@ share/man/man1/sbcl.1.gz
 %%SOURCES%%%%DATADIR%%/src/compiler/riscv/values.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/riscv/vm.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/saptran.lisp
+%%SOURCES%%%%DATADIR%%/src/compiler/select-tagging.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/seqtran.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/sparc/alloc.lisp
 %%SOURCES%%%%DATADIR%%/src/compiler/sparc/arith.lisp
