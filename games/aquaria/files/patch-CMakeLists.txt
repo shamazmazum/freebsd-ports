@@ -1,5 +1,11 @@
---- CMakeLists.txt.orig	2022-03-30 20:53:23 UTC
+--- CMakeLists.txt.orig	2016-06-19 23:56:27 UTC
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+ PROJECT(Aquaria)
+ 
+ INCLUDE(CheckCCompilerFlag)
 @@ -361,7 +361,7 @@ ENDIF()
      ADD_DEFINITIONS(-DLUA_USE_ULONGJMP=1)
  ENDIF()

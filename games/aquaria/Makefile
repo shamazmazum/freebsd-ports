@@ -1,10 +1,11 @@
 PORTNAME=	aquaria
 DISTVERSIONPREFIX=	OSE-v
-DISTVERSION=	1.002-27
-DISTVERSIONSUFFIX=	-g7377ea0
+DISTVERSION=	1.002-35
+DISTVERSIONSUFFIX=	-g98c51ac
+PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Underwater 2D fantasy action-adventure (game engine)
 WWW=		https://github.com/AquariaOSE/Aquaria
 
@@ -35,6 +36,8 @@ CMAKE_OFF=	AQUARIA_INTERNAL_FREETYPE \
 
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (vorbis deps)
 LDFLAGS_i386=	-Wl,-z,notext -Wl,--no-check-dynamic-relocations
+
+CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # GLM_GTX_transform is an experimental extension
 
 DESKTOP_ENTRIES="${GH_PROJECT}" \
 		"" \
