@@ -1,0 +1,14 @@
+--- src/Library/StackTrace/CMakeLists.txt.orig	2026-10-20 04:31:06 UTC
++++ src/Library/StackTrace/CMakeLists.txt
+@@ -12,11 +12,6 @@ target_check_style(library_stack_trace)
+ target_link_libraries(library_stack_trace PUBLIC utility)
+ target_check_style(library_stack_trace)
+ 
+-# cpptrace doesn't support Android...
+-if (NOT OE_BUILD_PLATFORM STREQUAL "android")
+-    target_link_libraries(library_stack_trace PRIVATE cpptrace::cpptrace)
+-endif ()
+-
+ # The crash handler walks the stack with StackWalk64.
+ if (OE_BUILD_PLATFORM STREQUAL "windows")
+     target_link_libraries(library_stack_trace PRIVATE dbghelp)

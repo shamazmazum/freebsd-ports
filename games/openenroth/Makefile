@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	g20260821
+PORTVERSION=	g20261011
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -18,10 +18,12 @@ BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		cli11>0:devel/cli11 \
 		magic_enum>0:devel/magic_enum
 
-USES=		cmake gl openal sdl pkgconfig:build
+USES=		cmake gl openal sdl pkgconfig:build dos2unix
 USE_GL=		gl
 USE_SDL=	sdl3
 SUB_FILES=	pkg-message
+
+DOS2UNIX_WRKSRC=	${WRKSRC}/_deps/ztd.idk-src
 
 CMAKE_OFF=	OE_USE_PREBUILT_DEPENDENCIES \
 		OE_BUILD_TESTS
@@ -33,25 +35,25 @@ CMAKE_ARGS=	-DFETCHCONTENT_SOURCE_DIR_ZTD.CMAKE="${WRKSRC}/_deps/ztd.cmake-src" 
 		-DFETCHCONTENT_SOURCE_DIR_ZTD.PLATFORM="${WRKSRC}/_deps/ztd.platform-src"
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	OpenEnroth OpenEnroth:bwcpp vector-of-bool:cmrc Rookfighter:ini \
+GH_ACCOUNT=	OpenEnroth vector-of-bool:cmrc Rookfighter:ini \
 		mandreyel:mio gharveymn:sv ocornut:imgui TartanLlama:gen \
 		ThePhD:sol LuaJIT:lua zhaozg:luacmake boostorg:lambda \
 		bnoazx005:tcpp captainurist:ztd \
 		soasis:ztdcmake soasis:ztdidk soasis:ztdic soasis:ztdet \
 		soasis:ztdcuneicode soasis:ztdplatform
-GH_PROJECT=	OpenEnroth backward-cpp:bwcpp cmrc:cmrc inifile-cpp:ini \
+GH_PROJECT=	OpenEnroth cmrc:cmrc inifile-cpp:ini \
 		mio:mio small_vector:sv imgui:imgui generator:gen \
 		sol2:sol LuaJIT:lua luajit-cmake:luacmake lambda2:lambda \
 		tcpp:tcpp ztd_text:ztd \
 		cmake:ztdcmake idk:ztdidk inline_containers:ztdic encoding_tables:ztdet \
 		cuneicode:ztdcuneicode platform:ztdplatform
-GH_TAGNAME=	4f48764 51f0700:bwcpp 952ffdd:cmrc 7bb1ec3:ini \
-		8b6b7d8:mio e8e63fe:sv 1f7f1f5:imgui 2a91250:gen 336f76c3:sol \
+GH_TAGNAME=	e355c99 952ffdd:cmrc 7bb1ec3:ini \
+		8b6b7d8:mio e8e63fe:sv b48d1af:imgui 2a91250:gen 336f76c:sol \
 		97813fb:lua 6446221:luacmake dddfec6:lambda 8041d01:tcpp \
 		c17bbb1:ztd \
 		382e34f:ztdcmake a8f2f9d:ztdidk 80c5acb:ztdic c0c5de5:ztdet \
 		8ed6b88:ztdcuneicode d03b150:ztdplatform
-GH_SUBDIR=	thirdparty/backward_cpp:bwcpp thirdparty/cmrc:cmrc \
+GH_SUBDIR=	thirdparty/cmrc:cmrc \
 		thirdparty/inifile_cpp:ini thirdparty/mio:mio \
 		thirdparty/small_vector:sv thirdparty/imgui/imgui:imgui \
 		thirdparty/generator:gen thirdparty/sol2:sol thirdparty/luajit:lua \

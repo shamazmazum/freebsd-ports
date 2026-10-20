@@ -1,4 +1,4 @@
---- thirdparty/luajit-cmake/LuaJIT.cmake.orig	2025-09-01 05:09:20 UTC
+--- thirdparty/luajit-cmake/LuaJIT.cmake.orig	2026-10-20 04:30:14 UTC
 +++ thirdparty/luajit-cmake/LuaJIT.cmake
 @@ -409,7 +409,7 @@ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/
  endif()

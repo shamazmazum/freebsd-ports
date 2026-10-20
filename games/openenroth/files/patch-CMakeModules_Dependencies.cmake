@@ -1,17 +1,17 @@
---- CMakeModules/Dependencies.cmake.orig	2026-07-15 21:30:22 UTC
+--- CMakeModules/Dependencies.cmake.orig	2026-10-20 04:22:21 UTC
 +++ CMakeModules/Dependencies.cmake
-@@ -116,6 +116,14 @@ macro(resolve_dependencies) # Intentionally a macro - 
-         # Prebuilt & user-supplied deps are resolved using the same code here.
-         find_package(ZLIB REQUIRED)
-         find_package(FFmpeg REQUIRED)
-+        find_package(PkgConfig REQUIRED)
-+        find_package(GLM REQUIRED)
-+        find_package(FastFloat CONFIG REQUIRED)
-+        find_package(CLI11 CONFIG REQUIRED)
-+        find_package(magic_enum CONFIG REQUIRED)
-+        pkg_check_modules(NLOHMANN_JSON REQUIRED nlohmann_json)
-+        pkg_check_modules(FMT REQUIRED fmt)
-+        pkg_check_modules(SPDLOG REQUIRED spdlog)
+@@ -94,6 +94,14 @@ macro(resolve_dependencies) # Intentionally a macro - 
+     # Prebuilt & user-supplied deps are resolved using the same code here.
+     find_package(ZLIB REQUIRED)
+     find_package(FFmpeg REQUIRED)
++    find_package(PkgConfig REQUIRED)
++    find_package(glm CONFIG REQUIRED)
++    find_package(FastFloat CONFIG REQUIRED)
++    find_package(CLI11 CONFIG REQUIRED)
++    find_package(magic_enum CONFIG REQUIRED)
++    find_package(fmt CONFIG REQUIRED)
++    find_package(nlohmann_json CONFIG REQUIRED)
++    pkg_check_modules(SPDLOG REQUIRED spdlog)
  
-         find_package(SDL3 CONFIG REQUIRED)
-         add_library(SDL3OE INTERFACE)
+     find_package(SDL3 CONFIG REQUIRED)
+     add_library(SDL3OE INTERFACE)

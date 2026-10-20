@@ -1,4 +1,4 @@
---- _deps/ztd.idk-src/include/ztd/idk/endian.h.orig	2026-08-12 09:30:02 UTC
+--- _deps/ztd.idk-src/include/ztd/idk/endian.h.orig	2026-10-20 03:40:57 UTC
 +++ _deps/ztd.idk-src/include/ztd/idk/endian.h
 @@ -36,6 +36,9 @@
  #include <ztd/idk/version.h>

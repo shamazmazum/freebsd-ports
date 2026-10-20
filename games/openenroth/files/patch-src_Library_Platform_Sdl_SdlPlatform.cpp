@@ -1,6 +1,6 @@
---- src/Library/Platform/Sdl/SdlPlatform.cpp.orig	2026-07-15 21:30:22 UTC
+--- src/Library/Platform/Sdl/SdlPlatform.cpp.orig	2026-10-20 04:27:34 UTC
 +++ src/Library/Platform/Sdl/SdlPlatform.cpp
-@@ -31,7 +31,7 @@ SdlPlatform::SdlPlatform() {
+@@ -28,7 +28,7 @@ SdlPlatform::SdlPlatform() {
  
      SDL_SetLogOutputFunction(&sdlLogCallback, _state.get());
  
