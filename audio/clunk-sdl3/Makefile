@@ -1,7 +1,8 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
 
-PORTNAME=	clunk-sdl2
-DISTVERSION=	1.0
+PORTNAME=	clunk-sdl3
+DISTVERSION=	1.0-17
+DISTVERSIONSUFFIX=	-gb52d1fd
 CATEGORIES=	audio
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -11,9 +12,9 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake sdl
-USE_SDL=	sdl2
+USE_SDL=	sdl3
 
-CONFLICTS_INSTALL= clunk
+CONFLICTS_INSTALL= clunk clunk-sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stalkerg
