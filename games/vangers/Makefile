@@ -1,7 +1,6 @@
 PORTNAME=	vangers
-DISTVERSION=	2.0-90
-DISTVERSIONSUFFIX=	-g72145fe
-PORTREVISION=	1
+DISTVERSION=	2.0-537
+DISTVERSIONSUFFIX=	-g8713913
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -10,13 +9,14 @@ COMMENT=	Legendary racing game
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	toml11>0:devel/toml11
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg \
-		libclunk.so:audio/clunk-sdl2 \
+		libclunk.so:audio/clunk-sdl3 \
 		libavcodec.so:multimedia/ffmpeg
 
 USES=		cmake dos2unix iconv:build sdl gl
-USE_SDL=	sdl2 net2
+USE_SDL=	sdl3 net3
 USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.cpp *.h
 
