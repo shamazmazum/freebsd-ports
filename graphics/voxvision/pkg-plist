@@ -6,7 +6,6 @@ include/voxvision/voxrnd.h
 include/voxvision/voxrnd/camera.h
 include/voxvision/voxrnd/cd.h
 include/voxvision/voxrnd/fps-control.h
-include/voxvision/voxrnd/lights.h
 include/voxvision/voxrnd/modules.h
 include/voxvision/voxrnd/object.h
 include/voxvision/voxrnd/renderer.h
@@ -14,7 +13,6 @@ include/voxvision/voxrnd/screenshot.h
 include/voxvision/voxtrees.h
 include/voxvision/voxtrees/datareader.h
 include/voxvision/voxtrees/geom.h
-include/voxvision/voxtrees/mtree.h
 include/voxvision/voxtrees/params.h
 include/voxvision/voxtrees/search.h
 include/voxvision/voxtrees/tree.h

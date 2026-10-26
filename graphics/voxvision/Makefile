@@ -1,6 +1,7 @@
 PORTNAME=	voxvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37
+DISTVERSION=	0.37-46
+DISTVERSIONSUFFIX=	-g0c90ec4
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -13,18 +14,16 @@ LIB_DEPENDS=	libiniparser.so:devel/iniparser \
 		libdispatch.so:devel/libdispatch \
 		libvn3d.so:graphics/vn3d
 
-USES=		lua:53 cmake sdl
+USES=		lua:53 cmake sdl pkgconfig
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_TUPLE=	shamazmazum:luasdl2:3e0db9e:luasdl2/src/voxengine/modules/luasdl2
 
-OPTIONS_DEFINE=	DOCS NO_SSE EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_DESC=	Install Doxygen-generated documentation
-NO_SSE_DESC=	Disable SSE SIMD intrinsics (for running on old CPUs)
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-NO_SSE_CMAKE_BOOL_OFF=	SSE_INTRIN
 OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
