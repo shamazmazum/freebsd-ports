@@ -1,0 +1,7 @@
+A simple library for reading and writing NumPy arrays in C code.
+It is independent of Python both compile time and runtime.
+
+This tiny C library can read and write NumPy arrays files (.npy)
+into memory and keep it in a C structure. There is no matrix operations
+available, just reading and writing. There is not even methods to set
+and get elements of the array.

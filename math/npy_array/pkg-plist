@@ -1,0 +1,4 @@
+include/npy_array.h
+include/npy_array_list.h
+lib/libnpy_array.so
+libdata/pkgconfig/npy_array.pc

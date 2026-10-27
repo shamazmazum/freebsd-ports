@@ -1,0 +1,8 @@
+--- configure.orig	2026-10-27 18:23:40 UTC
++++ configure
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #
+ # vim: ts=4:ft=sh
+ # 

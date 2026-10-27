@@ -1,0 +1,36 @@
+--- Makefile.in.orig	2025-05-25 20:59:23 UTC
++++ Makefile.in
+@@ -1,8 +1,8 @@
+ # This is a pretty much general Makefile for libraries
+ 
+-SHELL := /bin/bash
++SHELL := /usr/bin/env bash
+ 
+-CC      = gcc
++#CC      = gcc
+ INCLUDE += -I.
+ CFLAGS  += -std=c99 $(INCLUDE) -Wall -Wextra -O3 $(dbg) $(profile)
+ SED     = sed
+@@ -11,7 +11,7 @@ dep = $(obj:.o=.d)  # one dependency file for each sou
+ obj = $(src:.c=.o)
+ dep = $(obj:.o=.d)  # one dependency file for each source
+ 
+-LDFLAGS += $(profile) 
++LDFLAGS += $(profile) -Wl,-soname,libnpy_array.so
+ 
+ ifeq ($(shared), true)
+ 	target := $(addsuffix .so,$(target_lib))
+@@ -28,7 +28,7 @@ all: $(target) $(pkg_conf_pc)
+ 	$(RANLIB) $@ 
+ 
+ %.so: $(obj)
+-	$(CC) -shared -fPIC -o $@ $^ $(LIBS)
++	$(CC) -shared $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ -include $(dep)   # include all dep files in the makefile
+ 
+@@ -74,4 +74,3 @@ uninstall:
+ 	@$(RM) $(DESTDIR)$(PREFIX)/lib/$(target) && echo 'Removing $(target)'
+ 	@for h in $(header_files); do $(RM) $(DESTDIR)$(PREFIX)/include/$$h ; echo "Removing $$h"; done
+ 	@$(RM) $(pkg_config_path)/$(pkg_conf_pc) && echo 'Removing $(pkg_conf_pc)'
+-	
