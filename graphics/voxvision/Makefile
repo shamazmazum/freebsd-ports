@@ -1,7 +1,7 @@
 PORTNAME=	voxvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37-46
-DISTVERSIONSUFFIX=	-g0c90ec4
+DISTVERSION=	0.37-56
+DISTVERSIONSUFFIX=	-gff49d47
 CATEGORIES=	graphics
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libiniparser.so:devel/iniparser \
 		libdispatch.so:devel/libdispatch \
-		libvn3d.so:graphics/vn3d
+		libvn3d.so:graphics/vn3d \
+		libnpy_array.so:math/npy_array
 
 USES=		lua:53 cmake sdl pkgconfig
 USE_SDL=	sdl2
