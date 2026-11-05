@@ -1,9 +1,0 @@
-TIMESTAMP = 1786554409
-SHA256 (taisei-project-taisei-v1.4.6_GH0.tar.gz) = de4ec260bc4b1eb59414ca9d7fc72ff2374ece51da4863a7760ebd53932ed885
-SIZE (taisei-project-taisei-v1.4.6_GH0.tar.gz) = 217755960
-SHA256 (taisei-project-koishi-f899ac2_GH0.tar.gz) = 7b8c885b3e782e66d197662f58b901e25625a599d66d24653370203af295fec2
-SIZE (taisei-project-koishi-f899ac2_GH0.tar.gz) = 211104
-SHA256 (taisei-project-SDL_GameControllerDB-7988b5e_GH0.tar.gz) = c42acf8c81acc01b644af032cb3497b4a5c09fecadbcb13eac77e46220573fef
-SIZE (taisei-project-SDL_GameControllerDB-7988b5e_GH0.tar.gz) = 68424
-SHA256 (taisei-project-basis_universal-380ef93_GH0.tar.gz) = bc0a3a2e2c9cf569080500b2989120d84b6593de190b0a8befed97a4105ebd4f
-SIZE (taisei-project-basis_universal-380ef93_GH0.tar.gz) = 104262889
